@@ -1,11 +1,12 @@
 \chapter{Ustalenia początkowe}
 \begin{definicja}\cite[s. 253]{maurin2}
-    Przestrzeń Hausdorffa \(M\) lokalnie homeomorficzna z
-    ustaloną przestrzenią Banacha \(E\) nazywamy \emph{rozmaitościami topologicznymi}
+    Niech M będzie przestrzeń Hausdorffa lokalnie homeomorficzna z
+    ustaloną przestrzenią Banacha \(E\). Wówczas przestrzeń \(M\) nazywamy \emph{rozmaitością
+    topologiczną}
     
-    Lokalne homeomorfizmy
-    \(M \supset \Omega_{\chi} \rightarrow \chi(\Omega_{\chi}) \subset E\) nazywa
-się \emph{mapami}.
+    Niech \(M\) będzie lokalne homeomorfizmy
+    \(M \supset \Omega_{\chi} \rightarrow \chi(\Omega_{\chi}) \subset E\). \(M\) nazywamy
+\emph{mapą}.
 
 \begin{definicja}\cite[s. 41]{maurin2}
     Niech \((X, \tau)\) będzie przestrzenią Hausdorffa, przy czym \(X\) jest grupą z działaniem
@@ -77,13 +78,18 @@ rodzinę \( \{(\chi, \Omega_{\chi})\} \) map, że:
     \begin{enumerate}[label=(\roman*)]
         \item Powiemy, że równanie cząstkowe \eqref{eq:PDE} jest liniowe, jeśli jest postaci
             \begin{equation*}
-                \Sum_{|\alpha|\leq k} a_{\alpha}(x)D^\alpha u = f(x)
+                \sum_{|\alpha |\leq k} a_{\alpha}(x)D^\alpha u = f(x)
             \end{equation*}
         \item  Równanie \eqref{eq:PDE} jest półliniowe lub inaczej semiliniowe, jeśli jest postaci
             \begin{equation*}
-                \Sum_{|\alpha|=k} a_\alpha (x) D^\alpha u + a_0 (D^{k-1} u, \dots, Du, u, x) = 0
+                \sum_{|\alpha|=k} a_\alpha (x) D^\alpha u + a_0 (D^{k-1} u, \dots, Du, u, x) = 0
             \end{equation*}
         \item Równanie \eqref{eq:PDE} jest quasi-liniowe, jeśli jest postaci
-            
+            \begin{equation*}
+                \sum_{|\alpha | = k} a_\alpha (D^{k-1} u, \dots, Du, u, x) D^\alpha u + a_0 (D^{k-1}
+                u, \dots, Du, u, x) = 0
+            \end{equation*}
+        \item Równanie \eqref{eq:PDE} jest całkowicie nieliniowe, jeśli funkcja \(F\) zależy
+            nieliniowo od pochodnych najwyższego rzędu.
     \end{enumerate}
 \end{definicja}
