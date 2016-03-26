@@ -1,0 +1,89 @@
+\chapter{Ustalenia początkowe}
+\begin{definicja}\cite[s. 253]{maurin2}
+    Przestrzeń Hausdorffa \(M\) lokalnie homeomorficzna z
+    ustaloną przestrzenią Banacha \(E\) nazywamy \emph{rozmaitościami topologicznymi}
+    
+    Lokalne homeomorfizmy
+    \(M \supset \Omega_{\chi} \rightarrow \chi(\Omega_{\chi}) \subset E\) nazywa
+się \emph{mapami}.
+
+\begin{definicja}\cite[s. 41]{maurin2}
+    Niech \((X, \tau)\) będzie przestrzenią Hausdorffa, przy czym \(X\) jest grupą z działaniem
+    grupowym \(X\times X \ni (x, y) \rightarrow x\dot y \in X\) i elementem neutralnym \(e\).
+    Przestrzeń \((X, \tau)\) nazywa się \emph{grupą topologiczną}, gdy odwzorowania:
+    \begin{align*}
+        X\times X \ni (x, y) \rightarrow x \dot y \in Y, \\ 
+        X \ni x \rightarrow x^{-1} \in X
+    \end{align*}
+\end{definicja} są ciągłe.
+
+\end{definicja}
+\begin{definicja}\cite[s. 253]{maurin2}
+\emph{Strukturą różniczkowalną} (albo też \emph{atlasem}) klasy \(p\) nazywa się taką
+rodzinę \( \{(\chi, \Omega_{\chi})\} \) map, że:
+\begin{enumerate}[label=(\alph*)]
+    \item Rodzina \(\{\Omega_{\chi}\}\) stanowi otwarte pokrycie przestrzeni \(M\) (tzn. każdy punkt
+        \(x\in M\) ma otoczenie homeomorficzne z podzbiorem w \(E\)).
+    \item Jeśli \((\chi_1, \Omega_{\chi_1})\) i \((\chi_2, \Omega_{\chi_2})\), to odwzorowanie
+        \begin{equation*}
+            (\chi_1 \circ \chi_2^{-1}): E \supset \chi_2(\Omega_{\chi_1} \cap \Omega_{\chi_2})
+            \rightarrow \chi_1(\Omega_{\chi_1} \cap \Omega_{chi_2}) \subset E 
+        \end{equation*}
+        jest dyfeomorfizmem klasy \(p\) (odwzorowaniem \(p\) razy różniczkowalnym w sposób ciągły,
+        mającym odwzorowanie odwrotne, również klasy \(p\) razy różniczkowalne w sposób ciągły).
+\end{enumerate}
+\end{definicja}
+\begin{definicja}\cite[s. 253]{maurin2}
+    Atlas \(A\) nazywamy \emph{atlasem zupełnym klasy p}, jeśli dodanie do niego mapy powoduje, że
+    otrzymany atlas nie będzie już klasy \(p\).
+\end{definicja}
+\begin{definicja}\cite[s. 253]{maurin2}
+    Parę \((M, \{(\chi, \Omega_{\chi})\})\), gdzie \(M\) jest przestrzenią Hausdorffa, a \(\{(\chi, 
+        \Omega_\chi)\}\) jest atlasem zupełnym klasy \(p\), nazywa
+        się \emph{rozmaitością różniczkowalną klasy p, modelowaną na przestrzeni Banacha \(E\)}
+\end{definicja}
+
+\begin{definicja}\cite[s. 300]{maurin2}
+    Niech \(W\), \(M\) będą rozmaitościami różniczkowalnymi, \(p: W \rightarrow M\) surjekcją
+    (rzutem) różniczkowalną, \(F\) przestrzenią topologiczną, a \(G\)
+    efektywną różcznikowalną grupą odwzorowań przestrzeni \(F\) na siebie. Jeżeli
+    \begin{enumerate}[label=(\alph*)]
+        \item istnieje pokrycie otwarte \((\Omega_i, i\in I)\) przestrzeni \(M\) oraz takie
+            dyfeomorfizmy \(h_i: p^{-1}(\Omega_i) \rightarrow \Omega_i \times F\), że
+            odwzorywują ,,włókno'' \(p^{-1}(x)\) na \(\{x\} \times F\),
+        \item istnieją odwzorowania \(g_{ij}: \Omega_{ij} \rightarrow G\) dla \(i, j \in I\) takie,
+            że \(h_i \circ h_j^{-1}(a, f) = (a, g_{ij}(a)f)\) dla \(a\in \Omega_{ij}\), \(f \in F\),
+    \end{enumerate}
+            to zespół \(W = (W, p, M, F, G)\) nazywamy \emph{przestrzenią wiązki}, \(F\)
+            \emph{włóknem typowym},
+            \(G\) \emph{grupą struktury wiązki}, \(g_{ij}\) \emph{odwzorowaniem przejścia}, \(h_i\)
+            \emph{mapami}, a
+            zespół wszystkich tych danych \emph{wiązką różniczkowalną}.
+\end{definicja}
+
+\begin{definicja}\cite[s. 17]{evans}
+    Niech \(U\) będzie otwartym podzbiorem \(\R^n\), \(k \geq 1\).
+    Równanie postaci
+    \begin{equation} \label{eq:PDE}
+        F(D^k u(x), D^{k-1} u(x), \dots, D u(x), u(x), x) = 0, \, (x\in U)
+    \end{equation}
+    nazywamy równaniem różniczkowym cząstkowym \(k\)-tego rzędu; funkcja
+    \begin{equation*}
+        F: \R^{n^k} \times \R^{n^{k-1}} \times \dots \times \R^n \times \R \times U \rightarrow \R
+    \end{equation*} jest dana, zaś \(u: U \rightarrow \R\) jest niewiadomą.
+\end{definicja}
+
+\begin{definicja}\cite[s. 18]{evans}
+    \begin{enumerate}[label=(\roman*)]
+        \item Powiemy, że równanie cząstkowe \eqref{eq:PDE} jest liniowe, jeśli jest postaci
+            \begin{equation*}
+                \Sum_{|\alpha|\leq k} a_{\alpha}(x)D^\alpha u = f(x)
+            \end{equation*}
+        \item  Równanie \eqref{eq:PDE} jest półliniowe lub inaczej semiliniowe, jeśli jest postaci
+            \begin{equation*}
+                \Sum_{|\alpha|=k} a_\alpha (x) D^\alpha u + a_0 (D^{k-1} u, \dots, Du, u, x) = 0
+            \end{equation*}
+        \item Równanie \eqref{eq:PDE} jest quasi-liniowe, jeśli jest postaci
+            
+    \end{enumerate}
+\end{definicja}
