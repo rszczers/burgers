@@ -1,10 +1,17 @@
-Naszym celem jest uzasadnienie podstawowych równań ruchu cieczy idealnej. 
+\chapter{Płyn idealny} Naszym celem jest uzasadnienie podstawowych równań ruchu cieczy idealnej. 
 
-\begin{definicja}
-Polem wektorowym zależnym od czasu klasy \(\mathcal{C}^r\) na rozmaitości \(M\) nazywamy odwzorowanie \(X: \mathbb{R} \times M \rightarrow TM\) takie, że \(X(t,\,m) \in T_{m} M\) dla wszytkich par \((t, m) \in \R \times M\).
-\end{definicja}
+Niech \((M, g)\) będzie zwartą, orientowalną \(n\)-rozmaitością Riemannowską z brzegiem i \(\omega \in \Omega^n(M)\) będzie formą objętości na \(M\). Przypomnijmy, że \(g\) jest indeksowaną przez \(M\) rodziną iloczynów skalarnych określonych na przestrzeniach stycznych do M, \(g_p: T_p M \times T_p M \rightarrow \R\) dla \(p\in M\) i \(p\mapsto g_p(X_p, Y_p)\), gdzie \(X\) i \(Y\) są różniczkowalnymi polami wektorowymi na \(M\).
 
-Niech \(M\) będzie orientowalną \(n\)-rozmaitością Riemannowską z gładkim brzegiem
-\(u:\, \) - .  
+\textbf{Polem wektorowym zależnym od czasu} klasy \(C^r\) na \(M\) nazywamy odwzorowanie \(X:\mathbb{R}\times M\rightarrow TM\) takie, że \(X_t(m):=X(t,\,m) \in T_{m} M\) jest wektorem stycznym w \(m\) w chwili \(t\) dla wszytkich par \((t, m) \in \R \times M\). Przez \(X_t\in \mathfrak{X}^r(M)\) oznaczamy pole wektorowe na \(M\) w chwili \(t\), gdzie \(\mathfrak{X}^r(M)\) to zbiór wszystkich pól wektorowych klasy \(C^r\) na \(M\). 
+
+\textbf{Przepływem} (także operatorem ewolucji) na \(M\) nazywamy 1-parametrową grupę dyfeomorfizmów \(\varphi_t: M \rightarrow M\) z operacją składania \(\varphi_{t_1}\circ\varphi_{t_2} = \varphi_{t_1 + t_2}\) dla \(t_{1}, {t}_2 \in \R\), gdzie \(\varphi_0\) jest elementem neutralnym i \(\varphi_{t}\circ\varphi_{-t} = \varphi_0\) dla dowolnego \(t\in\R\).  
+
+\textbf{Trajektorią} (także: linią przepływu, krzywą całkową) pola wektorowego \(X\) w punkcie \(m\in M\) nazywamy krzywą \(c: \R \supset I \rightarrow M\) o początku w \(m\), taką, że \(c'(t) = X(c(t))\) dla każdego \(t\in I\).
+
+Pojęcia pola wektorowego, przepływu i trajektorii wiąże następujące twierdzenie
+
+\begin{twierdzenie}[O lokalnym istnieniu trajektorii]
+    Niech \(p\) będzie dowolnym punktem rozmaitości \(M\) i \(X_p\in T_p M\) dowolnym wektorem stycznym w \(p\). Wówczas dla pewnego \(\varepsilon > 0\) istnieje gładka krzywa \(c: ]-\varepsilon, \varepsilon[ \rightarrow M\) o początku w \(p\) taka, że \(c'(0) = X_p\).
+\end{twierdzenie}
 
 Wówczas \(u(x, t)\) oznacza prędkość cząsteczki próbnej przechodzącej przez punkt \(x\in M\). 
