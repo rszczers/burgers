@@ -1,4 +1,4 @@
-\documentclass[a4paper,oneside,leqno,10pt]{book}
+\documentclass[a4paper,oneside,reqno,10pt]{book}
 \usepackage[a4paper,left=4cm,right=3cm,top=3cm,bottom=3cm,head=0cm,headsep=0cm]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -21,10 +21,11 @@
 \usepackage{multicol}
 \usepackage{pdfpages}
 \usepackage{import}
+\usepackage{cases}
 \subimport{includes/}{def.tex}
+
 \begin{document}
-\subimport{includes/chapters/}{ustalenia_poczatkowe.tex}
+\subimport{includes/chapters/plyn_idealny/}{wstep.tex}
 \bibliographystyle{unsrt}
 \bibliography{bibdb}
-
 \end{document}

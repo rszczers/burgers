@@ -1,4 +1,4 @@
-PROJECT=fale_uderzeniowe
+PROJECT=burgers
 SOURCE=main
 OUTPUT_DIR=./temp/
 export BIBINPUTS=:.
