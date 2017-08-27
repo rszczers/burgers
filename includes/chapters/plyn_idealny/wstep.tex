@@ -4,11 +4,18 @@ Niech \((M, g)\) będzie zwartą, orientowalną \(n\)-rozmaitością Riemannowsk
 
 Niech \(X\) będzie polem wektorowym klasy \(C^r\) na \(M\) i niech \((U, \varphi) = (U, x^1, x^2, \dots, x^n)\) będzie mapą wokół \(p\in M\). Wówczas \(X_p = \sum_{j=1}^{n}a_j(p)\left.\frac{\partial}{\partial x^j}\right|_p\) jest wektorem stycznym w p, gdzie \(a_j\in C^r(M; \R)\). Funkcję wektorową \(\mathbf{X}: U\ni p \mapsto \left[a_j(p)\right]_{j=1}^n\in \R^n\) nazywamy \textbf{lokalną reprezentacją} X.
 
-\textbf{Polem wektorowym zależnym od czasu} klasy \(C^r\) na \(M\) nazywamy odwzorowanie \(X:\mathbb{R}\times M\rightarrow TM\) takie, że \(X_t(m):=X(t,\,m) \in T_{m} M\) jest wektorem stycznym w \(m\) w chwili \(t\) dla wszytkich par \((t, m) \in \R \times M\). Przez \(X_t\in \mathfrak{X}^r(M)\) oznaczamy pole wektorowe na \(M\) w chwili \(t\), gdzie \(\mathfrak{X}^r(M)\) to zbiór wszystkich pól wektorowych klasy \(C^r\) na \(M\). 
+Przez \(t\in\R\) będziemy na ogół oznaczać zmienną czasową. \textbf{Polem wektorowym zależnym od czasu} klasy \(C^r\) na \(M\) nazywamy odwzorowanie \(X:\mathbb{R}\times M\rightarrow TM\) takie, że \(X_t(m):=X(t,\,m) \in T_{m} M\) jest wektorem stycznym w \(m\) w chwili \(t\) dla wszytkich par \((t, m) \in \R \times M\). Przez \(X_t\in \mathfrak{X}^r(M)\) oznaczamy pole wektorowe na \(M\) w chwili \(t\), gdzie \(\mathfrak{X}^r(M)\) to zbiór wszystkich pól wektorowych klasy \(C^r\) na \(M\). 
 
 \textbf{Przepływem} (także operatorem ewolucji) na \(M\) nazywamy 1-parametrową grupę dyfeomorfizmów \(\varphi_t: M \rightarrow M\) z operacją składania \(\varphi_{t_1}\circ\varphi_{t_2} = \varphi_{t_1 + t_2}\) dla \(t_{1}, {t}_2 \in \R\), gdzie \(\varphi_0\) jest elementem neutralnym i \(\varphi_{t}\circ\varphi_{-t} = \varphi_0\) dla dowolnego \(t\in\R\).  
 
-\textbf{Trajektorią} (także: linią przepływu, krzywą całkową) pola wektorowego \(X\) w punkcie \(m\in M\) nazywamy krzywą \(c: \R \supset I \rightarrow M\) o początku w \(m\), taką, że \(c'(t) = X(c(t))\) dla każdego \(t\in I\).
+\textbf{Trajektorią} (także: linią przepływu, krzywą całkową) pola wektorowego \(X\) w punkcie \(m\in M\) nazywamy krzywą \(c: \R \supset I \rightarrow M\) o początku w \(m\), taką, że \(c'(t) = X(c(t))\) dla każdego \(t\in I\). Jeśli \((U, \varphi) = (U, x^1, x^2, \dots, x^n)\) jest mapą wokół \(c(0)=p\) i \([X^1, X^2, \dots, X^n]^T\) jest lokalną reprezentacją X, funkcja wektorowa \(\mathbf{c} = \varphi \circ c, I \ni t \mapsto \left[c^i(t)\right]_{i=1}^m \in \R^n\) jest lokalną reprezentacją krzywej \(c\) oraz spełniony jest układ równań różniczkowch pierwszego rzędu
+\begin{align*}
+    \frac{dc^1}{dt}(t) &= X^1(c^1(t), c^2(t), \dots, c^n(t)),\\
+    \frac{dc^2}{dt}(t) &= X^2(c^1(t), c^2(t), \dots, c^n(t)),\\
+    &\mathrel{\makebox[\widthof{=}]{\vdots}}  \\
+    \frac{dc^n}{dt}(t) &= X^n(c^1(t), c^2(t), \dots, c^n(t)).
+\end{align*}
+
 
 Pojęcia pola wektorowego, przepływu i trajektorii wiąże następujące twierdzenie
 
