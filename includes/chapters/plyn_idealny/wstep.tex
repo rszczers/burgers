@@ -1,6 +1,6 @@
 \chapter{Płyn idealny} Naszym celem jest uzasadnienie podstawowych równań ruchu cieczy idealnej. 
 
-Niech \((M, g)\) będzie zwartą, orientowalną \(n\)-rozmaitością Riemannowską z brzegiem i \(\omega \in \Omega^n(M)\) będzie formą objętości na \(M\). Przypomnijmy, że \(g\) jest indeksowaną przez \(M\) rodziną iloczynów skalarnych określonych na przestrzeniach stycznych do M, \(g_p: T_p M \times T_p M \rightarrow \R\) dla \(p\in M\) i \(p\mapsto g_p(X_p, Y_p)\), gdzie \(X\) i \(Y\) są różniczkowalnymi polami wektorowymi na \(M\).
+Niech \((M, g)\) będzie zwartą, orientowalną \(n\)-rozmaitością Riemannowską z brzegiem i \(\mu \in \Omega^n(M)\) będzie formą objętości na \(M\). Przypomnijmy, że metryka Riemannowska \(g: M \rightarrow \Omega^2(M)\) to gładkie cięcie wiązki tensorowej takie, że \(g_p: T_p M \times T_p M \rightarrow \R\) dla \(p\in M\) jest 2-formą różniczkową na \(M\).
 
 Niech \(X\) będzie polem wektorowym klasy \(C^r\) na \(M\) i niech \((U, \varphi) = (U, x^1, x^2, \dots, x^n)\) będzie mapą wokół \(p\in M\). Wówczas \(X_p = \sum_{j=1}^{n}a_j(p)\left.\frac{\partial}{\partial x^j}\right|_p\) jest wektorem stycznym w p, gdzie \(a_j\in C^r(M; \R)\). Funkcję wektorową \(\mathbf{X}: U\ni p \mapsto \left[a_j(p)\right]_{j=1}^n\in \R^n\) nazywamy \textbf{lokalną reprezentacją} X.
 
@@ -10,16 +10,16 @@ Przez chwilę \(t\in\R\) będziemy na ogół oznaczać zmienną czasową. \tex
 
 \textbf{Trajektorią} (także: linią przepływu, krzywą całkową) pola wektorowego \(X\) w punkcie \(m\in M\) nazywamy krzywą \(c: \R \supset I \rightarrow M\) o początku w \(m\), taką, że \(c'(t) = X(c(t))\) dla każdego \(t\in I\). Jeśli \((U, \varphi) = (U, x^1, x^2, \dots, x^n)\) jest mapą wokół \(c(0)=p\) i \([X^1, X^2, \dots, X^n]^T\) jest lokalną reprezentacją X, funkcja wektorowa \(\mathbf{c} = \varphi \circ c, I \ni t \mapsto \left[c^i(t)\right]_{i=1}^m \in \R^n\) jest lokalną reprezentacją krzywej \(c\) oraz spełniony jest układ równań różniczkowch pierwszego rzędu nazywany układem charakterystyk
 \begin{align*}
-    \frac{dc}{dt}^1(t) &= X^1(c^1(t), c^2(t), \dots, c^n(t)),\\
-    \frac{dc}{dt}^2(t) &= X^2(c^1(t), c^2(t), \dots, c^n(t)),\\
+    \frac{dc}{dt}^1(t) &= X^1\left(c^1(t), c^2(t), \dots, c^n(t)\right),\\
+    \frac{dc}{dt}^2(t) &= X^2\left(c^1(t), c^2(t), \dots, c^n(t)\right),\\
     &\mathrel{\makebox[\widthof{=}]{\vdots}}  \\
-    \frac{dc}{dt}^n(t) &= X^n(c^1(t), c^2(t), \dots, c^n(t)).
+    \frac{dc}{dt}^n(t) &= X^n\left(c^1(t), c^2(t), \dots, c^n(t)\right).
 \end{align*}
 
 Pojęcia pola wektorowego, przepływu i trajektorii wiąże następujące twierdzenie
 
-\begin{twierdzenie}[O lokalnym istnieniu gładkiej i jednoznacznej trajektorii]
-    Niech \(U\) będzie otwartym podzbiorem \(\R^n\) i niech \(\mathbf{X}: U\times \R \rightarrow \R^n\) będzie lokalną reprezentacją pola wektorowego zależnego od czasu klasy \(C^r\, r\geq 1\). Wówczas 
+\begin{twierdzenie}[O lokalnym istnieniu gładkiego i jednoznacznego przepływu]
+    Niech \(U\) będzie otwartym podzbiorem \(\R^n\) i niech \(\mathbf{X}: U\times \R \rightarrow \R^n\) będzie lokalną reprezentacją pola wektorowego zależnego od czasu klasy \(C^r\,, r\geq 1\). Wówczas 
     \begin{enumerate}[i)]
         \item Dla dowolnego \(x_0\in U\) i chwili \(t\in \R\) istnieje trajektoria w \(x_0\),
     \item Jeśli w punkcie i w tej samej chwili istnieją dwie różne trajektorie, to są identyczne na przecięciu swoich dziedzin,
