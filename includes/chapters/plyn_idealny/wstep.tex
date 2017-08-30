@@ -2,9 +2,25 @@
 
 Niech \((M, g)\) będzie zwartą, orientowalną \(n\)-rozmaitością Riemannowską z brzegiem i \(\mu \in \Omega^n(M)\) będzie formą objętości na \(M\). Przypomnijmy, że metryka Riemannowska \(g: M \rightarrow \Omega^2(M)\) to gładkie cięcie wiązki tensorowej takie, że \(g_p \in T_m^{\ast} M \otimes T_p^{\ast} M\) dla \(p\in M\) jest iloczynem skalarnym na przestrzeni stycznej w \(p\in M\).
 
-Niech \(X\) będzie polem wektorowym klasy \(C^r\) na \(M\) i niech \((U, \varphi) = (U, x^1, x^2, \dots, x^n)\) będzie mapą wokół \(p\in M\). Wówczas \(X_p = \sum_{j=1}^{n}a_j(p)\left.\frac{\partial}{\partial x^j}\right|_p\) jest wektorem stycznym w p, gdzie \(a_j\in C^r(M; \R)\). Funkcję wektorową \(\mathbf{X}: U\ni p \mapsto \left[a_j(p)\right]_{j=1}^n\in \R^n\) nazywamy \textbf{lokalną reprezentacją} X.
+Niech \(X\) będzie polem wektorowym klasy \(C^r\) na \(M\) i niech \((U, \varphi) = (U, x^1, x^2, \dots, x^n)\) będzie mapą wokół \(p\in M\). Wówczas \(X_p = \sum_{j=1}^{n}a_j(p)\left.\frac{\partial}{\partial x^j}\right|_p\) jest wektorem stycznym w p, gdzie \(a_j\in C^r(M; \R)\). Funkcję wektorową \(\mathbf{X} = \varphi_{\ast}\circ X(\varphi^{-1}): \R^n \supset \varphi(U)\ni p \mapsto \left[a_j(p)\right]_{j=1}^n\in \R^n\) nazywamy \textbf{lokalną reprezentacją} X.
 
-Przez chwilę \(t\in\R\) będziemy na ogół oznaczać zmienną czasową. \textbf{Polem wektorowym zależnym od czasu} klasy \(C^r\) na \(M\) nazywamy odwzorowanie \(X:\R\times M\rightarrow TM\) takie, że \(X_t(m):=X(t,\,m) \in T_{m} M\) jest wektorem stycznym w \(m\) w chwili \(t\) dla wszytkich par \((t, m) \in \R \times M\). Przez \(X_t\in \mathfrak{X}^r(M)\) oznaczamy pole wektorowe na \(M\) w chwili \(t\), gdzie \(\mathfrak{X}^r(M)\) to zbiór wszystkich pól wektorowych klasy \(C^r\) na \(M\). 
+\begin{figure}[!h]
+\centering
+\begin{tikzpicture}
+  \matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em]
+  {
+     M\supset U & \varphi(U)\subset \R^n \\
+     TM & T\R^n \cong \R^n \\};
+  \path[-stealth]
+    (m-1-1) edge node [left] {\(X\)} (m-2-1)
+    (m-1-1) edge node [above] {\(\varphi\)} (m-1-2)
+    (m-1-2) edge node [right] {\(\mathbf{X}\)} (m-2-2)
+    (m-2-1) edge node [above] {\(\varphi_{\ast}\)} (m-2-2);
+\end{tikzpicture}
+\end{figure}
+
+
+Przez chwilę \(t\in\R\) będziemy nazywać zmienną czasową. \textbf{Polem wektorowym zależnym od czasu} klasy \(C^r\) na \(M\) nazywamy odwzorowanie \(X:\R\times M\rightarrow TM\) takie, że \(X_t(m):=X(t,\,m) \in T_{m} M\) jest wektorem stycznym w \(m\) w chwili \(t\) dla wszytkich par \((t, m) \in \R \times M\). Przez \(X_t\in \mathfrak{X}^r(M)\) oznaczamy pole wektorowe na \(M\) w chwili \(t\), gdzie \(\mathfrak{X}^r(M)\) to zbiór wszystkich pól wektorowych klasy \(C^r\) na \(M\). 
 
 \textbf{Przepływem} (także operatorem ewolucji) na \(M\) nazywamy 1-parametrową grupę dyfeomorfizmów \(\varphi_t: M \rightarrow M\) z operacją składania \(\varphi_{t_1}\circ\varphi_{t_2} = \varphi_{t_1 + t_2}\) dla \(t_{1}, {t}_2 \in \R\), gdzie \(\varphi_0\) jest elementem neutralnym i \(\varphi_{t}\circ\varphi_{-t} = \varphi_0\) dla dowolnego \(t\in\R\).  
 
