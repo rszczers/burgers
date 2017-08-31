@@ -44,16 +44,24 @@ Chwilą \(t\in\R\) będziemy nazywać zmienną czasową. \textbf{Polem wektoro
 \begin{equation}
 c'(t_0) = c_\ast\left(\left.\frac{d}{dt}\right|_{t_0}\right)\in T_{c(t_0)}M,
 \end{equation}
-Zachodzi następujące twierdzenie
+Zachodzą następujące twierdzenia
 \begin{twierdzenie}
 Niech \(X_p\) będzie wektorem stycznym w punkcie \(p\) rozmaitości \(M\) i niech \(f\in C_p^\infty(M)\) będzie kiełkiem funkcji \(C^\infty\) w \(p\). Jeśli \(c:\:]-\varepsilon,\varepsilon[\rightarrow M\) jest gładką krzywą o początku w \(p\) taką, że \(c'(0)=X_p\), wówczas
 \begin{equation}
 X_pf=\left.\frac{d}{dt}\right|_0(f\circ c).
 \end{equation}
 \end{twierdzenie}
+\begin{twierdzenie}
+Niech \(F: N\to M\) będzie gładkim odwzorowaniem między rozmaitościami, \(p\in N\), \(X_p\in T_p N\). Jeśli \(c\) jest gładką krzywą o początku w \(p\) i jej prędkość w \(p\) to \(X_p\), wówczas
+\begin{equation}
+F_{\ast, p} (X_p) = \left.\frac{d}{dt}\right|_0(F\circ c)(t).
+\end{equation}
+Czyli popchnięcie prędkości \(X_p\) przez \(F\) jest wektorem prędkości krzywej \(F\circ c\) w \(M\).
+\end{twierdzenie}
+
 Przez \(\mathcal{D}_X\) oznaczmy wszystkie pary \((m, t)\in M \times \R\) dla których istnieje trajektoria \(c: I\rightarrow M\) pola wektorowego \(X\) w punkcie \(m\) i zmienna czasowa \(t\) zawiera się w pewnym przedziale \(I\). Mówimy, że pole wektorowe jest \textbf{zupełne}, jeśli \(\mathcal{D}_X = M \times \R\). Oznacza to, że dla każdego punktu na rozmaitości znajdziemy trajektorię cząsteczki próbnej poruszającej się dowolnie długo. Zbiór wszystkich punktów rozmaitości na których pole wektorowe nie znika, \(\mathrm{Supp}\,X=\{m\in M\:|\: X_m\neq 0\}\), nazywamy \textbf{nośnikiem} pola wektorowego X. 
 
-Zachodzą następujące twierdzenia
+Zachodzi następujące twierdzenie
 
 \begin{twierdzenie}\label{tw:D}
 Niech \(X\) będzie polem wektorowym na \(M\) klasy \(C^r,\, r\geq1\). Wówczas
@@ -64,14 +72,6 @@ Niech \(X\) będzie polem wektorowym na \(M\) klasy \(C^r,\, r\geq1\). Wówczas
 \item dla \((m,t)\in \mathcal{D}_X,\) \(F_X(m,t),\, s)\in\mathcal{D}_X\) wtedy i tylko wtedy, gdy \((m, t+s)\in \mathcal{D}_X\).
 \end{enumerate}
 \end{twierdzenie}  
-
-\begin{twierdzenie}
-Niech \(F: N\to M\) będzie gładkim odwzorowaniem między rozmaitościami, \(p\in N\), \(X_p\in T_p N\). Jeśli \(c\) jest gładką krzywą o początku w \(p\) i jej prędkość w \(p\) to \(X_p\), wówczas
-\begin{equation}
-F_{\ast, p} (X_p) = \left.\frac{d}{dt}\right|_0(F\circ c)(t).
-\end{equation}
-Czyli popchnięcie prędkości \(X_p\) przez \(F\) jest wektorem prędkości krzywej \(F\circ c\) w \(M\).
-\end{twierdzenie}
 
 Określone w Twierdzeniu \ref{tw:D} odwzorowanie \(F_X\) nazywamy \textbf{całką} \(X\), zaś trajektorię \(t\rightarrow F_X(m,t)\) \textbf{maksymalną krzywą całkową} \(X\) w \(m\). Jeśli pole wektorowe \(X\) jest zupełne, \(F_X\) nazywamy \textbf{przepływem} pola wektorowego \(X\). Każdy przepływ \(F\) określa 1-parametrową grupę dyfeomorfizmów \(\{F_t:\:M\rightarrow M\:|\: t\in \R\}\) z operacją składania \(F_{t_1}\circ F_{t_2} = F_{t_1 + t_2}\) dla \(t_{1}, {t}_2 \in \R\), gdzie \(F_0\) jest elementem neutralnym i \(F_{t}\circ F_{-t} = F_{0}\) dla dowolnego \(t\in\R\). Jeśli \(X\) jest polem wektorowym zależnym od czasu, wówczas analogicznie określamy \textbf{przepływ zależny od czasu} \(F_{t,s}\) pola \(X\) dla którego odwzorowanie \(t\mapsto F_{t,s}(m)\) jest trajektorią \(X\) o początku w punkcie \(m\) i w chwili \(t=s\), czyli
 \begin{align}
