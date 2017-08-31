@@ -1,6 +1,8 @@
-\chapter{Płyn idealny} Naszym celem jest uzasadnienie podstawowych równań ruchu cieczy idealnej. 
+\chapter{Płyn idealny} Naszym celem jest uzasadnienie podstawowych równań ruchu cieczy idealnej.
 
-Niech \((M, g)\) będzie zwartą, orientowalną \(n\)-rozmaitością Riemannowską z brzegiem i \(\mu \in \Omega^n(M)\) będzie formą objętości na \(M\). Przypomnijmy, że metryka Riemannowska \(g: M \rightarrow \Omega^2(M)\) to gładkie cięcie wiązki tensorowej takie, że \(g_p \in T_m^{\ast} M \otimes T_p^{\ast} M\) dla \(p\in M\) jest iloczynem skalarnym na przestrzeni stycznej w \(p\in M\).
+\section{Pojęcia wstępne}
+
+Niech \((M, g)\) będzie zwartą, orientowalną \(n\)-rozmaitością Riemannowską z brzegiem i \(\mu \in \Omega^n(M)\) będzie formą objętości na \(M\). Przypomnijmy, że metryka Riemannowska \(g:\: M \rightarrow \Omega^2(M)\) to gładkie cięcie wiązki tensorowej takie, że \(g_p \in T_m^{\ast} M \otimes T_p^{\ast} M\) dla \(p\in M\) jest iloczynem skalarnym na przestrzeni stycznej w \(p\in M\).
 
 Niech \(X\) będzie polem wektorowym klasy \(C^r\) na \(M\) i niech \((U, \varphi) = (U, x^1, x^2, \dots, x^n)\) będzie mapą wokół \(p\in M\). Wówczas \(X_p = \sum_{j=1}^{n}a_j(p)\left.\frac{\partial}{\partial x^j}\right|_p\) jest wektorem stycznym w p, gdzie \(a_j\in C^r(M; \R)\). Funkcję wektorową \(\mathbf{X} = \varphi_{\ast}\circ X(\varphi^{-1}): \R^n \supset \varphi(U)\ni p \mapsto \left[a_j(p)\right]_{j=1}^n\in \R^n\) nazywamy \textbf{lokalną reprezentacją} X.
 
@@ -44,9 +46,14 @@ Niech \(X\) będzie polem wektorowym na \(M\) klasy \(C^r,\, r\geq1\). Wówczas
 \end{enumerate}
 \end{twierdzenie}  
 
-Określone w Twierdzeniu \ref{tw:D} odwzorowanie \(F_X\) nazywamy \textbf{całką} \(X\), zaś trajektorię \(t\rightarrow F_X(m,t)\) \textbf{maksymalną krzywą całkową} \(X\) w \(m\). Jeśli pole wektorowe \(X\) jest zupełne, \(F_X\) nazywamy \textbf{przepływem} pola wektorowego \(X\). Każdy przepływ \(F\) określa 1-parametrową grupę dyfeomorfizmów \(\{F_t:\:M\rightarrow M\:|\: t\in \R\}\) z operacją składania \(F_{t_1}\circ F_{t_2} = F_{t_1 + t_2}\) dla \(t_{1}, {t}_2 \in \R\), gdzie \(F_0\) jest elementem neutralnym i \(F_{t}\circ F_{-t} = F_{0}\) dla dowolnego \(t\in\R\).  
-
-
+Określone w Twierdzeniu \ref{tw:D} odwzorowanie \(F_X\) nazywamy \textbf{całką} \(X\), zaś trajektorię \(t\rightarrow F_X(m,t)\) \textbf{maksymalną krzywą całkową} \(X\) w \(m\). Jeśli pole wektorowe \(X\) jest zupełne, \(F_X\) nazywamy \textbf{przepływem} pola wektorowego \(X\). Każdy przepływ \(F\) określa 1-parametrową grupę dyfeomorfizmów \(\{F_t:\:M\rightarrow M\:|\: t\in \R\}\) z operacją składania \(F_{t_1}\circ F_{t_2} = F_{t_1 + t_2}\) dla \(t_{1}, {t}_2 \in \R\), gdzie \(F_0\) jest elementem neutralnym i \(F_{t}\circ F_{-t} = F_{0}\) dla dowolnego \(t\in\R\). Jeśli \(X\) jest polem wektorowym zależnym od czasu, wówczas analogicznie określamy \textbf{przepływ zależny od czasu} \(F_{t,s}\) pola \(X\) dla którego odwzorowanie \(t\mapsto F_{t,s}(m)\) jest trajektorią \(X\) o początku w punkcie \(m\) i w chwili \(t=s\), czyli
+\begin{align}
+\frac{d}{dt}F_{t,s}(m) = X\left(t, F_{t,s}(m)\right), &\quad F_{s,s}(m) = m.
+\end{align} 
+Wówczas działanie składania staje się przechodnie, \(F_{t,s}\circ F_{s,r} = F_{s, r}\), a \(F_{t, t}\) jest elementem neutralnym. 
+\begin{twierdzenie}
+Każde pole wektorowe klasy \(C^r\) na zwartej rozmaitości \(M\) jest zupełne.
+\end{twierdzenie}
 %Pojęcia pola wektorowego, przepływu i trajektorii wiąże następujące twierdzenie
 
 %
