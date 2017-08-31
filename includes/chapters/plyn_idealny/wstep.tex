@@ -2,9 +2,9 @@
 
 \section{Pojęcia wstępne}
 
-Niech \((M, g)\) będzie zwartą, orientowalną \(n\)-rozmaitością Riemannowską z brzegiem i \(\mu \in \Omega^n(M)\) będzie formą objętości na \(M\). Przypomnijmy, że metryka Riemannowska \(g:\: M \rightarrow \Omega^2(M)\) to gładkie cięcie wiązki tensorowej \(\mathcal{T}_2^0\) takie, że \(g_p \in T_m^{\ast} M \otimes T_p^{\ast} M\) dla \(p\in M\) jest iloczynem skalarnym na przestrzeni stycznej w \(p\in M\).
+Niech \((M, g)\) będzie zwartą, orientowalną \(n\)-rozmaitością Riemannowską z brzegiem i \(\mu \in \Omega^n(M)\) będzie formą objętości na \(M\). Przypomnijmy, że metryka Riemannowska \(g:\: M \rightarrow \Omega^2(M)\) to pole tensorowe \(\mathcal{T}_2^0(M)\) takie, że \(g_p \in T_m^{\ast} M \otimes T_p^{\ast} M\) dla \(p\in M\) jest iloczynem skalarnym na przestrzeni stycznej w \(p\in M\).
 
-Niech \(X\) będzie polem wektorowym klasy \(C^r\) na \(M\) i niech \((U, \varphi) = (U, x^1, x^2, \dots, x^n)\) będzie mapą wokół \(p\in M\). Wówczas \(X_p = \sum_{j=1}^{n}a_j(p)\left.\frac{\partial}{\partial x^j}\right|_p\) jest wektorem stycznym w p, gdzie \(a_j\in C^r(M; \R)\). Funkcję wektorową \(\mathbf{X} = \varphi_{\ast}\circ X(\varphi^{-1}): \R^n \supset \varphi(U)\ni p \mapsto \left[a_j(p)\right]_{j=1}^n\in \R^n\) nazywamy \textbf{lokalną reprezentacją} X.
+Niech \(X\) będzie polem wektorowym klasy \(C^r\) na \(M\) i niech \((U, \varphi) = (U, x^1, x^2, \dots, x^n)\) będzie mapą wokół \(p\in M\). Wówczas \(X_p = \sum_{j=1}^{n}a_j(p)\left.\frac{\partial}{\partial x^j}\right|_p\) jest wektorem stycznym w p, gdzie \(a_j\in C^r(M)\) są kiełkami funkcji klasy \(C^r\) w \(p\). Funkcję wektorową \(\mathbf{X} = \varphi_{\ast}\circ X(\varphi^{-1}): \R^n \supset \varphi(U)\ni p \mapsto \left[a_j(p)\right]_{j=1}^n\in \R^n\) nazywamy \textbf{lokalną reprezentacją} X.
 
 \begin{figure}[!h]
 \centering
@@ -21,7 +21,6 @@ Niech \(X\) będzie polem wektorowym klasy \(C^r\) na \(M\) i niech \((U, \varph
 \end{tikzpicture}
 \end{figure}
 
-
 Chwilą \(t\in\R\) będziemy nazywać zmienną czasową. \textbf{Polem wektorowym zależnym od czasu} klasy \(C^r\) na \(M\) nazywamy odwzorowanie \(X:\R\times M\rightarrow TM\) takie, że \(X_t(m):=X(t,\,m) \in T_{m} M\) jest wektorem stycznym w \(m\) w chwili \(t\) dla wszytkich par \((t, m) \in \R \times M\). Przez \(X_t\in \mathfrak{X}^r(M)\) oznaczamy pole wektorowe na \(M\) w chwili \(t\), gdzie \(\mathfrak{X}^r(M)\) to zbiór wszystkich pól wektorowych klasy \(C^r\) na \(M\). 
 
 \textbf{Trajektorią} (także: linią przepływu, krzywą całkową) pola wektorowego \(X\) w punkcie \(m\in M\) nazywamy krzywą \(c: \R \supset I \rightarrow M\) o początku w \(m\), taką, że \(c'(t) = X_{c(t)}\) dla każdego \(t\in I\). Jeśli \((U, \varphi) = (U, x^1, x^2, \dots, x^n)\) jest mapą wokół \(c(0)=p\) i \([X^1, X^2, \dots, X^n]^T\) jest lokalną reprezentacją \(X\), funkcja wektorowa \(\mathbf{c} = \varphi \circ c, I \ni t \mapsto \left[c^i(t)\right]_{i=1}^m \in \R^n\) jest lokalną reprezentacją krzywej \(c\) oraz spełniony jest układ równań różniczkowch pierwszego rzędu nazywany układem charakterystyk
@@ -31,7 +30,18 @@ Chwilą \(t\in\R\) będziemy nazywać zmienną czasową. \textbf{Polem wektoro
     &\mathrel{\makebox[\widthof{=}]{\vdots}}  \\
     \frac{dc}{dt}^n(t) &= X^n\left(c^1(t), c^2(t), \dots, c^n(t)\right).
 \end{align*}
+\textbf{Prędkością} \(c'(t_0)\) \textbf{krzywej} \(c\) w chwili \(t\in]a, b[\) nazywamy wektor styczny
+\begin{equation}
+c'(t_0) = c_\ast\left(\left.\frac{d}{dt}\right|_{t_0}\right)\in T_{c(t_0)}M
+\end{equation}
+Zachodzi następujące twierdzenie
+\begin{twierdzenie}
+Niech \(X_p\) będzie wektorem stycznym w punkcie \(p\) rozmaitości \(M\) i niech \(f\in C_p^\infty(M)\) będzie kiełkiem funkcji \(C^\infty\) w \(p\). Jeśli \(c:\:]-\varepsilon,\varepsilon[\rightarrow M\) jest gładką krzywą o początku w \(p\) taką, że \(c'(0)=X_p\), wówczas
+\begin{equation}
+X_pf=\left.\frac{d}{dt}\right|_0(f\circ c).
+\end{equation}
 
+\end{twierdzenie}
 Przez \(\mathcal{D}_X\) oznaczmy wszystkie pary \((m, t)\in M \times \R\) dla których istnieje trajektoria \(c: I\rightarrow M\) pola wektorowego \(X\) w punkcie \(m\) i zmienna czasowa \(t\) zawiera się w pewnym przedziale \(I\). Mówimy, że pole wektorowe jest \textbf{zupełne}, jeśli \(\mathcal{D}_X = M \times \R\). Oznacza to, że dla każdego punktu na rozmaitości znajdziemy trajektorię cząsteczki próbnej poruszającej się dowolnie długo. Zbiór wszystkich punktów rozmaitości na których pole wektorowe nie znika, \(\mathrm{Supp}\,X=\{m\in M\:|\: X_m\neq 0\}\), nazywamy \textbf{nośnikiem} pola wektorowego X. 
 
 Zachodzi następujące twierdzenie
@@ -50,7 +60,7 @@ Określone w Twierdzeniu \ref{tw:D} odwzorowanie \(F_X\) nazywamy \textbf{całk�
 \begin{align}
 \frac{d}{dt}F_{t,s}(m) = X\left(t, F_{t,s}(m)\right), &\quad F_{s,s}(m) = m.
 \end{align} 
-Wówczas działanie składania staje się przechodnie, \(F_{t,s}\circ F_{s,r} = F_{s, r}\), a \(F_{t, t}\) jest elementem neutralnym. 
+Wówczas działanie składania staje się przechodnie, \(F_{t,s}\circ F_{s,r} = F_{s, r}\), a \(F_{t, t}\) jest jego elementem neutralnym. 
 \begin{twierdzenie}
 Każde pole wektorowe klasy \(C^r\) na zwartej rozmaitości \(M\) jest zupełne.
 \end{twierdzenie}
@@ -74,3 +84,19 @@ Każde pole wektorowe klasy \(C^r\) na zwartej rozmaitości \(M\) jest zupełne.
 %\end{twierdzenie}
 %Wówczas \(u(x, t)\) oznacza prędkość cząsteczki próbnej przechodzącej przez punkt \(x\in M\). 
 
+Niech \(X,\,Y\in\mathfrak{X}(M)\) i \(F:]-\varepsilon, \varepsilon[\times U\rightarrow M\) będzie lokalnym przepływem pola wektorowego \(X\) w otoczeniu \(U\subset M\) punktu \(p\in M\). \textbf{Pochodną Liego} \(\mathcal{L}_X Y\) \textbf{pola wektorowego} \(Y\) względem \(X\) w \(p\) nazywamy wektor
+\begin{equation}\label{eq:lie_vector}
+\begin{split}
+(\mathcal{L}_X Y)_p &= \lim_{t\to 0} \frac{F_{-t\ast}(Y_{F_t(p)})-Y_p}{t} =\\
+                    &= \lim_{t\to 0} \frac{(F_{-t\ast}Y)_p - Y_p}{t} =\\
+                    &= \left.\frac{d}{dt}\right|_{t = 0}(F_{-t\ast}Y)_p.
+\end{split}
+\end{equation} 
+Jeśli \(\omega\) jest gładką k-formą na rozmaitości \(M\), to \textbf{pochodną Liego} \(\mathcal{L}_X \omega\) \textbf{k-formy} \(\omega\) względem \(X\) w \(p\in M\) nazywamy formę
+\begin{equation}\label{eq:lie_form}
+\begin{split}
+(\mathcal{L}_X \omega)_p &= \lim_{t\to 0}\frac{F_t^{\ast}(\omega_{F_t(p)}-\omega_p}{t} =\\
+						 &= \lim_{t\to 0}\frac{(F_t^{\ast}\omega)_p - \omega_p}{t} =\\
+						 &= \left.\frac{d}{dt}\right|_{t=0}(F_t^{\ast}\omega)_p.
+\end{split}
+\end{equation}
