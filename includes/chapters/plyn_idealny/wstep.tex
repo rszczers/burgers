@@ -1,10 +1,20 @@
-\chapter{Płyn idealny} Naszym celem jest uzasadnienie podstawowych równań ruchu cieczy idealnej.
+\chapter{Płyn idealny} W tym rozdziale naszym celem jest opracowanie modelu fizycznego cieczy idealnej i uzasadnienie podstawowych równań ruchu z ną związanych.
 
 \section{Pojęcia wstępne}
 
-Niech \((M, g)\) będzie zwartą, orientowalną \(n\)-rozmaitością Riemannowską z brzegiem i \(\mu \in \Omega^n(M)\) będzie formą objętości na \(M\). Przypomnijmy, że metryka Riemannowska \(g:\: M \rightarrow \Omega^2(M)\) to pole tensorowe \(\mathcal{T}_2^0(M)\) takie, że \(g_p \in T_m^{\ast} M \otimes T_p^{\ast} M\) dla \(p\in M\) jest iloczynem skalarnym na przestrzeni stycznej w \(p\in M\).
+Niech \(N,\,M\) będą rozmaitościami różniczkowalnymi i \(F:N\to M\) gładkim odwzorowaniem między nimi. Wówczas dla każdego \(p\in M\) określamy odwzorowanie liniowe między przestrzeniami stycznymi 
+\begin{equation}
+F_{\ast, p}:T_p N\rightarrow T_{F(p)}M, 
+\end{equation}
+które nazywamy \textbf{różniczką} \(F\) w \(p\in N\). Jeśli \(X_p\in T_p N\) jest wektorem stycznym do \(M\) w \(p\), wówczas dla dowolnego kiełka \(f\in C_{F(p)}^\infty(M)\) funkcji w \(F(p)\) 
+\begin{equation}
+(F_{\ast, p} (X_p))f = X_p(f\circ F) \in \R.
+\end{equation} 
+gdzie \(F_{\ast, p} (X_p)\) jest wektorem stycznym do \(N\) w \(F(p)\). Jeśli \(F\) jest dyfeomorfizmem, zaś \(X\) -- polem wektorowym na \(M\), odwzorowanie \(F_\ast \circ X \circ F^{-1}\) nazywamy \textbf{popchnięciem} pola wektorowego \(X\) i przez \(F\). Dualnie, jeśli \(f\in C_p^\infty\) określamy \textbf{cofnięcie} \(F^\ast f := F\circ f\) funkcji \(f\) przez \(F\).
 
-Niech \(X\) będzie polem wektorowym klasy \(C^r\) na \(M\) i niech \((U, \varphi) = (U, x^1, x^2, \dots, x^n)\) będzie mapą wokół \(p\in M\). Wówczas \(X_p = \sum_{j=1}^{n}a_j(p)\left.\frac{\partial}{\partial x^j}\right|_p\) jest wektorem stycznym w p, gdzie \(a_j\in C^r(M)\) są kiełkami funkcji klasy \(C^r\) w \(p\). Funkcję wektorową \(\mathbf{X} = \varphi_{\ast}\circ X(\varphi^{-1}): \R^n \supset \varphi(U)\ni p \mapsto \left[a_j(p)\right]_{j=1}^n\in \R^n\) nazywamy \textbf{lokalną reprezentacją} X.
+Niech \((M, g)\) będzie zwartą, orientowalną \(n\)-rozmaitością Riemannowską z brzegiem i \(\mu \in \Omega^n(M)\) będzie formą objętości na \(M\). Przypomnijmy, że metryka Riemannowska \(g:\: M \rightarrow \Omega^2(M)\) to pole tensorowe \(\mathcal{T}_2^0(M)\) takie, że \(g_p \in T_m^{\ast} M \otimes T_p^{\ast} M\) dla \(p\in M\) jest iloczynem skalarnym określonym na przestrzeni stycznej \(T_p M\).
+
+Niech \(X\) będzie polem wektorowym klasy \(C^r\) na \(M\) i niech \((U, \varphi) = (U, x^1, x^2, \dots, x^n)\) będzie mapą wokół \(p\in M\). Wówczas \(X_p = \sum_{j=1}^{n}a_j(p)\left.\frac{\partial}{\partial x^j}\right|_p\) jest wektorem stycznym w p, gdzie \(a_j\in C^r(M)\) są kiełkami funkcji klasy \(C^r\) w \(p\). Popchnięcie \(X\) przez \(\varphi\), czyli funkcję wektorową \(\mathbf{X} = \varphi_{\ast}\circ X(\varphi^{-1}): \R^n \supset \varphi(U)\ni p \mapsto \left[a_j(p)\right]_{j=1}^n\in \R^n\) nazywamy \textbf{lokalną reprezentacją} X.
 
 \begin{figure}[!h]
 \centering
@@ -32,7 +42,7 @@ Chwilą \(t\in\R\) będziemy nazywać zmienną czasową. \textbf{Polem wektoro
 \end{align*}
 \textbf{Prędkością} \(c'(t_0)\) \textbf{krzywej} \(c\) w chwili \(t\in]a, b[\) nazywamy wektor styczny
 \begin{equation}
-c'(t_0) = c_\ast\left(\left.\frac{d}{dt}\right|_{t_0}\right)\in T_{c(t_0)}M
+c'(t_0) = c_\ast\left(\left.\frac{d}{dt}\right|_{t_0}\right)\in T_{c(t_0)}M,
 \end{equation}
 Zachodzi następujące twierdzenie
 \begin{twierdzenie}
@@ -40,11 +50,10 @@ Niech \(X_p\) będzie wektorem stycznym w punkcie \(p\) rozmaitości \(M\) i nie
 \begin{equation}
 X_pf=\left.\frac{d}{dt}\right|_0(f\circ c).
 \end{equation}
-
 \end{twierdzenie}
 Przez \(\mathcal{D}_X\) oznaczmy wszystkie pary \((m, t)\in M \times \R\) dla których istnieje trajektoria \(c: I\rightarrow M\) pola wektorowego \(X\) w punkcie \(m\) i zmienna czasowa \(t\) zawiera się w pewnym przedziale \(I\). Mówimy, że pole wektorowe jest \textbf{zupełne}, jeśli \(\mathcal{D}_X = M \times \R\). Oznacza to, że dla każdego punktu na rozmaitości znajdziemy trajektorię cząsteczki próbnej poruszającej się dowolnie długo. Zbiór wszystkich punktów rozmaitości na których pole wektorowe nie znika, \(\mathrm{Supp}\,X=\{m\in M\:|\: X_m\neq 0\}\), nazywamy \textbf{nośnikiem} pola wektorowego X. 
 
-Zachodzi następujące twierdzenie
+Zachodzą następujące twierdzenia
 
 \begin{twierdzenie}\label{tw:D}
 Niech \(X\) będzie polem wektorowym na \(M\) klasy \(C^r,\, r\geq1\). Wówczas
@@ -56,6 +65,14 @@ Niech \(X\) będzie polem wektorowym na \(M\) klasy \(C^r,\, r\geq1\). Wówczas
 \end{enumerate}
 \end{twierdzenie}  
 
+\begin{twierdzenie}
+Niech \(F: N\to M\) będzie gładkim odwzorowaniem między rozmaitościami, \(p\in N\), \(X_p\in T_p N\). Jeśli \(c\) jest gładką krzywą o początku w \(p\) i jej prędkość w \(p\) to \(X_p\), wówczas
+\begin{equation}
+F_{\ast, p} (X_p) = \left.\frac{d}{dt}\right|_0(F\circ c)(t).
+\end{equation}
+Czyli popchnięcie prędkości \(X_p\) przez \(F\) jest wektorem prędkości krzywej \(F\circ c\) w \(M\).
+\end{twierdzenie}
+
 Określone w Twierdzeniu \ref{tw:D} odwzorowanie \(F_X\) nazywamy \textbf{całką} \(X\), zaś trajektorię \(t\rightarrow F_X(m,t)\) \textbf{maksymalną krzywą całkową} \(X\) w \(m\). Jeśli pole wektorowe \(X\) jest zupełne, \(F_X\) nazywamy \textbf{przepływem} pola wektorowego \(X\). Każdy przepływ \(F\) określa 1-parametrową grupę dyfeomorfizmów \(\{F_t:\:M\rightarrow M\:|\: t\in \R\}\) z operacją składania \(F_{t_1}\circ F_{t_2} = F_{t_1 + t_2}\) dla \(t_{1}, {t}_2 \in \R\), gdzie \(F_0\) jest elementem neutralnym i \(F_{t}\circ F_{-t} = F_{0}\) dla dowolnego \(t\in\R\). Jeśli \(X\) jest polem wektorowym zależnym od czasu, wówczas analogicznie określamy \textbf{przepływ zależny od czasu} \(F_{t,s}\) pola \(X\) dla którego odwzorowanie \(t\mapsto F_{t,s}(m)\) jest trajektorią \(X\) o początku w punkcie \(m\) i w chwili \(t=s\), czyli
 \begin{align}
 \frac{d}{dt}F_{t,s}(m) = X\left(t, F_{t,s}(m)\right), &\quad F_{s,s}(m) = m.
@@ -64,8 +81,8 @@ Wówczas działanie składania staje się przechodnie, \(F_{t,s}\circ F_{s,r} =
 \begin{twierdzenie}
 Każde pole wektorowe klasy \(C^r\) na zwartej rozmaitości \(M\) jest zupełne.
 \end{twierdzenie}
-%Pojęcia pola wektorowego, przepływu i trajektorii wiąże następujące twierdzenie
 
+%Pojęcia pola wektorowego, przepływu i trajektorii wiąże następujące twierdzenie
 %
 %\begin{twierdzenie}[O lokalnym istnieniu gładkiego przepływu]
 %Niech \((U, \varphi)\) będzie mapą wokół \(p\in M\) i niech \(X\) będzie polem wektorowym klasy \(C^\infty\) na \(U\). Wówczas dla każdego \(p_0\in U\) istnieje przepływ \(F:]-\varepsilon, \varepsilon[ \times V \rightarrow U\) klasy \(C^\infty\) dla pewnego otoczenia \(V\subset U\) i pewnego \(\varepsilon>0\) taki, że \(F_t\) jest trajektorią pola wektorowego \(X\) w \(p_0\), czyli
@@ -100,3 +117,4 @@ Jeśli \(\omega\) jest gładką k-formą na rozmaitości \(M\), to \textbf{poch
 						 &= \left.\frac{d}{dt}\right|_{t=0}(F_t^{\ast}\omega)_p.
 \end{split}
 \end{equation}
+
