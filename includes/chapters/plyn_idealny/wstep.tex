@@ -5,7 +5,7 @@ Zaczniemy od przypomnienia podstawowych pojęć w teorii rozmaitości gładkich.
 \begin{equation}
 D(fg) = (Df)g(p) + f(Dg)(p)
 \end{equation}
-nazywamy \textbf{różniczkowaniem} w punkcie \(p\). Przestrzeń liniową wszystkich różniczkowań w punkcie \(p\) nazywamy \textbf{przestrzenią styczną} w \(p\) i oznaczamy przez \(T_p(M)\).
+nazywamy \textbf{różniczkowaniem} w punkcie \(p\). Przestrzeń liniową wszystkich różniczkowań w punkcie \(p\) nazywamy \textbf{przestrzenią styczną} w \(p\) i oznaczamy przez \(T_pM\).
 
 Niech \(\pi: E\to M\) będzie dowolnym odwzorowaniem między rozmaitościami \(E\) i \(M\). Przeciwobraz \(E_p = \pi^{-1}(p)\) punktu \(p\) nazywamy \textbf{włóknem} w \(p\). Niech \(\pi': E'\to M\) będzie odwzorowaniem rozmaitości \(E'\) i \(M\). Powiemy, że odwzorowanie \(\phi:E\to E'\) \textbf{zachowuje włókna}, jeśli \(\phi(E_p)\subset E'_p\) dla każdego \(p\in M\). Jeśli \(\pi\) jest surjekcją klasy \(C^\infty\) oraz
 \begin{enumerate}[i)]
@@ -16,13 +16,13 @@ Niech \(\pi: E\to M\) będzie dowolnym odwzorowaniem między rozmaitościami \(E
 \end{equation*}
 \end{enumerate}
 wówczas \(\pi\) określamy odwzorowaniem \emph{lokalnie trywialnym rzędu r}.
-Wówczas trójkę \((E, M, \pi)\) nazywamy \textbf{wiązką wektorową} klasy \(C^\infty\) rzędu \(r\). Nadużywając notacji często zamiast odnosić się bezpośrednio do tak zdefiniowanej trójki, będziemy mówili o \emph{wiązce wektorowej} \(E\) albo \emph{wiązce wektorowej} \(\pi:E\to M\).
+Wówczas trójkę \((E, M, \pi)\) nazywamy \textbf{wiązką wektorową} klasy \(C^\infty\) rzędu \(r\). Nadużywając notacji często zamiast odnosić się bezpośrednio do tak zdefiniowanej trójki, będziemy mówili o \emph{wiązce wektorowej} \(E\) albo \emph{wiązce wektorowej} \(\pi:E\to M\). W tę myśl \textbf{cięciem} wiązki \(\pi: E\to M\) nazywamy odwzorowanie \(s:M\to E\) takie, że \(\pi\circ s= id_M\). Przyporządkowuje ono każdemu punktowi \(p\in M\) włókno \(E_p\).
+
 Szczególnie interesującym nas obiektem tej kategorii jest trójka \((TM, M, \pi)\), gdzie 
 \begin{equation*}
 TM := \bigcup\limits_{p\in M} T_p M
 \end{equation*}
-oraz \(\pi: TM \ni v \mapsto p\in M\) jest naturalną projekcją. Jeśli \(M\) jest n-rozmaitością klasy \(C^k\), to tak zdefiniowana wiązka styczna \(TM\) okazuje się \(2n\)-rozmaitością klasy \(C^{k-1}\).
-
+oraz \(\pi: TM \ni v \mapsto p\in M\) jest naturalną projekcją. Jeśli \(M\) jest n-rozmaitością klasy \(C^k\), to tak zdefiniowana wiązka styczna \(TM\) okazuje się \(2n\)-rozmaitością klasy \(C^{k-1}\). 
 Niech \(N,\,M\) będą rozmaitościami różniczkowalnymi i \(F:N\to M\) gładkim odwzorowaniem między nimi. Wówczas dla każdego \(p\in M\) określamy odwzorowanie liniowe między przestrzeniami stycznymi 
 \begin{equation}
 F_{\ast, p}:T_p N\rightarrow T_{F(p)}M, 
