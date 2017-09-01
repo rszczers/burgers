@@ -1,4 +1,4 @@
-\chapter{Płyn idealny} W tym rozdziale naszym celem jest opracowanie modelu fizycznego cieczy idealnej i uzasadnienie podstawowych równań ruchu z ną związanych.
+\chapter{Płyn idealny} W tym rozdziale naszym celem jest opracowanie modelu fizycznego cieczy idealnej i uzasadnienie jej podstawowych równań ruchu.
 
 \section{Pojęcia wstępne}
 
@@ -57,8 +57,6 @@ F_{\ast, p} (X_p) = \left.\frac{d}{dt}\right|_0(F\circ c)(t).
 Czyli popchnięcie prędkości \(X_p\) przez \(F\) jest wektorem prędkości krzywej \(F\circ c\) w \(M\).
 \end{twierdzenie}
 
-Niech \((M, g)\) będzie zwartą, orientowalną \(n\)-rozmaitością Riemannowską z brzegiem i \(\mu \in \Omega^n(M)\) będzie formą objętości na \(M\). Przypomnijmy, że metryka Riemannowska \(g:\: M \rightarrow \Omega^2(M)\) to pole tensorowe \(\mathcal{T}_2^0(M)\) takie, że \(g_p \in T_m^{\ast} M \otimes T_p^{\ast} M\) dla \(p\in M\) jest iloczynem skalarnym określonym na przestrzeni stycznej \(T_p M\).
-
 Przez \(\mathcal{D}_X\) oznaczmy wszystkie pary \((m, t)\in M \times \R\) dla których istnieje trajektoria \(c: I\rightarrow M\) pola wektorowego \(X\) w punkcie \(m\) i zmienna czasowa \(t\) zawiera się w pewnym przedziale \(I\). Mówimy, że pole wektorowe jest \textbf{zupełne}, jeśli \(\mathcal{D}_X = M \times \R\). Oznacza to, że dla każdego punktu na rozmaitości znajdziemy trajektorię cząsteczki próbnej poruszającej się dowolnie długo. Zbiór wszystkich punktów rozmaitości na których pole wektorowe nie znika, \(\mathrm{Supp}\,X=\{m\in M\:|\: X_m\neq 0\}\), nazywamy \textbf{nośnikiem} pola wektorowego X. 
 
 Zachodzą następujące twierdzenia
@@ -113,9 +111,16 @@ Niech \(X,\,Y\in\mathfrak{X}(M)\) i \(F:]-\varepsilon, \varepsilon[\times U\righ
 Jeśli \(\omega\) jest gładką k-formą na rozmaitości \(M\), to \textbf{pochodną Liego} \(\mathcal{L}_X \omega\) \textbf{k-formy} \(\omega\) względem \(X\) w \(p\in M\) nazywamy formę
 \begin{equation}\label{eq:lie_form}
 \begin{split}
-(\mathcal{L}_X \omega)_p &= \lim_{t\to 0}\frac{F_t^{\ast}(\omega_{F_t(p)}-\omega_p}{t} =\\
+(\mathcal{L}_X \omega)_p &= \lim_{t\to 0}\frac{F_t^{\ast}(\omega_{F_t(p)})-\omega_p}{t} =\\
 						 &= \lim_{t\to 0}\frac{(F_t^{\ast}\omega)_p - \omega_p}{t} =\\
 						 &= \left.\frac{d}{dt}\right|_{t=0}(F_t^{\ast}\omega)_p.
 \end{split}
 \end{equation}
 
+Niech \((M, g)\) będzie zwartą, orientowalną \(n\)-rozmaitością Riemannowską z brzegiem i \(\mu \in \Omega^n(M)\) będzie formą objętości na \(M\). Przypomnijmy, że metryka Riemannowska \(g:\: M \rightarrow \Omega^2(M)\) to pole tensorowe \(\mathcal{T}_2^0(M)\) takie, że \(g_p \in T_m^{\ast} M \otimes T_p^{\ast} M\) dla \(p\in M\) jest iloczynem skalarnym określonym na przestrzeni stycznej \(T_p M\). \textbf{Formą objętości} na n-rozmaitości \(M\) nazywamy n-formę \(\mu\in\Omega^n(M)\) taką, że \(\mu(m)\neq 0\) dla wszystkich \(m\in M\). Mówimy, że \(M\) jest orientowalna, jeśli na \(M\) można określić formę objętości. 
+
+Niech \(X\) będzie polem wektorowym na \(M\). Funkcję \(\mathrm{div}_\mu X \in C^\infty(M)\) taką, że 
+\begin{equation}
+\mathcal{L}_X \mu = (\mathrm{div}_\mu X) \mu
+\end{equation}
+nazywamy \textbf{dywergencją} \(X\). Mówimy, że \(X\) jest \textbf{nieściśliwy} (względem \(\mu\)), jeśli \(\mathrm{div}_\mu X = 0\).
