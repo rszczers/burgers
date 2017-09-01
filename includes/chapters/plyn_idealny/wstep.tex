@@ -1,6 +1,27 @@
 \chapter{Płyn idealny} W tym rozdziale naszym celem jest opracowanie modelu fizycznego cieczy idealnej i uzasadnienie jej podstawowych równań ruchu.
 
 \section{Pojęcia wstępne}
+Zaczniemy od przypomnienia podstawowych pojęć w teorii rozmaitości gładkich. Niech \(M\) będzie rzeczywistą n-rozmaitością różniczkowalną klasy \(C^\infty\), \(p\) będzie dowolnym punktem rozmaitości \(M\) i niech \(U, V\subset M\) będą otoczeniami punktu \(p\). Powiemy, że dwie funkcje rzeczywiste \(f:U\to\R, g:V\to\R\) są \emph{równoważne}, jeśli w pewnym otoczeniu \(W\subset U\cap V\) punktu \(p\) są sobie równe. Pod pojęciem \textbf{kiełka} funkcji rzeczywistej klasy \(C^\infty\) w punkcie \(p\in M\) będziemy rozumieli każdą klasę równoważności tak zadanej relacji. Zbiór wszystkich kiełków w punkcie \(p\), \(C_p^\infty(M)\), jest wówczas \(\R\)-algebrą. Każde odwzorowanie liniowe \(D:C_p^\infty(M)\to\R\) spełniające warunek:
+\begin{equation}
+D(fg) = (Df)g(p) + f(Dg)(p)
+\end{equation}
+nazywamy \textbf{różniczkowaniem} w punkcie \(p\). Przestrzeń liniową wszystkich różniczkowań w punkcie \(p\) nazywamy \textbf{przestrzenią styczną} w \(p\) i oznaczamy przez \(T_p(M)\).
+
+Niech \(\pi: E\to M\) będzie dowolnym odwzorowaniem między rozmaitościami \(E\) i \(M\). Przeciwobraz \(E_p = \pi^{-1}(p)\) punktu \(p\) nazywamy \textbf{włóknem} w \(p\). Niech \(\pi': E'\to M\) będzie odwzorowaniem rozmaitości \(E'\) i \(M\). Powiemy, że odwzorowanie \(\phi:E\to E'\) \textbf{zachowuje włókna}, jeśli \(\phi(E_p)\subset E'_p\) dla każdego \(p\in M\). Jeśli \(\pi\) jest surjekcją klasy \(C^\infty\) oraz
+\begin{enumerate}[i)]
+\item każde włókno \(\pi^{-1}(p)\) ma strukturę n-wymiarowej przestrzeni wektorowej,
+\item dla każdego \(p\in M\) istnieje otoczenie \(U\in M\) punktu \(p\) i zachowujący włókna dyfeomorfizm \(\phi: \pi^{-1}(U)\to U \R^r\) taki, że dla każdego \(q\in U\) zawężenie
+\begin{equation*}
+\left.\phi\right|_{\pi^{-1}(q)}:\pi^{-1}(q)\to {q} \times \R^r
+\end{equation*}
+\end{enumerate}
+wówczas \(\pi\) określamy odwzorowaniem \emph{lokalnie trywialnym rzędu r}.
+Wówczas trójkę \((E, M, \pi)\) nazywamy \textbf{wiązką wektorową} klasy \(C^\infty\) rzędu \(r\). Nadużywając notacji często zamiast odnosić się bezpośrednio do tak zdefiniowanej trójki, będziemy mówili o \emph{wiązce wektorowej} \(E\) albo \emph{wiązce wektorowej} \(\pi:E\to M\).
+Szczególnie interesującym nas obiektem tej kategorii jest trójka \((TM, M, \pi)\), gdzie 
+\begin{equation*}
+TM := \bigcup\limits_{p\in M} T_p M
+\end{equation*}
+oraz \(\pi: TM \ni v \mapsto p\in M\) jest naturalną projekcją. Jeśli \(M\) jest n-rozmaitością klasy \(C^k\), to tak zdefiniowana wiązka styczna \(TM\) okazuje się \(2n\)-rozmaitością klasy \(C^{k-1}\).
 
 Niech \(N,\,M\) będą rozmaitościami różniczkowalnymi i \(F:N\to M\) gładkim odwzorowaniem między nimi. Wówczas dla każdego \(p\in M\) określamy odwzorowanie liniowe między przestrzeniami stycznymi 
 \begin{equation}
