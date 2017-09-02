@@ -1,8 +1,10 @@
 \chapter{Płyn idealny} W tym rozdziale naszym celem jest opracowanie modelu fizycznego cieczy idealnej i uzasadnienie jej podstawowych równań ruchu.
 
 \section{Pojęcia wstępne}
-Zaczniemy od przypomnienia podstawowych pojęć w teorii rozmaitości gładkich. Niech \(M\) będzie rzeczywistą n-rozmaitością różniczkowalną klasy \(C^\infty\), \(p\) będzie dowolnym punktem rozmaitości \(M\) i niech \(U, V\subset M\) będą otoczeniami punktu \(p\). Powiemy, że dwie funkcje rzeczywiste \(f:U\to\R, g:V\to\R\) są \emph{równoważne}, jeśli w pewnym otoczeniu \(W\subset U\cap V\) punktu \(p\) są one sobie równe. Pod pojęciem \textbf{kiełka} funkcji rzeczywistej klasy \(C^\infty\) w punkcie \(p\in M\) będziemy rozumieli każdą klasę równoważności tak zadanej relacji. Zbiór wszystkich kiełków w punkcie \(p\), \(C_p^\infty(M)\), jest wówczas \(\R\)-algebrą. Każde odwzorowanie liniowe \(D:C_p^\infty(M)\to\R\) spełniające warunek:
-\begin{equation}
+Zaczniemy od przypomnienia podstawowych pojęć w teorii rozmaitości gładkich. Niech \(M\) będzie rzeczywistą n-rozmaitością różniczkowalną klasy \(C^\infty\), \(p\) będzie dowolnym punktem rozmaitości \(M\) i niech \(U, V\subset M\) będą otoczeniami punktu \(p\). Powiemy, że dwie funkcje rzeczywiste \(f:U\to\R, g:V\to\R\) są \emph{równoważne}, jeśli w pewnym otoczeniu \(W\subset U\cap V\) punktu \(p\) są one sobie równe. Pod pojęciem \textbf{kiełka} funkcji rzeczywistej klasy \(C^\infty\) w punkcie \(p\in M\) będziemy rozumieli każdą klasę równoważności tak zadanej relacji. Zbiór wszystkich kiełków w punkcie \(p\), \(C_p^\infty(M)\), jest wówczas \(\R\)-algebrą. Zbiór wszystkich funkcji klasy \(C^\infty\) określonych na \(M\) będziemy oznaczali \(\mathcal{F}(M)\). 
+
+Zmierzamy do określenia pojęcia przestrzeni stycznej za pomocą kiełków funkcji. Każde odwzorowanie liniowe \(D:C_p^\infty(M)\to\R\) spełniające warunek:
+\begin{equation}\label{eq:differentiation}
 D(fg) = (Df)g(p) + f(Dg)(p)
 \end{equation}
 nazywamy \textbf{różniczkowaniem} w punkcie \(p\). Przestrzeń liniową wszystkich różniczkowań w punkcie \(p\) nazywamy \textbf{przestrzenią styczną} w \(p\) i oznaczamy przez \(T_pM\).
@@ -27,7 +29,12 @@ Szczególnie interesującym nas obiektem tej kategorii jest trójka \((TM, M, \p
 \begin{equation*}
 TM := \bigcup\limits_{p\in M} T_p M
 \end{equation*}
-oraz \(\pi: TM \ni v \mapsto p\in M\) jest naturalną projekcją. Jeśli \(M\) jest n-rozmaitością klasy \(C^k\), to tak zdefiniowana wiązka styczna \(TM\) okazuje się \(2n\)-rozmaitością klasy \(C^{k-1}\).  Korzystając z powyższego wygodnego aparatu matematycznego możemy teraz określić \textbf{pole wektorowe} na rozmaitości \(M\) jako po prostu cięcie wiązki stycznej \(TM\).
+oraz \(\pi: TM \ni v \mapsto p\in M\) jest naturalną projekcją. Jeśli \(M\) jest n-rozmaitością klasy \(C^k\), to tak zdefiniowana wiązka styczna \(TM\) okazuje się \(2n\)-rozmaitością klasy \(C^{k-1}\).  Korzystając z powyższego wygodnego aparatu matematycznego możemy teraz określić \textbf{pole wektorowe} na rozmaitości \(M\) po prostu jako cięcie wiązki stycznej \(TM\). Zbiór wszystkich pól wektorowych na \(M\), \(\mathfrak{X}(M)\), stanowi szczególny rodzaj \(\mathcal{F}\)-modułu, mianowicie \emph{moduł Liego}. Pola wektorowe można w nim rozumieć jako różniczkowania w algebrze \(\mathcal{F}\) oraz określony jest w nim operator \emph{komutacji} pól wektorowych, nazywany również \emph{nawiasem Liego}:
+\begin{equation*}
+    [X, Y]f := X(Yf) - Y(Xf).
+\end{equation*}
+Okazuje się, że komutacja gładkich pól wektorowych nie wyprowadza poza \(\mathfrak{X}(M)\) i lokalnie spełnia warunek \eqref{eq:differentiation}, czyli jest różniczkowaniem.
+
 
 Niech \(N,\,M\) będą rozmaitościami różniczkowalnymi i \(F:N\to M\) gładkim odwzorowaniem między nimi. Wówczas dla każdego \(p\in M\) określamy odwzorowanie liniowe między przestrzeniami stycznymi 
 \begin{equation}
