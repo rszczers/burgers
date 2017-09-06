@@ -47,12 +47,11 @@ gdzie \(\braket{\ast, \ast}_i\) jest funkcją dualności pary przestrzeni \(V_i^
 Tak określone działanie jest łączne, \(r\)-liniowe, ciągłe i nie jest przemienne. Dla wygody oznaczamy \(\mathcal{T}_{0}^{0}(V) = \R\). Wektor postaci \(x_1\otimes\dots \otimes x_r\) nazywamy \emph{iloczynem tenstorowym} wektorów \(x_1, \dots, x_r\).   
 
 
-
-Niech \(V\) będzie przestrzenią wektorową. Mnożąc tensorowo kilka kopii \(V\) i jej dualnej otrzymujemy strukturę, którą nazywamy \emph{przestrzenią tensorów o walencji} \({p \brack q}\) nad przestrzenią \(V\),
+Niech \(V\) będzie przestrzenią wektorową. Rozważając funkcjonały liniowe na iloczynie tensorowym kilku kopii \(V\) i jej dualnych otrzymujemy strukturę, którą nazywamy \emph{przestrzenią tensorów o walencji} \({p \brack q}\) nad przestrzenią \(V\),
 \begin{align*}
     \mathcal{T}_q^p(V) := \mathrm{L}^{p+q}(\underbrace{V^\ast \otimes \dots \otimes V^\ast}_{p\ \text{razy}} \otimes\underbrace{V\otimes\dots\otimes V}_{q\ \text{razy}}; \R) , &\quad p+q\geq 1.
 \end{align*}
-Elementy \(\mathcal{T}_q^p(V)\) nazywamy \emph{tensorami q-krotnie kowariantnymi i p-krotnie kontrawariantnymi} albo prościej: \emph{tensorami o walencji} \(p \brack q\). Dla tensorów \(t_1 \in \mathcal{T}_{s_1}^{r_1}(V)\) i \(t_2 \in \mathcal{T}_{s_2}^{r_2}(V)\) mamy \(t_1 \otimes t_2 \in \mathcal{T}_{s_1+s_2}^{r_1+r_2}(V)\) oraz 
+Taką definicję określa się niekiedy \emph{klasyczną definicją tensora}. Elementy \(\mathcal{T}_q^p(V)\) nazywamy \emph{tensorami q-krotnie kowariantnymi i p-krotnie kontrawariantnymi} albo prościej: \emph{tensorami o walencji} \(p \brack q\). Dla tensorów \(t_1 \in \mathcal{T}_{s_1}^{r_1}(V)\) i \(t_2 \in \mathcal{T}_{s_2}^{r_2}(V)\) mamy \(t_1 \otimes t_2 \in \mathcal{T}_{s_1+s_2}^{r_1+r_2}(V)\) oraz 
 \begin{align*}
     (t_1 \otimes t_2)& (\beta^1,\dots, \beta^{r_1}, \gamma^1, \dots, \gamma^{r_2}, f_1, \dots, f_{s_1}, g_1, \dots, g_{s_2}) = \\
                      & t_1(\beta^1,\dots, \beta^{r_1}, f_1, \dots, f_{s_1})\,t_2(\gamma^1, \dots, \gamma^{r_2},g_1, \dots, g_{s_2}).
@@ -69,8 +68,12 @@ Niech \(\pi:\:TM\to M\) będzie wiązką styczną i niech \(T_m M = \pi^{-1}(m)\
 \end{equation*}
 oraz niech odwzorowanie \(\pi_s^r:\mathcal{T}_s^r(M)\to M\), \(\pi_s^r(e) = m\) dla \(e\in \mathcal{T}_s^r(E_m)\) będzie naturalną projekcją elementu z włókna na rozmaitość. Naśladując konstrukcję wiązki stycznej, trójkę \((\mathcal{T}_s^r(M), M, \pi_s^r(e))\) nazywamy \emph{wiązką tensorową} o walencji \(r \brack s\) na \(M\). Analogicznie, cięcie wiązki tensorowej określamy \textbf{polem tensorowym}. Pole tensorowe \(k\)-kowariantne i \(0\)-kontrawariantne na \(M\), które jest antysymetryczne, nazywamy \textbf{k-formą różniczkową} na \(M\).
 
-
-
+Jeśli \(V\) jest przestrzenią wektorową, przez \(A_k(V)\subset \mathcal{T}_k^0(V)\) oznaczamy podprzestrzeń liniową alternujących k-tensorów na \(V\), oznaczaną czasem \(\Exterior^k(V^{\vee})\) przez nawiązanie do izomorficznej konstrukcji na gruncie algebr Grassmanna. W tej pracy wyłącznie zaznaczymy tę odpowiedniość przez stosowanie tej notacji, gdyż wzmiankowana konstrukcja daleko wykracza poza jej zakres. Piszemy odpowiednio:
+\begin{align*}
+    \Exterior^0(V^{\vee}) &= A_0(V) = \R\\
+    \Exterior^1(V^{\vee}) &= A_1(V) = V^\ast\\
+    \Exterior^2(V^{\vee}) &= A_2(V),\ \text{i tak dalej.}
+\end{align*}
 
 %Rozważmy przestrzenie wektorowe \(V_1, V_2, \dots, V_r\). Przestrzeń \(V\) nazwiemy \emph{iloczynem tensorowym} przestrzeni \(V_1, V_2, \dots, V_r\) i będziemy oznaczali \(V=V_1\otimes V_2 \otimes \dots \otimes V_r\), jeśli 
 %\begin{enumerate}[i)]
