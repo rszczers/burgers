@@ -21,7 +21,7 @@ jest izomomorfizmem przestrzeni wektorowych,
 \end{enumerate}
 wówczas \(\pi\) określamy odwzorowaniem \emph{lokalnie trywialnym rzędu r}.  Tak określony zbiór \(U\) nazywamy zbiorem \emph{trywializującym} \(E\), zaś \(\phi\) nazywamy \emph{trywializacją} \(E\) nad \(U\).
 
-Korzystając z powyższych rozstrzygnięć definiujemy \textbf{wiązką wektorową} klasy \(\mathrm{C}^\infty\) rzędu \(r\) jako trójkę \((E, M, \pi)\). Nadużywając notacji często zamiast odnosić się bezpośrednio do tak zdefiniowanej struktury, będziemy mówili o \emph{wiązce wektorowej} \(E\) albo \emph{wiązce wektorowej} \(\pi:E\to M\). W tę myśl \textbf{cięciem} wiązki \(\pi: E\to M\) nazywamy odwzorowanie \(s:M\to E\) takie, że \(\pi\circ s= id_M\). Przyporządkowuje ono każdemu punktowi \(p\in M\) włókno \(E_p\). 
+Korzystając z powyższych rozstrzygnięć definiujemy \textbf{wiązką wektorową} klasy \(\mathrm{C}^\infty\) rzędu \(r\) jako trójkę \((E, M, \pi)\), gdzie \(\pi: E\to M\) jest lokalnie trywialną gładką surjekcją rzędu \(r\). Nadużywając notacji często zamiast odnosić się bezpośrednio do tak zdefiniowanej struktury, będziemy mówili o \emph{wiązce wektorowej} \(E\) albo \emph{wiązce wektorowej} \(\pi:E\to M\). W tę myśl \textbf{cięciem} wiązki \(\pi: E\to M\) nazywamy odwzorowanie \(s:M\to E\) takie, że \(\pi\circ s= id_M\). Przyporządkowuje ono każdemu punktowi \(p\in M\) włókno \(E_p\). 
 
 Okazuje się, że zbiór wszystkich sekcji klasy \(\mathrm{C}^\infty\) wiązki \(E\), oznaczany \(\Gamma(E)\), ma interesujące własności algebraiczne. Jeśli \(U\) jest otwartym pozdbiorem rozmaitości \(E\), wówczas analogicznie określmy \(\Gamma(U)\). Na tak zadanym zbiorze można zadać strukturę modułu nad pierścieniem \(C^\infty(U)\) funkcji klasy \(\mathrm{C}^\infty\) zadanych na \(U\). \(\Gamma(U)\) jest również rzeczywistą przestrzeńą wektorowa w której możemy wybrać uporządkowaną bazę \((s_1, s_2, \dots, s_r)\). Jest to tak zwany \emph{reper} wiązki wektorowej \(\pi:E\to M\) nad \(U\). 
 
@@ -35,27 +35,26 @@ oraz \(\pi: TM \ni v \mapsto p\in M\) jest naturalną projekcją. Jeśli \(M\) j
 \end{equation*}
 Okazuje się, że komutacja gładkich pól wektorowych nie wyprowadza poza \(\mathfrak{X}(M)\) i lokalnie spełnia warunek \eqref{eq:differentiation}, czyli jest różniczkowaniem.
 
-Przez \(\mathrm{L}^k(V; \R)\) oznaczać będziemy przestrzeń wszystkich funkcjonałów k-liniowych określonych na przestrzeni liniowej \(V\). Rozważmy skończenie wymiarowe rzeczywiste przestrzenie wektorowe \(V_1,\,V_2,\,\dots,\,V_r\) i odpowiednio ich przestrzenie dualne \(V_1^\ast,\,V_2^\ast,\,\dots,\,V_r^\ast\). Dzięki kanonicznemu izomorfizmowi przestrzeni i ich dwusprzężonych, przestrzenie \(V_i\) możemy traktować jako przestrzenie funkcjonałów na \(V_i^\ast\),
-\begin{equation*}
-    x_i: V_i^\ast \ni \varphi^i \mapsto \braket{\varphi^i, x_i}_i := x_i(\varphi^i)\in\R
-\end{equation*}
-gdzie \(\braket{\ast, \ast}_i\) jest funkcją dualności pary przestrzeni \(V_i^\ast,\, V_i\). Możemy określić iloczyn tak rozumianych funkcji,
-\begin{gather*}
-    x_1\otimes \dots \otimes x_r : V_1^\ast\times \dots \times V_r^\ast \mapsto \R,\\
-    (x_1\otimes \dots \otimes x_r)(\varphi^1, \dots, \varphi^r) := \braket{\varphi^1,x_1}_1 \dots \braket{\varphi^r, x_r}_r.
-\end{gather*}
-Tak określone działanie jest łączne, \(r\)-liniowe, ciągłe i nie jest przemienne. Dla wygody oznaczamy \(\mathcal{T}_{0}^{0}(V) = \R\). Wektor postaci \(x_1\otimes\dots \otimes x_r\) nazywamy \emph{iloczynem tenstorowym} wektorów \(x_1, \dots, x_r\).   
-
-
-Niech \(V\) będzie przestrzenią wektorową. Rozważając funkcjonały liniowe na iloczynie tensorowym kilku kopii \(V\) i jej dualnych otrzymujemy strukturę, którą nazywamy \emph{przestrzenią tensorów o walencji} \({p \brack q}\) nad przestrzenią \(V\),
+%Przez \(\mathrm{L}^k(V; \R)\) oznaczać będziemy przestrzeń wszystkich funkcjonałów k-liniowych określonych na przestrzeni liniowej \(V\). Rozważmy skończenie wymiarowe rzeczywiste przestrzenie wektorowe \(V_1,\,V_2,\,\dots,\,V_r\) i odpowiednio ich przestrzenie dualne \(V_1^\ast,\,V_2^\ast,\,\dots,\,V_r^\ast\). Dzięki kanonicznemu izomorfizmowi przestrzeni i ich dwusprzężonych, przestrzenie \(V_i\) możemy traktować jako przestrzenie funkcjonałów na \(V_i^\ast\),
+%\begin{equation*}
+%    x_i: V_i^\ast \ni \varphi^i \mapsto \braket{\varphi^i, x_i}_i := x_i(\varphi^i)\in\R
+%\end{equation*}
+%gdzie \(\braket{\ast, \ast}_i\) jest funkcją dualności pary przestrzeni \(V_i^\ast,\, V_i\). Możemy określić iloczyn tak rozumianych funkcji,
+%\begin{gather*}
+%    x_1\otimes \dots \otimes x_r : V_1^\ast\times \dots \times V_r^\ast \mapsto \R,\\
+%    (x_1\otimes \dots \otimes x_r)(\varphi^1, \dots, \varphi^r) := \braket{\varphi^1,x_1}_1 \dots \braket{\varphi^r, x_r}_r.
+%\end{gather*}
+%Tak określone działanie jest łączne, \(r\)-liniowe, ciągłe i nie jest przemienne. Dla wygody oznaczamy \(\mathcal{T}_{0}^{0}(V) = \R\). Wektor postaci \(x_1\otimes\dots \otimes x_r\) nazywamy \emph{iloczynem tenstorowym} wektorów \(x_1, \dots, x_r\).   
+Niech \(V\) będzie przestrzenią wektorową. Rozważając funkcjonały wieloliniowe na produkcie kilku kopii \(V\) i jej dualnych otrzymujemy strukturę, którą nazywamy \emph{przestrzenią tensorów o walencji} \({p \brack q}\) nad przestrzenią \(V\),
 \begin{align*}
-    \mathcal{T}_q^p(V) := \mathrm{L}^{p+q}(\underbrace{V^\ast \otimes \dots \otimes V^\ast}_{p\ \text{razy}} \otimes\underbrace{V\otimes\dots\otimes V}_{q\ \text{razy}}; \R) , &\quad p+q\geq 1.
+    \mathcal{T}_q^p(V) := \mathrm{L}^{p+q}(\underbrace{V^\ast, \dots, V^\ast}_{p\ \text{razy}} ,\underbrace{V,\dots, V}_{q\ \text{razy}}; \R) , &\quad p+q\geq 1.
 \end{align*}
-Taką definicję określa się niekiedy \emph{klasyczną definicją tensora}. Elementy \(\mathcal{T}_q^p(V)\) nazywamy \emph{tensorami q-krotnie kowariantnymi i p-krotnie kontrawariantnymi} albo prościej: \emph{tensorami o walencji} \(p \brack q\). Dla tensorów \(t_1 \in \mathcal{T}_{s_1}^{r_1}(V)\) i \(t_2 \in \mathcal{T}_{s_2}^{r_2}(V)\) mamy \(t_1 \otimes t_2 \in \mathcal{T}_{s_1+s_2}^{r_1+r_2}(V)\) oraz 
+Taką definicję określa się niekiedy \emph{modelem wieloliniowym tensora}. Elementy \(\mathcal{T}_q^p(V)\) nazywamy \emph{tensorami q-krotnie kowariantnymi i p-krotnie kontrawariantnymi} albo prościej: \emph{tensorami o walencji} \(p \brack q\). Dla tensorów \(t_1 \in \mathcal{T}_{s_1}^{r_1}(V)\) i \(t_2 \in \mathcal{T}_{s_2}^{r_2}(V)\) określamy \textbf{iloczyn tensorowy} \(t_1 \otimes t_2 \in \mathcal{T}_{s_1+s_2}^{r_1+r_2}(V)\) przepisem 
 \begin{align*}
     (t_1 \otimes t_2)& (\beta^1,\dots, \beta^{r_1}, \gamma^1, \dots, \gamma^{r_2}, f_1, \dots, f_{s_1}, g_1, \dots, g_{s_2}) = \\
-                     & t_1(\beta^1,\dots, \beta^{r_1}, f_1, \dots, f_{s_1})\,t_2(\gamma^1, \dots, \gamma^{r_2},g_1, \dots, g_{s_2}).
+                     & t_1(\beta^1,\dots, \beta^{r_1}, f_1, \dots, f_{s_1})\,t_2(\gamma^1, \dots, \gamma^{r_2},g_1, \dots, g_{s_2}),
 \end{align*}
+gdzie \(\beta^j, \gamma^j \in V^\ast\), \(f_j, g_j\in V\).
 Okazuje się, że jeśli \(\{e_1, \dots, e_n\}\) jest bazą przestrzeni \(V\) i \(\{e^1, \dots, e^n\}\) jest bazą przestrzeni dualnej, to
 \begin{equation*}
     \left\{e_{i_1} \otimes \dots \otimes e_{i_q} \otimes e^{j_1} \otimes \dots \otimes e^{j_p} \, | \, i_1, \dots, i_q, j_1, \dots, j_p = 1, \dots, n \right\} 
@@ -64,17 +63,17 @@ jest bazą \(\mathcal{T}_q^p(V)\), a zatem \(\mathrm{dim}\mathcal{T}_q^p(V) = (\
 
 Niech \(\pi:\:TM\to M\) będzie wiązką styczną i niech \(T_m M = \pi^{-1}(m)\) oznacza włókno nad punktem \(m\in M\). Określmy
 \begin{equation*}
-    \mathcal{T}_s^r(M)=\bigcup\limits_{m\in M} T_r^s(T_m M),
+    \mathcal{T}_s^r(M)=\bigcup\limits_{m\in M} \mathcal{T}_r^s(T_m M),
 \end{equation*}
-oraz niech odwzorowanie \(\pi_s^r:\mathcal{T}_s^r(M)\to M\), \(\pi_s^r(e) = m\) dla \(e\in \mathcal{T}_s^r(E_m)\) będzie naturalną projekcją elementu z włókna na rozmaitość. Naśladując konstrukcję wiązki stycznej, trójkę \((\mathcal{T}_s^r(M), M, \pi_s^r(e))\) nazywamy \emph{wiązką tensorową} o walencji \(r \brack s\) na \(M\). Analogicznie, cięcie wiązki tensorowej określamy \textbf{polem tensorowym}. Pole tensorowe \(k\)-kowariantne i \(0\)-kontrawariantne na \(M\), które jest antysymetryczne, nazywamy \textbf{k-formą różniczkową} na \(M\).
+oraz niech odwzorowanie \(\pi_s^r:\mathcal{T}_s^r(M)\to M\), \(\pi_s^r(e) = m\) dla \(e\in \mathcal{T}_s^r(E_m)\) będzie naturalną projekcją elementu z włókna na rozmaitość. Naśladując konstrukcję wiązki stycznej, trójkę \((\mathcal{T}_s^r(M), M, \pi_s^r(e))\) nazywamy \emph{wiązką tensorową} o walencji \(r \brack s\) na \(M\). Analogicznie, cięcie wiązki tensorowej określamy \textbf{polem tensorowym}. Każde kowariantne (\(0\)-kontrawariantne) pole tensorowe na \(M\), które jest antysymetryczne, nazywamy \textbf{k-formą różniczkową} na \(M\).
 
-Jeśli \(V\) jest przestrzenią wektorową, przez \(A_k(V)\subset \mathcal{T}_k^0(V)\) oznaczamy podprzestrzeń liniową alternujących k-tensorów na \(V\), oznaczaną czasem \(\Exterior^k(V^{\vee})\) przez nawiązanie do izomorficznej konstrukcji na gruncie algebr Grassmanna. W tej pracy wyłącznie zaznaczymy tę odpowiedniość przez stosowanie tej notacji, gdyż wzmiankowana konstrukcja daleko wykracza poza jej zakres. Piszemy odpowiednio:
-\begin{align*}
-    \Exterior^0(V^{\vee}) &= A_0(V) = \R\\
-    \Exterior^1(V^{\vee}) &= A_1(V) = V^\ast\\
-    \Exterior^2(V^{\vee}) &= A_2(V),\ \text{i tak dalej.}
-\end{align*}
-
+%Jeśli \(V\) jest przestrzenią wektorową, przez \(A_k(V)\subset \mathcal{T}_k^0(V)\) oznaczamy podprzestrzeń liniową alternujących k-tensorów na \(V\), oznaczaną czasem \(\Exterior^k(V^{\vee})\) przez nawiązanie do izomorficznej konstrukcji na gruncie algebr Grassmanna. W tej pracy wyłącznie zaznaczymy tę odpowiedniość przez stosowanie tej notacji, gdyż wzmiankowana konstrukcja daleko wykracza poza jej zakres. Piszemy odpowiednio:
+%\begin{align*}
+%    \Exterior^0(V^{\vee}) &= A_0(V) = \R\\
+%    \Exterior^1(V^{\vee}) &= A_1(V) = V^\ast\\
+%    \Exterior^2(V^{\vee}) &= A_2(V),\ \text{i tak dalej.}
+%\end{align*}
+%Nasze największe zainteresowanie będą budziły gładkie k-formy różniczkowe. Przestrzeń liniową wszystkich k-form na rozmaitości \(M\) klasy \(\mathrm{C}^\infty\) konwencjonalnie oznaczamy przez \(\Omega^k(M)\). 
 %Rozważmy przestrzenie wektorowe \(V_1, V_2, \dots, V_r\). Przestrzeń \(V\) nazwiemy \emph{iloczynem tensorowym} przestrzeni \(V_1, V_2, \dots, V_r\) i będziemy oznaczali \(V=V_1\otimes V_2 \otimes \dots \otimes V_r\), jeśli 
 %\begin{enumerate}[i)]
 %    \item zadane jest odwzorowanie wieloliniowe
