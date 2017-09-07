@@ -1,4 +1,4 @@
 temp
 *.aux
 *.log
-*.swp
+*.sw*
