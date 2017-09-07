@@ -30,7 +30,7 @@ Szczególnie interesującym nas obiektem tej kategorii jest \textbf{wiązka styc
 TM := \bigcup\limits_{p\in M} T_p M
 \end{equation*}
 oraz \(\pi: TM \ni v \mapsto p\in M\) jest naturalną projekcją. 
-%Jeśli \(M\) jest n-rozmaitością klasy \(\mathrm{C}^k\), to tak zdefiniowana wiązka styczna \(TM\) okazuje się \(2n\)-rozmaitością klasy \(\mathrm{C}^{k-1}\).  
+Jeśli \(M\) jest n-rozmaitością klasy \(\mathrm{C}^k\), to tak zdefiniowana wiązka styczna \(TM\) okazuje się \(2n\)-rozmaitością klasy \(\mathrm{C}^{k-1}\) (\cite{tu}, s. 130). 
 Korzystając z powyższego wygodnego aparatu matematycznego możemy teraz określić \textbf{pole wektorowe} na rozmaitości \(M\) po prostu jako cięcie wiązki stycznej \(TM\). Zbiór wszystkich pól wektorowych na \(M\), \(\mathfrak{X}(M)\), stanowi szczególny rodzaj \(\mathcal{F}\)-modułu, mianowicie \emph{moduł Liego}. Pola wektorowe można w nim rozumieć jako różniczkowania w algebrze \(\mathcal{F}\) oraz określony jest w nim operator \emph{komutacji} pól wektorowych, nazywany również \emph{nawiasem Liego}:
 \begin{equation*}
     [X, Y]f := X(Yf) - Y(Xf).
@@ -80,7 +80,7 @@ Przy powyższych oznaczeniach na przestrzeni \(\mathcal{T}_q^p(V)\) wprowadza si
 \begin{equation*}
     \mathcal{A}=\frac{1}{p!}\sum_{\pi\in S_p} \mathrm{sgn\,\pi}\,P^\pi,
 \end{equation*}
-nazywany \emph{operatorem antysymetryzacji}. Można wykazać (\cite{herdegen}, §20, tw. 4), że tensor \(t\) jest antysymetryczny wtedy i tylko, gdy \(\mathcal{A}t = t\). Wprowadźmy oznaczenie\footnote{Jest to nawiązanie do izomorficznej konstrukcji na gruncie algebr Grassmanna przeprowadzonej za pomocą potęgowania zewnętrznego; szczegółów można szukać w \cite{maurin2}.} dla przestrzeni tensorów całkowicie antysymetrycznych
+nazywany \emph{operatorem antysymetryzacji}. Można wykazać (\cite{herdegen}, §20, tw. 4), że tensor \(t\) jest antysymetryczny wtedy i tylko, gdy \(\mathcal{A}t = t\). Wprowadźmy oznaczenie\footnote{Jest to nawiązanie do algebraicznej konstrukcji przeprowadzonej za pomocą potęgowania zewnętrznego; okazuje się ona izomorficzna z przyjętymi przestrzeniami; szczegółów można szukać w \cite{maurin2}.} dla przestrzeni tensorów całkowicie antysymetrycznych
 \begin{align*}
     \Exterior^p(V):=\mathcal{AT}^p_0(V)\subseteq \mathcal{T}^p_0(V),\quad \Exterior^p(V^\ast):=\mathcal{AT}^0_p(V)\subseteq\mathcal{T}^0_p(V), \quad p\geq 1.
 \end{align*}
@@ -88,7 +88,11 @@ Ich elementy nazywamy odpowiednio \textbf{\(p\)-wektorami} i \textbf{\(p\)-forma
 \begin{equation*}
      \Exterior^0(V):=\Exterior^0(V^\ast)=\R
 \end{equation*}
-
+\textbf{Iloczynem zewnętrznych \(p\)-wektorów (\(p\)-form)} \(t_i\in\Exterior^{p_i}(V)\), \(s^i\in\Exterior^{p_i}(V^\ast)\), \(i=1,\dots, k\), nazywamy odpowiednio tensory
+\begin{align*}
+    t_1\wedge\dots\wedge t_k = \mathcal{A}(t_1\otimes \dots \otimes t_k), \quad 
+    s^1\wedge\dots\wedge s^k = \mathcal{A}(s^1\otimes \dots \otimes t^k).
+\end{align*}
 %\begin{twierdzenie}[\cite{herdegen}, §19, tw. 2]
 %    Dla każdej permutacji \(\pi\in S_p\) i istnieje dokładnie jeden operator liniowy \(P^{\pi}:\mathcal{T}_q^p(V)\to\mathcal{T}_q^p(V)\), który na tensory proste działa według przepisu
 %    \begin{equation*}
