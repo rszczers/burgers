@@ -98,7 +98,22 @@ Jeśli \(V\) jest przestrzenią \(n\)-wymiarową, wówczas (\cite{herdegen}, §2
     \mathrm{dim}\,\Exterior^p(V) = \mathrm{dim}\,\Exterior^p(V^\ast) = \binom{n}{k}.
 \end{equation*}
 W szczególności przestrzenie \(\Exterior^n(V)\) i \(\Exterior^n(V^\ast)\) są jednowymiarowe. 
-Każde kowariantne (\(0\)-kontrawariantne) pole tensorowe na \(M\), które jest antysymetryczne, nazywamy \textbf{k-formą różniczkową} na \(M\).
+
+Będziemy teraz zmierzać do określenia form różniczkowych na rozmaitościach różniczkowalnych. Niech \(p\) będzie punktem z rozmaitości \(M\). \textbf{Przestrzenią kostyczną} w \(p\) do \(M\) nazywamy przestrzeń dualną do przestrzeni stycznej \(T_p M\)
+\begin{equation*}
+    T^\ast_p M := (T_p M)^\ast = \mathrm{L}(T_p M, \R),
+\end{equation*}
+Jej elementy są \emph{1-formami}, które nazywamy \textbf{kowektorami}. Podobnie jak w przypadku wiązki stycznej, określając
+\begin{equation*}
+    T^\ast M = \bigcup\limits_{p\in M} T_p^\ast M.
+\end{equation*}
+możemy zadać strukturę wiązki wektorowej \((T^\ast M, M, \phi)\) rzędu \(2n\) (\cite{tu}, s. 192), którą nazywamy \textbf{wiązką kostyczną} na \(M\). 
+Rozważmy zbiór
+\begin{equation*}
+    \Exterior^k(T^\ast M) := \bigcup\limits_{p\in M} \Exterior^k(T^{\ast}_p M) = \bigcup\limits_{p\in M} \mathcal{AT}^0_k(T_p M)
+\end{equation*} i zadajmy odwzorowanie \(\pi: \Exterior^k (T^\ast M) \ni \alpha \mapsto p\in M\) dla 
+\(\alpha \in \Exterior^k(T^{\ast}_p M)\). Okazuje się (\cite{tu}, s. 203), że \(\pi\) jest wiązką wektorową rzędu \(\binom{n}{k}\), której cięcia są antysymetrycznymi \(k\)-kowariantnymi (i \(0\)-kontrawariantnymi) polami tensorowymi na \(M\).   
+Każde \(k\)-kowariantne pole tensorowe na \(M\), które jest antysymetryczne, nazywamy \textbf{\(k\)-formą różniczkową} na \(M\).
 %\begin{twierdzenie}[\cite{herdegen}, §19, tw. 2]
 %    Dla każdej permutacji \(\pi\in S_p\) i istnieje dokładnie jeden operator liniowy \(P^{\pi}:\mathcal{T}_q^p(V)\to\mathcal{T}_q^p(V)\), który na tensory proste działa według przepisu
 %    \begin{equation*}
