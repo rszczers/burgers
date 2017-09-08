@@ -37,6 +37,17 @@ Korzystając z powyższego wygodnego aparatu matematycznego możemy teraz okreś
 \end{equation*}
 Okazuje się, że komutacja gładkich pól wektorowych nie wyprowadza poza \(\mathfrak{X}(M)\) i lokalnie spełnia warunek \eqref{eq:differentiation}, czyli jest różniczkowaniem.
 
+Niech \(N,\,M\) będą rozmaitościami różniczkowalnymi i \(F:N\to M\) odwzorowaniem klasy \(\mathrm{C}^\infty\) między nimi. Wówczas dla każdego punktu \(p\) na rozmaitości \(M\) określamy odwzorowanie liniowe między przestrzeniami stycznymi 
+\begin{equation}
+F_{\ast, p}:T_p N\rightarrow T_{F(p)}M, 
+\end{equation}
+które nazywamy \textbf{różniczką} \(F\) w \(p\in N\). Jeśli \(X_p\in T_p N\) jest wektorem stycznym do \(M\) w \(p\), wówczas dla dowolnego kiełka \(f\in C_{F(p)}^\infty(M)\) funkcji w \(F(p)\) 
+\begin{equation}
+(F_{\ast, p} (X_p))f = X_p(f\circ F) \in \R.
+\end{equation} 
+gdzie \(F_{\ast, p} (X_p)\) jest wektorem stycznym do \(N\) w \(F(p)\). Jeśli \(F\) jest dyfeomorfizmem, zaś \(X\) -- polem wektorowym na \(M\), odwzorowanie \(F_\ast \circ X \circ F^{-1}\) nazywamy \textbf{popchnięciem} pola wektorowego \(X\) i przez \(F\). Dualnie, jeśli \(f\in C_p^\infty(M)\) określamy \textbf{cofnięcie} \(F^\ast f := F\circ f\) funkcji \(f\) przez \(F\).
+
+
 %Przez \(\mathrm{L}^k(V; \R)\) oznaczać będziemy przestrzeń wszystkich funkcjonałów k-liniowych określonych na przestrzeni liniowej \(V\). Rozważmy skończenie wymiarowe rzeczywiste przestrzenie wektorowe \(V_1,\,V_2,\,\dots,\,V_r\) i odpowiednio ich przestrzenie dualne \(V_1^\ast,\,V_2^\ast,\,\dots,\,V_r^\ast\). Dzięki kanonicznemu izomorfizmowi przestrzeni i ich dwusprzężonych, przestrzenie \(V_i\) możemy traktować jako przestrzenie funkcjonałów na \(V_i^\ast\),
 %\begin{equation*}
 %    x_i: V_i^\ast \ni \varphi^i \mapsto \braket{\varphi^i, x_i}_i := x_i(\varphi^i)\in\R
@@ -164,16 +175,17 @@ Przestrzeń wektorową wszystkich \(\mathrm{C}^\infty\) \(k\)-form na \(M\) ozn
 %\begin{gather*}
 %    w: M \mapsto \mathcal{T}_q^p (M) := \bigcup\limits_{x\in M}\mathcal{T}_q^p (x),  \quad w(x) \in \mathcal{T}_q^p (x),
 %\end{gather*}
-%gdzie składowe tensora \(w(x)\) są funkcjami klasy \(\mathrm{C}^k(M)\). Przy powyższych określeniach \textbf{formą różniczkową} rzędu \(p\) na \(M\) będziemy nazywali każde antysymetryczne pole tensorowe \(p\)-kowariantne i \(0\)-kontrawariantne. 
-%Niech \(N,\,M\) będą rozmaitościami różniczkowalnymi i \(F:N\to M\) gładkim odwzorowaniem między nimi. Wówczas dla każdego \(p\in M\) określamy odwzorowanie liniowe między przestrzeniami stycznymi 
-%\begin{equation}
-%F_{\ast, p}:T_p N\rightarrow T_{F(p)}M, 
-%\end{equation}
-%które nazywamy \textbf{różniczką} \(F\) w \(p\in N\). Jeśli \(X_p\in T_p N\) jest wektorem stycznym do \(M\) w \(p\), wówczas dla dowolnego kiełka \(f\in C_{F(p)}^\infty(M)\) funkcji w \(F(p)\) 
-%\begin{equation}
-%(F_{\ast, p} (X_p))f = X_p(f\circ F) \in \R.
-%\end{equation} 
-%gdzie \(F_{\ast, p} (X_p)\) jest wektorem stycznym do \(N\) w \(F(p)\). Jeśli \(F\) jest dyfeomorfizmem, zaś \(X\) -- polem wektorowym na \(M\), odwzorowanie \(F_\ast \circ X \circ F^{-1}\) nazywamy \textbf{popchnięciem} pola wektorowego \(X\) i przez \(F\). Dualnie, jeśli \(f\in C_p^\infty(M)\) określamy \textbf{cofnięcie} \(F^\ast f := F\circ f\) funkcji \(f\) przez \(F\).
+%gdzie składowe tensora \(w(x)\) są funkcjami klasy \(\mathrm{C}^k(M)\). Przy powyższych określeniach \textbf{formą różniczkową} rzędu \(p\) na \(M\) będziemy nazywali każde antysymetryczne pole tensorowe \(p\)-kowariantne i \(0\)-kontrawariantne.
+Niech \(\omega\) będzie \(k\)-formą różniczkową i niech \(X_1, \dots, X_k\) będą polami wektorowymi na \(M\). Określamy na \(M\) funkcję \(\omega(X_1, \dots, X_k)\) postaci
+\begin{equation*}
+    M\ni p \mapsto \omega(X_1, \dots, X_k)_p = \omega_p\left((X_1)_p, \dots, (X_k)_p\right) \in \R,\quad p\in M
+\end{equation*}
+Niech \(f\in C^\infty(M)\) będzie funkcją na rozmaitości \(M\) i \(X\) będzie polem wektorowym na \(M\). Określmy \(1\)-formę różniczkową \(df\) 
+
+\textbf{Różniczką} funkcji \(f\) nazywamy \(1\)-formę różniczkową \(df\) na \(M\) taką, że dla każdego \(p\in M\) i wektora stycznego \(X_p\in T_p M\) zachodzi
+\begin{equation*}
+    \left.df\right|_p(X_p) = X_p f.
+\end{equation*}
 
 Niech \(X\) będzie polem wektorowym klasy \(\mathrm{C}^r\) na \(M\) i niech \((U, \varphi) = (U, x^1, x^2, \dots, x^n)\) będzie mapą wokół \(p\in M\). Wówczas \(X_p = \sum_{j=1}^{n}a_j(p)\left.\frac{\partial}{\partial x^j}\right|_p\) jest wektorem stycznym w p, gdzie \(a_j\in C^r(M)\) są kiełkami funkcji klasy \(\mathrm{C}^r\) w \(p\). Popchnięcie \(X\) przez \(\varphi\), czyli funkcję wektorową \(\mathbf{X} = \varphi_{\ast}\circ X(\varphi^{-1}): \R^n \supset \varphi(U)\ni p \mapsto \left[a_j(p)\right]_{j=1}^n\in \R^n\) nazywamy \textbf{lokalną reprezentacją} X.
 
