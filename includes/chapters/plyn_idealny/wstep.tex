@@ -1,7 +1,7 @@
 \chapter{Płyn idealny} W tym rozdziale naszym celem jest opracowanie modelu fizycznego cieczy idealnej i uzasadnienie jej podstawowych równań ruchu.
 
 \section{Pojęcia wstępne}
-Zaczniemy od przypomnienia podstawowych pojęć w teorii rozmaitości gładkich. Niech \(M\) będzie rzeczywistą n-rozmaitością różniczkowalną klasy \(\mathrm{C}^\infty\), \(p\) będzie dowolnym punktem rozmaitości \(M\) i niech \(U, V\subset M\) będą otoczeniami punktu \(p\). Powiemy, że dwie funkcje rzeczywiste \(f:U\to\R, g:V\to\R\) są \emph{równoważne}, jeśli w pewnym otoczeniu \(W\subset U\cap V\) punktu \(p\) są one sobie równe. Pod pojęciem \textbf{kiełka} funkcji rzeczywistej klasy \(\mathrm{C}^\infty\) w punkcie \(p\in M\) będziemy rozumieli każdą klasę równoważności tak zadanej relacji. Zbiór wszystkich kiełków w punkcie \(p\), \(\mathrm{C}_p^\infty(M)\), jest wówczas \(\R\)-algebrą. Zbiór wszystkich funkcji klasy \(\mathrm{C}^\infty\) określonych na \(M\) będziemy oznaczali \(\mathcal{F}(M)\). 
+Zaczniemy od przypomnienia podstawowych pojęć w teorii rozmaitości gładkich. Niech \(M\) będzie rzeczywistą \(n\)-rozmaitością różniczkowalną klasy \(\mathrm{C}^\infty\), \(p\) będzie dowolnym punktem rozmaitości \(M\) i niech \(U, V\subset M\) będą otoczeniami punktu \(p\). Powiemy, że dwie funkcje rzeczywiste \(f:U\to\R,\ g:V\to\R\) są \emph{równoważne}, jeśli w pewnym otoczeniu \(W\subset U\cap V\) punktu \(p\) są one sobie równe. Pod pojęciem \textbf{kiełka} funkcji rzeczywistej klasy \(\mathrm{C}^\infty\) w punkcie \(p\in M\) będziemy rozumieli każdą klasę równoważności tak zadanej relacji. Zbiór wszystkich kiełków w punkcie \(p\), \(\mathrm{C}_p^\infty(M)\), jest wówczas \(\R\)-algebrą. Zbiór wszystkich funkcji klasy \(\mathrm{C}^\infty\) określonych na \(M\) będziemy oznaczali \(\mathcal{F}(M)\). 
 
 Zmierzamy do określenia pojęcia przestrzeni stycznej za pomocą kiełków funkcji. Każde odwzorowanie liniowe \(D:C_p^\infty(M)\to\R\) spełniające warunek:
 \begin{equation}\label{eq:differentiation}
@@ -11,7 +11,7 @@ nazywamy \textbf{różniczkowaniem} w punkcie \(p\). Przestrzeń liniową wszyst
 
 Niech \(\pi: E\to M\) będzie dowolnym odwzorowaniem między rozmaitościami \(E\) i \(M\). Przeciwobraz \(E_p = \pi^{-1}(p)\) punktu \(p\) nazywamy \textbf{włóknem} w \(p\). Niech \(\pi': E'\to M\) będzie odwzorowaniem rozmaitości \(E'\) i \(M\). Powiemy, że odwzorowanie \(\phi:E\to E'\) \textbf{zachowuje włókna}, jeśli \(\phi(E_p)\subset E'_p\) dla każdego \(p\in M\). Jeśli \(\pi\) jest surjekcją klasy \(\mathrm{C}^\infty\) oraz
 \begin{enumerate}[i)]
-\item każde włókno \(\pi^{-1}(p)\) ma strukturę n-wymiarowej przestrzeni wektorowej,
+    \item każde włókno \(\pi^{-1}(p)\) ma strukturę \(r\)-wymiarowej przestrzeni wektorowej,
 \item dla każdego \(p\in M\) istnieje otoczenie \(U\in M\) punktu \(p\) i zachowujący włókna dyfeomorfizm \(\phi: \pi^{-1}(U)\to U\times \R^r\) taki, że dla każdego \(q\in U\) zawężenie
 \begin{equation*}
 \left.\phi\right|_{\pi^{-1}(q)}:\pi^{-1}(q)\to \{q\} \times \R^r
@@ -21,9 +21,9 @@ jest izomomorfizmem przestrzeni wektorowych,
 \end{enumerate}
 wówczas \(\pi\) określamy odwzorowaniem \emph{lokalnie trywialnym rzędu r}.  Tak określony zbiór \(U\) nazywamy zbiorem \emph{trywializującym} \(E\), zaś \(\phi\) nazywamy \emph{trywializacją} \(E\) nad \(U\).
 
-Korzystając z powyższych rozstrzygnięć definiujemy \textbf{wiązką wektorową} klasy \(\mathrm{C}^\infty\) rzędu \(r\) jako trójkę \((E, M, \pi)\), gdzie \(\pi: E\to M\) jest lokalnie trywialną gładką surjekcją rzędu \(r\). Nadużywając notacji często zamiast odnosić się bezpośrednio do tak zdefiniowanej struktury, będziemy mówili o \emph{wiązce wektorowej} \(E\) albo \emph{wiązce wektorowej} \(\pi:E\to M\). W tę myśl \textbf{cięciem} wiązki \(\pi: E\to M\) nazywamy odwzorowanie \(s:M\to E\) takie, że \(\pi\circ s= \mathrm{id}_M\). Przyporządkowuje ono każdemu punktowi \(p\in M\) włókno \(E_p\). 
+Korzystając z powyższych rozstrzygnięć definiujemy \textbf{wiązką wektorową} klasy \(\mathrm{C}^\infty\) rzędu \(r\) jako trójkę \((E, M, \pi)\), gdzie \(\pi: E\to M\) jest lokalnie trywialną gładką surjekcją rzędu \(r\). Nadużywając notacji często zamiast odnosić się bezpośrednio do tak zdefiniowanej struktury, będziemy mówili o \emph{wiązce wektorowej} \(E\) albo \emph{wiązce wektorowej} \(\pi:E\to M\). W tę myśl \textbf{cięciem} wiązki \(\pi: E\to M\) nazywamy odwzorowanie \(s:M\to E\) takie, że \(\pi\circ s= \mathrm{id}_M\). Przyporządkowuje ono każdemu punktowi \(p\in M\) włókno \(E_p\). Jeśli \(E\to M\) jest wiązką wektorową klasy \(\mathrm{C}^\infty\), wówczas przestrzeń wektorową wszystkich cięć \(E\) klasy \(\mathrm{C}^\infty\) oznaczamy \(\Gamma(M, E)\) lub krótko \(\Gamma(E)\), o ile nie prowadzi to do niejednoznaczności. 
 
-Okazuje się, że zbiór wszystkich cięć klasy \(\mathrm{C}^\infty\) wiązki \(E\), oznaczany \(\Gamma(E)\), ma interesujące własności algebraiczne. Jeśli \(U\) jest otwartym pozdbiorem rozmaitości \(E\), wówczas analogicznie określmy \(\Gamma(U)\). Na tak zadanym zbiorze można zadać strukturę modułu nad pierścieniem \(C^\infty(U)\) funkcji klasy \(\mathrm{C}^\infty\) zadanych na \(U\). \(\Gamma(U)\) jest również rzeczywistą przestrzeńą wektorowa w której możemy wybrać uporządkowaną bazę \((s_1, s_2, \dots, s_r)\). Jest to tak zwany \emph{reper} wiązki wektorowej \(\pi:E\to M\) nad \(U\). 
+Okazuje się, że zbiór wszystkich cięć klasy \(\mathrm{C}^\infty\) wiązki \(E\), \(\Gamma(E)\), ma interesujące własności algebraiczne. Jeśli \(U\) jest otwartym pozdbiorem rozmaitości \(E\), wówczas analogicznie określmy \(\Gamma(U)\). Na tak zadanym zbiorze można zadać strukturę modułu nad pierścieniem \(C^\infty(U)\) funkcji klasy \(\mathrm{C}^\infty\) zadanych na \(U\). \(\Gamma(U)\) jest również rzeczywistą przestrzeńą wektorowa w której możemy wybrać uporządkowaną bazę \((s_1, s_2, \dots, s_r)\). Jest to tak zwany \emph{reper} wiązki wektorowej \(\pi:E\to M\) nad \(U\). 
 
 Szczególnie interesującym nas obiektem tej kategorii jest \textbf{wiązka styczna} \((TM, M, \pi)\), gdzie 
 \begin{equation*}
@@ -114,6 +114,12 @@ Rozważmy zbiór
 \end{equation*} i zadajmy odwzorowanie \(\pi: \Exterior^k (T^\ast M) \ni \alpha \mapsto p\in M\) dla 
 \(\alpha \in \Exterior^k(T^{\ast}_p M)\). Okazuje się (\cite{tu}, s. 203), że \(\pi\) jest wiązką wektorową rzędu \(\binom{n}{k}\), której cięcia są antysymetrycznymi \(k\)-kowariantnymi (i \(0\)-kontrawariantnymi) polami tensorowymi na \(M\).   
 Każde \(k\)-kowariantne pole tensorowe na \(M\), które jest antysymetryczne, nazywamy \textbf{\(k\)-formą różniczkową} na \(M\).
+Przestrzeń wektorową wszystkich \(\mathrm{C}^\infty\) \(k\)-form na \(M\) oznaczamy \(\Omega^k(M)\) oraz
+\begin{equation*}
+    \Omega^k(M)=\Gamma\left(M, \Exterior^k(T^\ast M)\right).
+\end{equation*}
+
+
 %\begin{twierdzenie}[\cite{herdegen}, §19, tw. 2]
 %    Dla każdej permutacji \(\pi\in S_p\) i istnieje dokładnie jeden operator liniowy \(P^{\pi}:\mathcal{T}_q^p(V)\to\mathcal{T}_q^p(V)\), który na tensory proste działa według przepisu
 %    \begin{equation*}
