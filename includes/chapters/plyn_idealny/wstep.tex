@@ -176,16 +176,24 @@ Przestrzeń wektorową wszystkich \(\mathrm{C}^\infty\) \(k\)-form na \(M\) ozn
 %    w: M \mapsto \mathcal{T}_q^p (M) := \bigcup\limits_{x\in M}\mathcal{T}_q^p (x),  \quad w(x) \in \mathcal{T}_q^p (x),
 %\end{gather*}
 %gdzie składowe tensora \(w(x)\) są funkcjami klasy \(\mathrm{C}^k(M)\). Przy powyższych określeniach \textbf{formą różniczkową} rzędu \(p\) na \(M\) będziemy nazywali każde antysymetryczne pole tensorowe \(p\)-kowariantne i \(0\)-kontrawariantne.
-Niech \(\omega\) będzie \(k\)-formą różniczkową i niech \(X_1, \dots, X_k\) będą polami wektorowymi na \(M\). Określamy na \(M\) funkcję \(\omega(X_1, \dots, X_k)\) postaci
-\begin{equation*}
-    M\ni p \mapsto \omega(X_1, \dots, X_k)_p = \omega_p\left((X_1)_p, \dots, (X_k)_p\right) \in \R,\quad p\in M
-\end{equation*}
-Niech \(f\in C^\infty(M)\) będzie funkcją na rozmaitości \(M\) i \(X\) będzie polem wektorowym na \(M\). Określmy \(1\)-formę różniczkową \(df\) 
 
-\textbf{Różniczką} funkcji \(f\) nazywamy \(1\)-formę różniczkową \(df\) na \(M\) taką, że dla każdego \(p\in M\) i wektora stycznego \(X_p\in T_p M\) zachodzi
-\begin{equation*}
-    \left.df\right|_p(X_p) = X_p f.
-\end{equation*}
+%Niech \(\omega\) będzie \(k\)-formą różniczkową i niech \(X_1, \dots, X_k\) będą polami wektorowymi na \(M\). Określamy na \(M\) funkcję \(\omega(X_1, \dots, X_k)\) postaci
+%\begin{equation*}
+%   M\ni p \mapsto \omega(X_1, \dots, X_k)_p = \omega_p\left((X_1)_p, \dots, (X_k)_p\right) \in \R,\quad p\in M
+%\end{equation*}
+
+%Niech \(f\in C^\infty(M)\) będzie funkcją na rozmaitości \(M\) i \(X\) będzie polem wektorowym na \(M\). \(1\)-formę różniczkowa \(df\) taka, że dla każdego \(p\in M\) i wektora stycznego \(X_p\in T_p M\) zachodzi
+%\begin{equation*}
+%    \left.df\right|_p(X_p) = X_p f.
+%\end{equation*} nazywamy \emph{różniczką} funkcji \(f\). 
+
+%Ponieważ \(f_\ast(X_p)\in T_{f(p)}\R\), to istnieje liczba \(a\in \R\) taka, że
+%\(f_{\ast}(X_p) = a \left.\frac{d}{dt}\right|_{f(p)}\), gdzie 
+%\begin{equation*}
+%    a = f_{\ast}(X_p)(t) = X_p(t\circ f) = X_p f = (df)_p(X_p).
+%\end{equation*}
+
+
 
 Niech \(X\) będzie polem wektorowym klasy \(\mathrm{C}^r\) na \(M\) i niech \((U, \varphi) = (U, x^1, x^2, \dots, x^n)\) będzie mapą wokół \(p\in M\). Wówczas \(X_p = \sum_{j=1}^{n}a_j(p)\left.\frac{\partial}{\partial x^j}\right|_p\) jest wektorem stycznym w p, gdzie \(a_j\in C^r(M)\) są kiełkami funkcji klasy \(\mathrm{C}^r\) w \(p\). Popchnięcie \(X\) przez \(\varphi\), czyli funkcję wektorową \(\mathbf{X} = \varphi_{\ast}\circ X(\varphi^{-1}): \R^n \supset \varphi(U)\ni p \mapsto \left[a_j(p)\right]_{j=1}^n\in \R^n\) nazywamy \textbf{lokalną reprezentacją} X.
 
@@ -195,7 +203,7 @@ Niech \(X\) będzie polem wektorowym klasy \(\mathrm{C}^r\) na \(M\) i niech \((
   \matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em]
   {
      M\supset U & \varphi(U)\subset \R^n \\
-     TU & T\R^n \cong \R^n \\};
+     TU & T\R^n\\};
   \path[-stealth]
     (m-1-1) edge node [left] {\(X\)} (m-2-1)
     (m-1-1) edge node [above] {\(\varphi\)} (m-1-2)
@@ -299,3 +307,35 @@ Niech \(X\) będzie polem wektorowym na \(M\). Funkcję \(\mathrm{div}_\mu X \in
 \mathcal{L}_X \mu = (\mathrm{div}_\mu X) \mu
 \end{equation}
 nazywamy \textbf{dywergencją} \(X\). Mówimy, że \(X\) jest \textbf{nieściśliwy} (względem \(\mu\)), jeśli \(\mathrm{div}_\mu X = 0\).
+
+
+\begin{twierdzenie}[O zamianie zmiennych, \cite{marsden}, tw. 8.1.7]
+    Niech \(M\) i \(N\) będą \(n\)-rozmaitościami z orientacją  i niech \(f: M\to N\) będzie dyfeomorfizmem zachowującym orientację. Jeśli \(\omega \in \Omega^n(N)\) ma zwarty nośnik, to \(f^\ast\omega\) również ma zwarty nośnik oraz
+    \begin{equation}\label{eq:zamiana zmiennych}
+        \int_N \omega = \int_M f^\ast \omega.
+    \end{equation}
+\end{twierdzenie}
+\begin{twierdzenie}[\cite{marsden}, tw. 8.1.12]
+    Niech \((M, \mu)\) będzie rozmaitością z objętością i niech \(X\) będzie polem wektorowym na \(M\) z przepływem \(F_t\). Oznaczając \(f_t(m) = f(m, t)\) dla \(f\in\mathcal{F}(M\times \R)\) mamy:
+\begin{equation}\label{eq:transport}
+    \frac{d}{dt}\int_{F_t(U)} f_t \mu = \int_{F_t(U)}\left(\frac{\partial f}{\partial t} + \mathrm{div}_\mu (f_t X)\right) \mu,
+\end{equation}
+    dla dowolnego zbioru otwartego \(U\) w \(M\).
+\end{twierdzenie}
+\begin{proof}
+    \begin{align*}
+        \frac{d}{dt}F^\ast_t(f_t\mu) &= F^\ast_t\left(\frac{\partial f}{\partial t}\mu\right)+
+        F^\ast_t\mathcal{L}_X(f_t\mu) =\\
+        &= F^\ast_t\left(\frac{\partial f}{\partial t}\mu\right) +
+        F^\ast_t\left(\left(\mathcal{L}_X f_t\right)\mu + f_t(\mathrm{div}_\mu X)\mu\right) =\\
+        &= F^\ast_t\left(\left(\frac{\partial f}{\partial t}+\mathrm{div}_\mu(f_t X)\right)\mu\right). 
+    \end{align*}
+
+    Stosując wzór na zamianę zmiennych otrzymujemy
+
+    \begin{align}
+       \frac{d}{dt}\int_{F_t (U)} f_t \mu &= \frac{d}{dt}\int_U F^\ast_t (f_t \mu) 
+       = \int_U F^\ast_t \left(\left(\frac{\partial f}{\partial t} + \mathrm{div}_\mu (f_t X)\right)\mu\right) =\\
+       &=\int_{F_t(U)} \left(\frac{\partial f}{\partial t} + \mathrm{div}_\mu (f_t X)\right)\mu.
+    \end{align}
+\end{proof}
