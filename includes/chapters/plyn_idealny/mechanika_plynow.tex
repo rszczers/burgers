@@ -1,0 +1,19 @@
+\section{Dynamika płynów}
+
+Poniższy opis płynu jest idealizacją, która zaniedbuje cząsteczkową strukturę rzeczywistych płynów. Przez płyny rozumiemy tutaj wszystkie substancje fizyczne w stanie ciekłym i gazowym. \emph{Ciecze} są płynami, które charakteryzuje długość średniej swobodnej drogi cząsteczki w przedziale \(10^{-7} - 10^{-8}\) cm i znaczna odporność na zmianę objętości pod wpływem ciśnienia. \emph{Gazy} charakteryzuje znacznie dłuższa średnia swobodna droga cząsteczek rzędu \(10^{-3}\) cm i łatwość zmiany objętości. Nasze rozważania będą oparte na obserwabliach takich jak prędkość, gęstość i ciśnienie. Wielkości te należy rozumieć jako wartości średnie dla cząsteczek zawartych w infinitezymalnie małej objętości płynu. Przez \emph{cząsteczkę próbną} będziemy rozumieli właśnie taką małą objętość. Nasze rozważania będą konsekwencjami poniższych trzech zasad:
+\begin{enumerate}
+    \item Masa nie ulega zniszczeniu ani nie jest tworzona.
+    \item Zmiana pędu cząsteczki próbnej płynu jest równa wartości przyłożonej do niej siły.
+    \item Energia nie ulega zniszczeniu ani nie jest tworzona. 
+\end{enumerate}
+Drugi punkt to popularna II zasada dynamiki Newtona. Punkt pierwszy wyraża zasadę zachowania masy, zaś trzeci – zasadę zachowania energii. Oznacza to, że wyprowadzając równania ruchu nie uwzględniamy procesów dyssypacji energii, które mogą zachodzić w płynącej cieczy w wyniku wewnętrznego tarcia (\emph{lepkości}) i wymiany ciepła między różnymi częściami cieczy.
+
+Niech \((M, g)\) będzie zwartą, orientowalną \(n\)-rozmaitością Riemannowską z brzegiem i \(\mu \in \Omega^n(M)\) będzie formą objętości na \(M\). Rozmaitość \(M\) interpretujemy jako pewien obszar wypełniony poruszającym się płynem. Ustalmy punkt \(x\in M\) i rozważmy cząstkę próbną, która porusza się po trajektorii przechodzącej przez punkt \(x\) w chwili \(t=0\). Oznaczmy tę trajektorię przez \(\varphi_t(x)=\varphi(x,t)\). Niech \(u(x, t)\) oznacza prędkość cząsteczki próbnej położonej w punkcie \(x\) w chwili \(t\). Określiliśmy w ten sposób na rozmaitości \(M\) pole wektorowe zależne od czasu, które dalej nazywać będziemy \emph{polem prędkości płynu}. Zależność między \(u\) i \(\varphi_t\) możemy wyrazić przez
+\begin{equation}\label{eq:first-step}
+    \frac{d\varphi_t}{dt}(x) = u(\varphi_t(x), t). 
+\end{equation}
+Zauważmy, że \(\varphi_t\) jest przepływem dla pola wektorowego zależnego od czasu \(u\). Załóżmy, że dla każdej chwili \(t\) dana jest pewna gładka funkcja \(\rho_t(x)=\rho(x,t)\), która wyraża gęstość płynu w punkcie \(x\). Niech \(W\) będzie podobszarem \(M\). Wówczas masa płynu wypełniającego \(W\) w chwili \(t\) wyraża się przez
+\begin{equation}\label{eq:mass}
+    m(W,t) = \int_W \rho_t d\mu.
+\end{equation}
+
