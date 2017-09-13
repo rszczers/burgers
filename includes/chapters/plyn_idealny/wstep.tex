@@ -59,16 +59,32 @@ Korzystając z powyższego wygodnego aparatu matematycznego możemy teraz okreś
 \end{equation*}
 Okazuje się (\cite{tu}, tw. 14.10), że komutacja gładkich pól wektorowych nie wyprowadza poza \(\mathfrak{X}(M)\) i lokalnie spełnia warunek \eqref{eq:differentiation}, czyli jest różniczkowaniem.
 
-
-Niech \(N,\,M\) będą rozmaitościami różniczkowalnymi i \(F:N\to M\) odwzorowaniem klasy \(\mathrm{C}^\infty\) między nimi. Wówczas dla każdego punktu \(p\) na rozmaitości \(M\) określamy odwzorowanie liniowe między przestrzeniami stycznymi 
+Niech \(\pi_N: TN \to N\) i \(\pi_M: TM \to M\) będą wiązkami stycznymi. Odwzorowanie \(F:N\to M\) klasy \(C^\infty\) między rozmaitościami \(N\) i \(M\) indukuje \emph{wiązkę odwzorowań} \(F_\ast: TN\to TM\) taką, że dla każdego \(p\in N\):  
+%Niech \(N,\,M\) będą rozmaitościami różniczkowalnymi i \(F:N\to M\) odwzorowaniem klasy \(\mathrm{C}^\infty\) między nimi. Wówczas dla każdego punktu \(p\) na rozmaitości \(M\) określamy odwzorowanie liniowe między przestrzeniami stycznymi 
 \begin{equation}
 F_{\ast, p}:T_p N\rightarrow T_{F(p)}M, 
 \end{equation}
-które nazywamy \textbf{różniczką} \(F\) w \(p\in N\). Jeśli \(X_p\in T_p N\) jest wektorem stycznym do \(M\) w \(p\), wówczas dla dowolnego kiełka \(f\in C_{F(p)}^\infty(M)\) funkcji w \(F(p)\) 
+jest odwzorowaniem liniowym między przestrzeniami stycznymi, które nazywamy \textbf{różniczką} \(F\) w \(p\in N\) oraz poniższy diagram jest przemienny. 
+\begin{figure}[!h]
+\centering
+\begin{tikzpicture}
+  \matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em]
+  {
+     TN & TM \\
+     N & M\\};
+  \path[-stealth]
+    (m-1-1) edge node [left] {\(\pi_N\)} (m-2-1)
+    (m-1-1) edge node [above] {\(F_\ast\)} (m-1-2)
+    (m-1-2) edge node [right] {\(\pi_M\)} (m-2-2)
+    (m-2-1) edge node [above] {\(F\)} (m-2-2);
+\end{tikzpicture}
+\end{figure}
+
+Jeśli \(X_p\in T_p N\) jest wektorem stycznym do \(M\) w \(p\), wówczas dla dowolnego kiełka \(f\in C_{F(p)}^\infty(M)\) funkcji w \(F(p)\) określamy 
 \begin{equation}
 (F_{\ast, p} (X_p))f = X_p(f\circ F) \in \R.
 \end{equation} 
-gdzie \(F_{\ast, p} (X_p)\) jest wektorem stycznym do \(N\) w \(F(p)\). Jeśli \(F\) jest dyfeomorfizmem, zaś \(X\) -- polem wektorowym na \(M\), odwzorowanie \(F_\ast \circ X \circ F^{-1}\) nazywamy \textbf{popchnięciem} pola wektorowego \(X\) i przez \(F\). Dualnie, jeśli \(f\in C_p^\infty(M)\) określamy \textbf{cofnięcie} \(F^\ast f := F\circ f\) funkcji \(f\) przez \(F\).
+gdzie \(F_{\ast, p} (X_p)\) jest wektorem stycznym do \(N\) w \(F(p)\). Jeśli \(F\) jest dyfeomorfizmem, zaś \(X\) -- polem wektorowym na \(M\), odwzorowanie \(F_\ast X := F_\ast \circ X \circ F^{-1}\) nazywamy \textbf{popchnięciem} pola wektorowego \(X\) przez \(F\). Dualnie, jeśli \(f\in C_p^\infty(M)\) określamy \textbf{cofnięcie} \(F^\ast f := f\circ F\) funkcji \(f\) przez \(F\).
 
 
 %Przez \(\mathrm{L}^k(V; \R)\) oznaczać będziemy przestrzeń wszystkich funkcjonałów k-liniowych określonych na przestrzeni liniowej \(V\). Rozważmy skończenie wymiarowe rzeczywiste przestrzenie wektorowe \(V_1,\,V_2,\,\dots,\,V_r\) i odpowiednio ich przestrzenie dualne \(V_1^\ast,\,V_2^\ast,\,\dots,\,V_r^\ast\). Dzięki kanonicznemu izomorfizmowi przestrzeni i ich dwusprzężonych, przestrzenie \(V_i\) możemy traktować jako przestrzenie funkcjonałów na \(V_i^\ast\),
@@ -264,7 +280,6 @@ Czyli popchnięcie prędkości \(X_p\) przez \(F\) jest wektorem prędkości krz
 Przez \(\mathcal{D}_X\) oznaczmy wszystkie pary \((m, t)\in M \times \R\) dla których istnieje trajektoria \(c: I\rightarrow M\) pola wektorowego \(X\) w punkcie \(m\) i zmienna czasowa \(t\) zawiera się w pewnym przedziale \(I\). Mówimy, że pole wektorowe jest \textbf{zupełne}, jeśli \(\mathcal{D}_X = M \times \R\). Oznacza to, że dla każdego punktu na rozmaitości znajdziemy trajektorię cząsteczki próbnej poruszającej się dowolnie długo. Zbiór wszystkich punktów rozmaitości na których pole wektorowe nie znika, \(\mathrm{supp}\,X=\{m\in M\:|\: X_m\neq 0\}\), nazywamy \textbf{nośnikiem} pola wektorowego X. 
 
 Zachodzą następujące twierdzenia
-
 \begin{twierdzenie}\label{tw:D}
 Niech \(X\) będzie polem wektorowym na \(M\) klasy \(C^r,\, r\geq1\). Wówczas
 \begin{enumerate}[i)]
@@ -331,13 +346,13 @@ Niech \(X\) będzie polem wektorowym na \(M\). Funkcję \(\mathrm{div}_\mu X \in
 \end{equation}
 nazywamy \textbf{dywergencją} \(X\). Mówimy, że \(X\) jest \textbf{nieściśliwy} (względem \(\mu\)), jeśli \(\mathrm{div}_\mu X = 0\).
 
-
 \begin{twierdzenie}[\textbf{O zamianie zmiennych}, \cite{marsden}, tw. 8.1.7]
     Niech \(M\) i \(N\) będą \(n\)-rozmaitościami z orientacją  i niech \(f: M\to N\) będzie dyfeomorfizmem zachowującym orientację. Jeśli \(\omega \in \Omega^n(N)\) ma zwarty nośnik, to \(f^\ast\omega\) również ma zwarty nośnik oraz
     \begin{equation}\label{eq:zamiana zmiennych}
         \int_N \omega = \int_M f^\ast \omega.
     \end{equation}
 \end{twierdzenie}
+
 Poniższej prezentujemy centralne twierdzenie w mechanice płynów, które umożliwi nam uzyskanie zasady zachowania w postaci \emph{równania ciągłości}.
 \begin{twierdzenie}[\textbf{O transporcie}, \cite{marsden}, tw. 8.1.12]
     Niech \((M, \mu)\) będzie rozmaitością z objętością i niech \(X\) będzie polem wektorowym na \(M\) z przepływem \(F_t\). Oznaczając \(f_t(m) = f(m, t)\) dla \(f\in\mathcal{F}(M\times \R)\) mamy:
