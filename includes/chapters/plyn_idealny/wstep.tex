@@ -1,9 +1,8 @@
 \chapter{Płyn idealny} W tym rozdziale naszym celem jest opracowanie modelu fizycznego cieczy idealnej i uzasadnienie jej podstawowych równań ruchu.
 
 \section{Pojęcia wstępne}
-Zaczniemy od przypomnienia podstawowych pojęć w teorii rozmaitości gładkich. Niech \(M\) będzie rzeczywistą \(n\)-rozmaitością różniczkowalną klasy \(\mathrm{C}^\infty\), \(p\) będzie dowolnym punktem rozmaitości \(M\) i niech \(U, V\subset M\) będą otoczeniami punktu \(p\). Powiemy, że dwie funkcje rzeczywiste \(f:U\to\R,\ g:V\to\R\) są \emph{równoważne}, jeśli w pewnym otoczeniu \(W\subset U\cap V\) punktu \(p\) są one sobie równe. Pod pojęciem \emph{kiełka} funkcji rzeczywistej klasy \(\mathrm{C}^\infty\) w punkcie \(p\in M\) będziemy rozumieli każdą klasę równoważności tak zadanej relacji. Zbiór wszystkich kiełków w punkcie \(p\), \(\mathrm{C}_p^\infty(M)\), jest wówczas \(\R\)-algebrą. Zbiór wszystkich funkcji klasy \(\mathrm{C}^\infty\) określonych na \(M\) będziemy oznaczali \(\mathcal{F}(M)\). 
-
-Zmierzamy do określenia pojęcia przestrzeni stycznej za pomocą kiełków funkcji. Każde odwzorowanie liniowe \(D:C_p^\infty(M)\to\R\) spełniające warunek:
+Zaczniemy od przypomnienia podstawowych pojęć w teorii rozmaitości gładkich. Niech \(M\) będzie rzeczywistą \(n\)-rozmaitością różniczkowalną klasy \(\mathrm{C}^\infty\), \(p\) będzie dowolnym punktem rozmaitości \(M\) i niech \(U, V\subset M\) będą otoczeniami punktu \(p\). Zmierzamy do określenia pojęcia \emph{przestrzeni stycznej} za pomocą klas funkcji określonych na \(M\), które są lokalnie identyczne. Powiemy, że dwie funkcje rzeczywiste \(f:U\to\R,\ g:V\to\R\) są \emph{równoważne}, jeśli w pewnym otoczeniu \(W\subset U\cap V\) punktu \(p\) są one sobie równe. Pod pojęciem \emph{kiełka} funkcji rzeczywistej klasy \(\mathrm{C}^\infty\) w punkcie \(p\in M\) będziemy rozumieli każdą klasę równoważności tak zadanej relacji. Zbiór wszystkich kiełków w punkcie \(p\), \(\mathrm{C}_p^\infty(M)\), jest wówczas \(\R\)-algebrą. Zbiór wszystkich funkcji klasy \(\mathrm{C}^\infty\) określonych na \(M\) będziemy oznaczali \(\mathcal{F}(M)\). 
+Każde odwzorowanie liniowe \(D:C_p^\infty(M)\to\R\) spełniające warunek:
 \begin{equation}\label{eq:differentiation}
 D(fg) = (Df)g(p) + f(Dg)(p)
 \end{equation}
@@ -19,11 +18,12 @@ Niech \(\pi: E\to M\) będzie dowolnym odwzorowaniem między rozmaitościami \(E
 jest izomomorfizmem przestrzeni wektorowych,
 
 \end{enumerate}
-wówczas \(\pi\) określamy odwzorowaniem \emph{lokalnie trywialnym rzędu r}.  Tak określony zbiór \(U\) nazywamy zbiorem \emph{trywializującym} \(E\), zaś \(\phi\) nazywamy \emph{trywializacją} \(E\) nad \(U\).
+wówczas \(\pi\) nazywamy odwzorowaniem \emph{lokalnie trywialnym rzędu r}.  Tak określony zbiór \(U\) nazywamy zbiorem \emph{trywializującym} \(E\), zaś \(\phi\) nazywamy \emph{trywializacją} \(E\) nad \(U\).
 
 Korzystając z powyższych rozstrzygnięć definiujemy \textbf{wiązką wektorową} klasy \(\mathrm{C}^\infty\) rzędu \(r\) jako trójkę \((E, M, \pi)\), gdzie \(\pi: E\to M\) jest lokalnie trywialną gładką surjekcją rzędu \(r\). Nadużywając notacji często zamiast odnosić się bezpośrednio do tak zdefiniowanej struktury, będziemy mówili o \emph{wiązce wektorowej} \(E\) albo \emph{wiązce wektorowej} \(\pi:E\to M\). W tę myśl \textbf{cięciem} wiązki \(\pi: E\to M\) nazywamy odwzorowanie \(s:M\to E\) takie, że \(\pi\circ s= \mathrm{id}_M\). Przyporządkowuje ono każdemu punktowi \(p\in M\) włókno \(E_p\). Jeśli \(E\to M\) jest wiązką wektorową klasy \(\mathrm{C}^\infty\), wówczas przestrzeń wektorową wszystkich cięć \(E\) klasy \(\mathrm{C}^\infty\) oznaczamy \(\Gamma(M, E)\) lub krótko \(\Gamma(E)\), o ile nie prowadzi to do niejednoznaczności. 
 
 Okazuje się, że zbiór wszystkich cięć klasy \(\mathrm{C}^\infty\) wiązki \(E\), \(\Gamma(E)\), ma interesujące własności algebraiczne. Jeśli \(U\) jest otwartym pozdbiorem rozmaitości \(E\), wówczas analogicznie określmy \(\Gamma(U)\). Na tak zadanym zbiorze można zadać strukturę modułu nad pierścieniem \(C^\infty(U)\) funkcji klasy \(\mathrm{C}^\infty\) zadanych na \(U\). \(\Gamma(U)\) jest również rzeczywistą przestrzeńą wektorowa w której możemy wybrać uporządkowaną bazę \((s_1, s_2, \dots, s_r)\). Jest to tak zwany \emph{reper} wiązki wektorowej \(\pi:E\to M\) nad \(U\). 
+
 
 %Niech \(\pi_E:E\to M\) i \(\pi_F\to N\) będą dowolnymi wiązkami wektorowymi. Odwzorowanie \(\tilde{f}:E\to F\)   
 %jest \emph{morfizmem wiązek} z \(E\) do \(F\) .
@@ -186,6 +186,8 @@ Okazuje się (\cite{marsden}, tw. 7.4.1), że na n-rozmaitościach można jedno
     \item \(\mathbf{d}\) jest \emph{operatorem lokalnym}, czyli dla otwartych podzbiorów \(U \subset V \subset M\) i \(\alpha\in\Omega^k(V)\) zachodzi \(\mathbf{d}(\left.\alpha\right|_U)  = \left.(\mathbf{d}\alpha)\right|_U\), gdzie \(|_U\) oznacza zawężenie do \(U\).
 \end{enumerate}
 
+
+
 %\begin{twierdzenie}[\cite{herdegen}, §19, tw. 2]
 %    Dla każdej permutacji \(\pi\in S_p\) i istnieje dokładnie jeden operator liniowy \(P^{\pi}:\mathcal{T}_q^p(V)\to\mathcal{T}_q^p(V)\), który na tensory proste działa według przepisu
 %    \begin{equation*}
@@ -279,13 +281,13 @@ Chwilą \(t\in\R\) będziemy nazywać zmienną czasową. \textbf{Polem wektoro
 c'(t_0) = c_\ast\left(\left.\frac{d}{dt}\right|_{t_0}\right)\in T_{c(t_0)}M,
 \end{equation}
 Zachodzą następujące twierdzenia
-\begin{twierdzenie}
+\begin{twierdzenie}[\cite{tu}, tw. 8.16]
 Niech \(X_p\) będzie wektorem stycznym w punkcie \(p\) rozmaitości \(M\) i niech \(f\in C_p^\infty(M)\) będzie kiełkiem funkcji \(C^\infty\) w \(p\). Jeśli \(c:\:]-\varepsilon,\varepsilon[\rightarrow M\) jest gładką krzywą o początku w \(p\) taką, że \(c'(0)=X_p\), wówczas
 \begin{equation}
 X_pf=\left.\frac{d}{dt}\right|_0(f\circ c).
 \end{equation}
 \end{twierdzenie}
-\begin{twierdzenie}
+\begin{twierdzenie}[\cite{tu}, tw. 8.18]
 Niech \(F: N\to M\) będzie gładkim odwzorowaniem między rozmaitościami, \(p\in N\), \(X_p\in T_p N\). Jeśli \(c\) jest gładką krzywą o początku w \(p\) i jej prędkość w \(p\) to \(X_p\), wówczas
 \begin{equation}
 F_{\ast, p} (X_p) = \left.\frac{d}{dt}\right|_0(F\circ c)(t).
@@ -296,7 +298,7 @@ Czyli popchnięcie prędkości \(X_p\) przez \(F\) jest wektorem prędkości krz
 Przez \(\mathcal{D}_X\) oznaczmy wszystkie pary \((m, t)\in M \times \R\) dla których istnieje trajektoria \(c: I\rightarrow M\) pola wektorowego \(X\) w punkcie \(m\) i zmienna czasowa \(t\) zawiera się w pewnym przedziale \(I\). Mówimy, że pole wektorowe jest \textbf{zupełne}, jeśli \(\mathcal{D}_X = M \times \R\). Oznacza to, że dla każdego punktu na rozmaitości znajdziemy trajektorię cząsteczki próbnej poruszającej się dowolnie długo. Zbiór wszystkich punktów rozmaitości na których pole wektorowe nie znika, \(\mathrm{supp}\,X=\{m\in M\:|\: X_m\neq 0\}\), nazywamy \textbf{nośnikiem} pola wektorowego X. 
 
 Zachodzą następujące twierdzenia
-\begin{twierdzenie}\label{tw:D}
+\begin{twierdzenie}[\cite{marsden}, tw. 4.1.17]\label{tw:D}
 Niech \(X\) będzie polem wektorowym na \(M\) klasy \(C^r,\, r\geq1\). Wówczas
 \begin{enumerate}[i)]
 \item \(\mathcal{D}_X\supset M\times \{0\}\),
@@ -306,7 +308,7 @@ Niech \(X\) będzie polem wektorowym na \(M\) klasy \(C^r,\, r\geq1\). Wówczas
 \end{enumerate}
 \end{twierdzenie}  
 
-\begin{twierdzenie}
+\begin{twierdzenie}[\cite{marsden}, tw. 4.1.20]
 Każde pole wektorowe klasy \(C^r\) na zwartej rozmaitości \(M\) jest zupełne.
 \end{twierdzenie}
 
@@ -352,7 +354,26 @@ Jeśli \(\omega\) jest gładką k-formą na rozmaitości \(M\), to \textbf{poch
 \end{split}
 \end{equation}
 
-\textbf{Formą objętości} na \(n\)-rozmaitości \(M\) nazywamy \(n\)-formę \(\mu\in\Omega^n(M)\) taką, że \(\mu(m)\neq 0\) dla wszystkich \(m\in M\). Mówimy, że \(M\) jest orientowalna, jeśli na \(M\) można określić formę objętości \(\mu\), zaś rozmaitość z wybraną formą objętości będziemy nazywali \emph{rozmaitością z objętością} i oznaczali \((M, \mu)\). 
+\textbf{Formą objętości} na \(n\)-rozmaitości \(M\) nazywamy każdą nieznikający na \(M\) \(n\)-formę \(\mu\in\Omega^n(M)\) i mówimy, że \(M\) jest orientowalna, jeśli na \(M\) można określić formę objętości.
+Powiedzmy, że rozmaitość \(M\) jest orientowalna i rozważmy na niej dowolne dwie formy objętości \(\mu_1\) i \(\mu_2\). Powiemy, że są one równoważne, jeśli istnieje \(f\in\mathcal{F}(M)\) taka, że \(f(m)>0\) dla wszystkich \(m\in M\) oraz \(\mu_1 = f \mu_2\). Każdą klasę równoważności \(\left[\mu\right]\) takiej relacji nazywamy \emph{orientacją} na \(M\).   
+Rozmaitości z wybraną orientacją będziemy nazywali \emph{rozmaitościami zorientowanymi} i oznaczali \((M, \mu)\). 
+Jeśli \(F: (M, \mu_M)\to(N, \mu_N)\) jest dyfeomorfizmem między rozmaitościami zorientowanymi, to powiemy, że \(F\) \emph{zachowuje (odwraca) orientację}, jeśli \(F^\ast \mu_M = \mu_N\) (\(F^\ast \mu_M = -\mu_N\)).
+
+%Zajmiemy się teraz \emph{orientacją} rozmaitości. Będziemy chcięli określić orientację rozmaitości orientując przestrzenie styczne w każdym jej punkcie.  
+%Niech \((X_1, \dots, X_n)\) i \((Y_1, \dots, Y_n)\) będą dowolnymi reperami nad \(M\) takimi, że dla każdego \(p\in M\) 
+%\((X_{1,p}, \dots, X_{n,p})\) i \((Y_{1,p}, \dots, Y_{n,p})\) są uporządkowanymi bazami przestrzeni stycznej \(T_p M\). Wprowadzamy relację równoważności
+%\begin{equation*}
+%    (X_1, \dots, X_n) \sim (Y_1, \dots, Y_n) \iff (X_{1,p}, \dots, X_{n,p}) \sim (Y_{1,p}, \dots, Y_{n,p})\ \text{dla każdego}\ p\in M
+%\end{equation*}
+%gdzie relacja \(\sim\) użyta po prawej stronie oznacza, że istnieje macierz przejścia \(A = [a_i^j]\) taka, że \(\mathrm{det} A>0\) dla każdego \(p\in M\). Jeśli istnieje reper \((Y_1, \dots, Y_n)\), który jest ciągły na otoczeniu \(U\) każdego punkt \(p\) na rozmaitości \(M\), to klasę równoważności którą reprezentuje nazywamy \textbf{orientacją} na rozmaitości \(M\), zaś samą rozmaitość \(M\) nazywamy \emph{orientowalną}.  
+%    
+
+%Wybierając reper na rozmaitości \(M\) również możemy określamy jej orientację. Myśl tę wyraża poniższe twierdzenie
+%\begin{twierdzenie}[\cite{tu}, tw. 21.5]
+%    Rozmaitość \(M\) jest orientowalna wtedy i tylko wtedy, gdy na \(M\) . 
+%\end{twierdzenie}
+
+
 
 Dalej rozważać będziemy \(n\)-rozmaitości \(M\) z określoną metryką Riemmana \(g\), które nazywać będziemy krótko \textbf{n-rozmaitościami Riemanowskimi} i oznaczali \((M, g)\). Przypomnijmy, że metryka Riemannowska \(g:\: M \rightarrow \Omega^2(M)\) to symetryczne i dodatnio określone pole tensorowe \(\mathcal{T}_2^0(M)\) takie, że \(g_p \in T_m^{\ast} M \otimes T_p^{\ast} M\) dla \(p\in M\) jest iloczynem skalarnym określonym na przestrzeni stycznej \(T_p M\).  
 
