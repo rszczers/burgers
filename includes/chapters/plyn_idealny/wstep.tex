@@ -61,9 +61,9 @@ Okazuje się (\cite{tu}, tw. 14.10), że komutacja gładkich pól wektorowych ni
 
 Niech \(\pi_N: TN \to N\) i \(\pi_M: TM \to M\) będą wiązkami stycznymi. Odwzorowanie \(F:N\to M\) klasy \(C^\infty\) między rozmaitościami \(N\) i \(M\) indukuje \emph{wiązkę odwzorowań} \(F_\ast: TN\to TM\) taką, że dla każdego \(p\in N\):  
 %Niech \(N,\,M\) będą rozmaitościami różniczkowalnymi i \(F:N\to M\) odwzorowaniem klasy \(\mathrm{C}^\infty\) między nimi. Wówczas dla każdego punktu \(p\) na rozmaitości \(M\) określamy odwzorowanie liniowe między przestrzeniami stycznymi 
-\begin{equation}
+\begin{equation*}
 F_{\ast, p}:T_p N\rightarrow T_{F(p)}M, 
-\end{equation}
+\end{equation*}
 jest odwzorowaniem liniowym między przestrzeniami stycznymi, które nazywamy \textbf{różniczką} \(F\) w \(p\in N\) oraz poniższy diagram jest przemienny. 
 \begin{figure}[!h]
 \centering
@@ -81,9 +81,9 @@ jest odwzorowaniem liniowym między przestrzeniami stycznymi, które nazywamy \t
 \end{figure}
 
 Jeśli \(X_p\in T_p N\) jest wektorem stycznym do \(M\) w \(p\), wówczas dla dowolnego kiełka \(f\in C_{F(p)}^\infty(M)\) funkcji w \(F(p)\) określamy 
-\begin{equation}
+\begin{equation*}
 (F_{\ast, p} (X_p))f = X_p(f\circ F) \in \R.
-\end{equation} 
+\end{equation*} 
 gdzie \(F_{\ast, p} (X_p)\) jest wektorem stycznym do \(N\) w \(F(p)\). Jeśli \(F\) jest dyfeomorfizmem, zaś \(X\) -- polem wektorowym na \(M\), odwzorowanie \(F_\ast X := F_\ast \circ X \circ F^{-1}\) nazywamy \textbf{popchnięciem} pola wektorowego \(X\) przez \(F\). Dualnie, jeśli \(f\in C_p^\infty(M)\) określamy \textbf{cofnięcie} \(F^\ast f := f\circ F\) funkcji \(f\) przez \(F\).
 
 
@@ -403,7 +403,7 @@ nazywamy \emph{całką z formy \(\omega\) na \(M\)}. Taka definicja jest niezale
 
 Dalej rozważać będziemy \(n\)-rozmaitości \(M\) z określoną metryką Riemmana \(g\), które nazywać będziemy krótko \textbf{n-rozmaitościami Riemanowskimi} i oznaczali \((M, g)\). Przypomnijmy, że metryka Riemannowska \(g:\: M \rightarrow \Omega^2(M)\) to symetryczne i dodatnio określone pole tensorowe \(\mathcal{T}_2^0(M)\) takie, że \(g_p \in T_m^{\ast} M \otimes T_p^{\ast} M\) dla \(p\in M\) jest iloczynem skalarnym określonym na przestrzeni stycznej \(T_p M\).  
 
-\begin{twierdzenie}[\textbf{O zamianie zmiennych}, \cite{marsden}, tw. 8.1.7]
+\begin{twierdzenie}[\textbf{O zamianie zmiennych}, \cite{marsden}, tw. 8.1.7]\label{thm:coord_change}
     Niech \(M\) i \(N\) będą \(n\)-rozmaitościami z orientacją  i niech \(f: M\to N\) będzie dyfeomorfizmem zachowującym orientację. Jeśli \(\omega \in \Omega^n(N)\) ma zwarty nośnik, to \(f^\ast\omega\) również ma zwarty nośnik oraz
     \begin{equation}\label{eq:zamiana zmiennych}
         \int_N \omega = \int_M f^\ast \omega.
@@ -433,7 +433,7 @@ Poniższej prezentujemy centralne twierdzenie w mechanice płynów, które umoż
         &= F^\ast_t\left(\left(\frac{\partial f}{\partial t}+\mathrm{div}_\mu(f_t X)\right)\mu\right). 
     \end{align*}
 
-    Stosując wzór na zamianę zmiennych otrzymujemy
+    Stosując wzór na zamianę zmiennych z Twierdzenia \ref{thm:coord_change} otrzymujemy
 
     \begin{align*}
        \frac{d}{dt}\int_{F_t (U)} f_t \mu &= \frac{d}{dt}\int_U F^\ast_t (f_t \mu) 
