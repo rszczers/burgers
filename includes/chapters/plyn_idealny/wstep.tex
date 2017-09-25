@@ -6,9 +6,9 @@ Każde odwzorowanie liniowe \(D:C_p^\infty(M)\to\R\) spełniające warunek:
 \begin{equation}\label{eq:differentiation}
 D(fg) = (Df)g(p) + f(Dg)(p)
 \end{equation}
-nazywamy \textbf{różniczkowaniem} w punkcie \(p\). Przestrzeń liniową wszystkich różniczkowań w punkcie \(p\) nazywamy \textbf{przestrzenią styczną} w \(p\) i oznaczamy przez \(T_pM\).
+nazywamy \emph{różniczkowaniem} w punkcie \(p\). Przestrzeń liniową wszystkich różniczkowań w punkcie \(p\) nazywamy \textbf{przestrzenią styczną} w \(p\) i oznaczamy przez \(T_pM\).
 
-Niech \(\pi: E\to M\) będzie dowolnym odwzorowaniem między rozmaitościami \(E\) i \(M\). Przeciwobraz \(E_p = \pi^{-1}(p)\) punktu \(p\) nazywamy \textbf{włóknem} w \(p\). Niech \(\pi': E'\to M\) będzie odwzorowaniem rozmaitości \(E'\) i \(M\). Powiemy, że odwzorowanie \(\phi:E\to E'\) \textbf{zachowuje włókna}, jeśli \(\phi(E_p)\subset E'_p\) dla każdego \(p\in M\). Jeśli \(\pi\) jest surjekcją klasy \(\mathrm{C}^\infty\) oraz
+Niech \(\pi: E\to M\) będzie dowolnym odwzorowaniem między rozmaitościami \(E\) i \(M\). Przeciwobraz \(E_p = \pi^{-1}(p)\) punktu \(p\) nazywamy \textbf{włóknem} w \(p\). Niech \(\pi': E'\to M\) będzie odwzorowaniem rozmaitości \(E'\) i \(M\). Powiemy, że odwzorowanie \(\phi:E\to E'\) \emph{zachowuje włókna}, jeśli \(\phi(E_p)\subset E'_p\) dla każdego \(p\in M\). Jeśli \(\pi\) jest surjekcją klasy \(\mathrm{C}^\infty\) oraz
 \begin{enumerate}[i)]
     \item każde włókno \(\pi^{-1}(p)\) ma strukturę \(r\)-wymiarowej przestrzeni wektorowej,
 \item dla każdego \(p\in M\) istnieje otoczenie \(U\in M\) punktu \(p\) i zachowujący włókna dyfeomorfizm \(\phi: \pi^{-1}(U)\to U\times \R^r\) taki, że dla każdego \(q\in U\) zawężenie
@@ -168,7 +168,7 @@ Przestrzeń wektorową wszystkich \(\mathrm{C}^\infty\) \(k\)-form na \(M\) ozn
 \begin{equation*}
     \Omega^k(M)=\Gamma\left(M, \Exterior^k(T^\ast M)\right).
 \end{equation*}
-
+Zbiór \(\mathrm{supp}\, \omega = \mathrm{cl}\left\{p\in M \: | \: \omega_p \neq 0\right\}\) nazywamy nośnikiem \(k\)-formy \(\omega\in\Omega^k(M)\), zaś przez \(\Omega^k_c(M)\) oznaczać będziemy przestrzeń wektorową wszystkich \(k\)-form klasy \(C^\infty\) ze zwartym nośnikiem na \(M\).
 %Analogicznie jak w przypadku przestrzeni stycznych możemy wprowadzić operacje popchnięcia i cofnięcia k-form. \(\mathrm{C}^\infty\) odwzorowanie rozmaitości \(F:M\to N\) indukuje wiązkę odwzorowań \(F^\ast:\Omega^k(\to \) taką, że dla k-formy \(\omega\in\Omega^k(N)\) jego \emph{cofnięcie} określamy punktowo przepisem \((F^\ast \omega)_p = F^\ast(\omega_{F(p)})\) dla wszystkich \(p\in N\), czyli
 %\begin{equation*}
 %    (F^\ast\omega)_p(v_1, \dots, v_k) = \omega_{F(p)}(F_{/ast,p}v_1, \dots, F_{/ast,p}v_k).
@@ -354,10 +354,37 @@ Jeśli \(\omega\) jest gładką k-formą na rozmaitości \(M\), to \textbf{poch
 \end{split}
 \end{equation}
 
-\textbf{Formą objętości} na \(n\)-rozmaitości \(M\) nazywamy każdą nieznikający na \(M\) \(n\)-formę \(\mu\in\Omega^n(M)\) i mówimy, że \(M\) jest orientowalna, jeśli na \(M\) można określić formę objętości.
+\emph{Formą objętości} na \(n\)-rozmaitości \(M\) nazywamy każdą nieznikający na \(M\) \(n\)-formę \(\mu\in\Omega^n(M)\) i mówimy, że \(M\) jest orientowalna, jeśli na \(M\) można określić formę objętości.
 Powiedzmy, że rozmaitość \(M\) jest orientowalna i rozważmy na niej dowolne dwie formy objętości \(\mu_1\) i \(\mu_2\). Powiemy, że są one równoważne, jeśli istnieje \(f\in\mathcal{F}(M)\) taka, że \(f(m)>0\) dla wszystkich \(m\in M\) oraz \(\mu_1 = f \mu_2\). Każdą klasę równoważności \(\left[\mu\right]\) takiej relacji nazywamy \emph{orientacją} na \(M\).   
-Rozmaitości z wybraną orientacją będziemy nazywali \emph{rozmaitościami zorientowanymi} i oznaczali \((M, \mu)\). 
-Jeśli \(F: (M, \mu_M)\to(N, \mu_N)\) jest dyfeomorfizmem między rozmaitościami zorientowanymi, to powiemy, że \(F\) \emph{zachowuje (odwraca) orientację}, jeśli \(F^\ast \mu_M = \mu_N\) (\(F^\ast \mu_M = -\mu_N\)).
+Rozmaitości z wybraną orientacją będziemy nazywali \emph{rozmaitościami zorientowanymi} i oznaczali \((M, [\mu])\). 
+
+Jeśli \(F: (M, \mu_M)\to(N, \mu_N)\) jest dyfeomorfizmem między rozmaitościami zorientowanymi, to powiemy, że \(F\) \emph{zachowuje (odwraca) orientację}, jeśli \(\left[F^\ast \mu_M\right] = \left[\mu_N\right]\) (\(\left[F^\ast \mu_M\right] = -\left[\mu_N\right]\)). Podobnie, jeśli tylko \(F^\ast \mu_M = \mu_N\), powiemy że \(F\) \emph{zachowuje objętość}. Pojęcie orientowalności niekiedy wygodniej jest określać za pomocą \emph{atlasu zorientowanego}. Atlas na \(M\) nazywamy \emph{zorientowanym}, jeśli dla dowolnych dwóch nakładających się na siebie map \((U, x^1, \dots, x^n)\) i \((V, y^1, \dots, y^n)\) jakobian \(\mathrm{det}\left[\frac{\partial y^i}{\partial x^j}\right]\) jest dodatni na \(U\cap V\). Wówczas, o ile rozmaitośc jest parazwarta, orientowalność \(M\) jest równoważna istnieniu atlasu zorientowanego na \(M\) (\cite{marsden}, tw. 7.5.2).
+
+Niech \(f: \R^n \to \R\) będzie ciągłą funkcją ze zwartym nośnikiem. Przez \(\int f dx^1 \dots dx^n\) oznaczamy całkę Riemanna na dowolnej kostce w \(\R^n\), zawierającej nośnik funkcji \(f\). Niech teraz \(U\) będzie otwartym podzbiorem \(\R^n\) i \(\omega\in\Omega^n_c(U)\) będzie \(n\)-formą ze zwartym nośnikiem na \(U\). Jeśli \(\omega\) względem bazy standardowej w \(\R^n\) jest postaci
+\begin{equation*}
+    \omega(x)=\frac{1}{n} \omega_{i_1\dots i_n}(x) dx^{i_1}\wedge\dots\wedge dx^{i_n} = \omega_{1\dots n}(x)dx^1\wedge\dots\wedge dx^n,
+\end{equation*}
+gdzie współrzędne \(\omega\) określamy przez wektory bazy standardowej
+\begin{equation*}
+    \omega_{i_1\dots i_n}(x) = \omega(x)(e_{i_1}, \dots, e_{i_n}),
+\end{equation*}
+wówczas \emph{całką z formy \(\omega\)} na \(U\subset\R^n\) nazywamy
+\begin{equation*}
+    \int_U \omega = \int_{\R^n} \omega_{1\dots n}(x) dx^1\dots dx^n.
+\end{equation*}
+
+Korzystając z powyższej definicji całkowania na \(\R^n\) możemy przy pomocy rozkładu jedności rozszerzyć to pojęcie na dowolne rozmaitości. Niech zorientowany atlas \(\left\{(U_{\alpha}, \varphi_{\alpha})\right\}\) zadaje orientację na \(n\)-rozmaitości \(M\). Wybierzmy z tego atlasu mapę \((U, \varphi)\) i niech \(\omega\in\Omega^n_c(M)\). Jeśli \(\mathrm{supp}\,\omega \subset U\), wówczas zawężenie \(\left.\omega\right|_U\) ma taki sam zwarty nośnik. Ponieważ \(\varphi:\:U\to\varphi(U)\) jest dyfeomorfizmem, \((\varphi^{-1})^\ast\left.\omega\right|_U\) jest również \(n\)-formą ze zwartym nośnikiem na \(\varphi(U)\subset\R^n\). Wówczas
+\begin{equation*}
+    \int_U \omega := \int_{\varphi(U)} (\varphi^{-1})^{\ast}\left.\omega\right|_U.
+\end{equation*}
+nazywamy \emph{całką z formy \(\omega\)} na \(U\).  
+Niech \(\omega\in\Omega^n_c(M)\). Wybierzmy rozkład jedności \(\{\rho_{\alpha}\}\) przyporządkowany pokryciu \(\{U_{\alpha}\}\). Ponieważ \(\rho_{\alpha}\omega\) jest \(n\)-formą ze zwartym nośnikiem zawartym w \(U_{\alpha}\), to określona jest całka \(\int_{U_\alpha} \rho_{\alpha} \omega\). Skończoną sumę postaci
+\begin{equation*}
+    \int_M \omega := \sum_{\alpha} \int_{U_{\alpha}} \rho_{\alpha}\omega 
+\end{equation*}
+nazywamy \emph{całką z formy \(\omega\) na \(M\)}. Taka definicja jest niezależna ani od wyboru zorientowanego atlasu, ani od wyboru rozkładu jedności (\cite{tu}, s. 265-266).
+
+%Wybierzmy mapę \((U, \varphi)\) i niech \(\omega\in\Omega^n_c(M)\). Jeśli \(\mathrm{supp}\,\omega \subset U\), wówczas zawężenie \(\left.\omega\right|_U\) ma taki sam zwarty nośnik.  
 
 %Zajmiemy się teraz \emph{orientacją} rozmaitości. Będziemy chcięli określić orientację rozmaitości orientując przestrzenie styczne w każdym jej punkcie.  
 %Niech \((X_1, \dots, X_n)\) i \((Y_1, \dots, Y_n)\) będą dowolnymi reperami nad \(M\) takimi, że dla każdego \(p\in M\) 
@@ -374,14 +401,7 @@ Jeśli \(F: (M, \mu_M)\to(N, \mu_N)\) jest dyfeomorfizmem między rozmaitościam
 %\end{twierdzenie}
 
 
-
 Dalej rozważać będziemy \(n\)-rozmaitości \(M\) z określoną metryką Riemmana \(g\), które nazywać będziemy krótko \textbf{n-rozmaitościami Riemanowskimi} i oznaczali \((M, g)\). Przypomnijmy, że metryka Riemannowska \(g:\: M \rightarrow \Omega^2(M)\) to symetryczne i dodatnio określone pole tensorowe \(\mathcal{T}_2^0(M)\) takie, że \(g_p \in T_m^{\ast} M \otimes T_p^{\ast} M\) dla \(p\in M\) jest iloczynem skalarnym określonym na przestrzeni stycznej \(T_p M\).  
-
-Niech \(X\) będzie polem wektorowym na \(M\). Funkcję \(\mathrm{div}_\mu X \in C^\infty(M)\) taką, że 
-\begin{equation}
-\mathcal{L}_X \mu = (\mathrm{div}_\mu X) \mu
-\end{equation}
-nazywamy \textbf{dywergencją} \(X\). Mówimy, że \(X\) jest \textbf{nieściśliwy} (względem \(\mu\)), jeśli \(\mathrm{div}_\mu X = 0\).
 
 \begin{twierdzenie}[\textbf{O zamianie zmiennych}, \cite{marsden}, tw. 8.1.7]
     Niech \(M\) i \(N\) będą \(n\)-rozmaitościami z orientacją  i niech \(f: M\to N\) będzie dyfeomorfizmem zachowującym orientację. Jeśli \(\omega \in \Omega^n(N)\) ma zwarty nośnik, to \(f^\ast\omega\) również ma zwarty nośnik oraz
@@ -390,8 +410,14 @@ nazywamy \textbf{dywergencją} \(X\). Mówimy, że \(X\) jest \textbf{nieściśl
     \end{equation}
 \end{twierdzenie}
 
+Niech \(X\) będzie polem wektorowym na \(M\). Funkcję \(\mathrm{div}_\mu X \in C^\infty(M)\) taką, że 
+\begin{equation}
+\mathcal{L}_X \mu = (\mathrm{div}_\mu X) \mu
+\end{equation}
+nazywamy \textbf{dywergencją} \(X\). Mówimy, że \(X\) jest \textbf{nieściśliwy} (względem \(\mu\)), jeśli \(\mathrm{div}_\mu X = 0\).
+
 Poniższej prezentujemy centralne twierdzenie w mechanice płynów, które umożliwi nam uzyskanie zasady zachowania w postaci \emph{równania ciągłości}.
-\begin{twierdzenie}[\textbf{O transporcie}, \cite{marsden}, tw. 8.1.12]
+\begin{twierdzenie}[\textbf{O transporcie}, \cite{marsden}, tw. 8.1.12]\label{thm:transport}
     Niech \((M, \mu)\) będzie rozmaitością z objętością i niech \(X\) będzie polem wektorowym na \(M\) z przepływem \(F_t\). Oznaczając \(f_t(m) = f(m, t)\) dla \(f\in\mathcal{F}(M\times \R)\) mamy:
 \begin{equation}\label{eq:transport}
     \frac{d}{dt}\int_{F_t(U)} f_t \mu = \int_{F_t(U)}\left(\frac{\partial f}{\partial t} + \mathrm{div}_\mu (f_t X)\right) \mu,
