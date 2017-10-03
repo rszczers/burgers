@@ -139,7 +139,7 @@ Ich elementy nazywamy odpowiednio \textbf{\(p\)-wektorami} i \textbf{\(p\)-forma
      \Exterior^0(V):=\Exterior^0(V^\ast)=\R
 \end{equation*}
 
-Przez \(\Sigma^k(V^{\ast})\) oznaczamy podprzestrzeń liniową \(k\)-kowariantnych tensorów symetrycznych na \(V\) na którą operator symetryzacji \(\mathcal{S}\) rzutuje przestrzeń \(\mathcal{ST}^p_0(V)\). Jeśli \(\alpha\in\Sigma^k(V^{\ast})\), \(\beta\in\Sigma^l(V^{\ast})\) są symetrycznymi tensorami na \(V\), wówczas \(\alpha\otimes\beta\) na ogół nie jest tensorem symetrycznym. Operator symetryzacji indukuje nowe działanie 
+Przez \(\Sigma^k(V^{\ast})\) oznaczamy podprzestrzeń liniową \(k\)-kowariantnych tensorów symetrycznych na \(V\) na którą operator symetryzacji \(\mathcal{S}\) rzutuje przestrzeń \(\mathcal{T}^p_0(V)\). Jeśli \(\alpha\in\Sigma^k(V^{\ast})\), \(\beta\in\Sigma^l(V^{\ast})\) są symetrycznymi tensorami na \(V\), wówczas \(\alpha\otimes\beta\) na ogół nie jest tensorem symetrycznym. Operator symetryzacji indukuje nowe działanie 
 \begin{equation*}
     \alpha\beta = \mathcal{S}(\alpha\otimes\beta),
 \end{equation*}
@@ -424,7 +424,7 @@ nazywamy \emph{całką z formy \(\omega\) na \(M\)}. Taka definicja jest niezale
 %\end{twierdzenie}
 
 
-Dalej rozważać będziemy \(n\)-rozmaitości \(M\) z określoną metryką Riemmana \(g\), które nazywać będziemy krótko \textbf{n-rozmaitościami Riemanowskimi} i oznaczali \((M, g)\). Przypomnijmy, że metryka Riemannowska \(g\) to gładkie symetryczne i dodatnio określone 2-kowariantne pole tensorowe takie, że \(g_p \in T_m^{\ast} M \otimes T_p^{\ast} M\) dla \(p\in M\) jest iloczynem skalarnym określonym na przestrzeni stycznej \(T_p M\).  
+Dalej rozważać będziemy \(n\)-rozmaitości \(M\) z określoną metryką Riemmana \(g\), które nazywać będziemy krótko \textbf{n-rozmaitościami Riemanowskimi} i oznaczali \((M, g)\). Przypomnijmy, że metryka Riemannowska \(g\) to gładkie symetryczne i dodatnio określone 2-kowariantne pole tensorowe takie, że \(g_p \in \Sigma^2(T^{\ast}_p M)\) dla każdego \(p\in M\) jest iloczynem skalarnym określonym na przestrzeni stycznej \(T_p M\), gdzie \(M\) jest rozmaitością gładką.  
 
 \begin{twierdzenie}[\textbf{O zamianie zmiennych}, \cite{marsden}, tw. 8.1.7]\label{thm:coord_change}
     Niech \(M\) i \(N\) będą \(n\)-rozmaitościami z orientacją  i niech \(f: M\to N\) będzie dyfeomorfizmem zachowującym orientację. Jeśli \(\omega \in \Omega^n(N)\) ma zwarty nośnik, to \(f^\ast\omega\) również ma zwarty nośnik oraz
