@@ -59,7 +59,7 @@ Korzystając z powyższego wygodnego aparatu matematycznego możemy teraz okreś
 \end{equation*}
 Okazuje się (\cite{tu}, tw. 14.10), że komutacja gładkich pól wektorowych nie wyprowadza poza \(\mathfrak{X}(M)\) i lokalnie spełnia warunek \eqref{eq:differentiation}, czyli jest różniczkowaniem.
 
-Niech \(\pi_N: TN \to N\) i \(\pi_M: TM \to M\) będą wiązkami stycznymi. Odwzorowanie \(F:N\to M\) klasy \(C^\infty\) między rozmaitościami \(N\) i \(M\) indukuje \emph{odwzorowanie wiązek} \(F_\ast: TN\to TM\) taką, że dla każdego \(p\in N\):  
+Niech \(\pi_N: TN \to N\) i \(\pi_M: TM \to M\) będą wiązkami stycznymi. Odwzorowanie \(F:N\to M\) klasy \(C^\infty\) między rozmaitościami \(N\) i \(M\) indukuje \emph{odwzorowanie wiązek} \(F_\ast: TN\to TM\) takie, że dla każdego \(p\in N\):  
 %Niech \(N,\,M\) będą rozmaitościami różniczkowalnymi i \(F:N\to M\) odwzorowaniem klasy \(\mathrm{C}^\infty\) między nimi. Wówczas dla każdego punktu \(p\) na rozmaitości \(M\) określamy odwzorowanie liniowe między przestrzeniami stycznymi 
 \begin{equation*}
 F_{\ast, p}:T_p N\rightarrow T_{F(p)}M, 
@@ -194,7 +194,7 @@ Zbiór \(\mathrm{supp}\, \omega = \mathrm{cl}\left\{p\in M \: | \: \omega_p \neq
 
 Analogicznie jak w przypadku przestrzeni stycznych możemy wprowadzić operacje \emph{cofnięcia \(k\)-formy}. Dyfeomorfizm rozmaitości \(F:M\to N\) indukuje gładkie odwzorowaie wiązek \(F^\ast:\Omega^k(N)\to\Omega^{k}(M)\) taką, że dla \(k\)-formy \(\omega\in\Omega^k(N)\) jego \emph{cofnięcie} określamy punktowo przepisem \((F^\ast \omega)_p = F^\ast(\omega_{F(p)})\) dla wszystkich \(p\in N\), czyli
 \begin{equation*}
-    (F^\ast\omega)_p(v_1, \dots, v_k) = \omega_{F(p)}(F_{\ast,p}v_1, \dots, F_{\ast,p}v_k),\quad v_i\in T_p NDyfeomorfizm.
+    (F^\ast\omega)_p(v_1, \dots, v_k) = \omega_{F(p)}(F_{\ast,p}v_1, \dots, F_{\ast,p}v_k),\quad v_i\in T_p N.
 \end{equation*}
 
 Okazuje się (\cite{marsden}, tw. 7.4.1), że na n-rozmaitościach można jednoznacznie określić rodzinę odwzorowań \(\mathbf{d}^k(U): \Omega^k(U)\to \Omega^{k+1}(U)\), gdzie \(k=0, 1, 2, \dots, n\) i \(U\) jest otwartym podzbiorem \(M\). Taką rodzinę oznaczamy krótko \(\mathbf{d}\) i nazywamy \emph{pochodną zewnętrzną} na \(M\). Wymagamy, żeby miała ona następujące własności:
@@ -424,7 +424,7 @@ nazywamy \emph{całką z formy \(\omega\) na \(M\)}. Taka definicja jest niezale
 %\end{twierdzenie}
 
 
-Dalej rozważać będziemy \(n\)-rozmaitości \(M\) z określoną metryką Riemmana \(g\), które nazywać będziemy krótko \textbf{n-rozmaitościami Riemanowskimi} i oznaczali \((M, g)\). Przypomnijmy, że metryka Riemannowska \(g\) to gładkie symetryczne i dodatnio określone 2-kowariantne pole tensorowe takie, że \(g_p \in \Sigma^2(T^{\ast}_p M)\) dla każdego \(p\in M\) jest iloczynem skalarnym określonym na przestrzeni stycznej \(T_p M\), gdzie \(M\) jest rozmaitością gładką.  
+Dalej rozważać będziemy gładkie \(n\)-rozmaitości \(M\) z określoną metryką Riemmana \(g\), które nazywać będziemy krótko \textbf{n-rozmaitościami Riemanowskimi} i oznaczali \((M, g)\). Przypomnijmy, że metryka Riemannowska \(g\) to gładkie symetryczne i dodatnio określone 2-kowariantne pole tensorowe takie, że \(g_p \in \Sigma^2(T^{\ast}_p M)\) dla każdego \(p\in M\) jest iloczynem skalarnym określonym na przestrzeni stycznej \(T_p M\).  
 
 \begin{twierdzenie}[\textbf{O zamianie zmiennych}, \cite{marsden}, tw. 8.1.7]\label{thm:coord_change}
     Niech \(M\) i \(N\) będą \(n\)-rozmaitościami z orientacją  i niech \(f: M\to N\) będzie dyfeomorfizmem zachowującym orientację. Jeśli \(\omega \in \Omega^n(N)\) ma zwarty nośnik, to \(f^\ast\omega\) również ma zwarty nośnik oraz
