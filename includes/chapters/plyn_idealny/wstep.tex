@@ -126,11 +126,11 @@ Okazuje się (\cite{herdegen}, §19, tw. 2), że każda permutacja \(\pi\in S_n\
 \begin{equation*}
     P^\pi t = t\quad \text{(odpowiednio:}\ P^\pi t = \mathrm{sgn}\pi\, t\text{)}. 
 \end{equation*}
-Przy powyższych oznaczeniach na przestrzeni \(\mathcal{T}_q^p(V)\) wprowadza się operator
+Przy powyższych oznaczeniach na przestrzeni \(\mathcal{T}_q^p(V)\) wprowadza się operatory rzutowe
 \begin{equation*}
-    \mathcal{A}=\frac{1}{p!}\sum_{\pi\in S_p} \mathrm{sgn\,\pi}\,P^\pi,
+    \mathcal{A}=\frac{1}{p!}\sum_{\pi\in S_p} \mathrm{sgn\,\pi}\,P^\pi,\quad \mathcal{S}=\frac{1}{p!}\sum_{\pi\in S_p} P^\pi,
 \end{equation*}
-nazywany \emph{operatorem antysymetryzacji}. Można wykazać (\cite{herdegen}, §20, tw. 4), że tensor \(t\) jest antysymetryczny wtedy i tylko, gdy \(\mathcal{A}t = t\). Wprowadźmy oznaczenie\footnote{Jest to nawiązanie do algebraicznej konstrukcji przeprowadzonej za pomocą potęgowania zewnętrznego; okazuje się ona izomorficzna z przyjętymi przestrzeniami; szczegółów można szukać w \cite{maurin2}.} dla przestrzeni tensorów całkowicie antysymetrycznych
+które nazywamy odpowiednio \emph{operatorem antysymetryzacji} i symetryzacji. Można wykazać (\cite{herdegen}, §20, tw. 4), że tensor \(t\) jest antysymetryczny (symetryczny) wtedy i tylko, gdy \(\mathcal{A}t = t\)  (\(\mathcal{S}t = t\)). Wprowadźmy oznaczenie\footnote{Jest to nawiązanie do algebraicznej konstrukcji przeprowadzonej za pomocą potęgowania zewnętrznego; okazuje się ona izomorficzna z przyjętymi przestrzeniami; szczegółów można szukać w \cite{maurin2}.} dla przestrzeni tensorów całkowicie antysymetrycznych
 \begin{align*}
     \Exterior^p(V):=\mathcal{AT}^p_0(V)\subseteq \mathcal{T}^p_0(V),\quad \Exterior^p(V^\ast):=\mathcal{AT}^0_p(V)\subseteq\mathcal{T}^0_p(V), \quad p\geq 1.
 \end{align*}
@@ -138,6 +138,13 @@ Ich elementy nazywamy odpowiednio \textbf{\(p\)-wektorami} i \textbf{\(p\)-forma
 \begin{equation*}
      \Exterior^0(V):=\Exterior^0(V^\ast)=\R
 \end{equation*}
+
+Przez \(\Sigma^k(V^{\ast})\) oznaczamy podprzestrzeń liniową \(k\)-kowariantnych tensorów symetrycznych na \(V\) na którą operator symetryzacji \(\mathcal{S}\) rzutuje przestrzeń \(\mathcal{ST}^p_0(V)\). Jeśli \(\alpha\in\Sigma^k(V^{\ast})\), \(\beta\in\Sigma^l(V^{\ast})\) są symetrycznymi tensorami na \(V\), wówczas \(\alpha\otimes\beta\) na ogół nie jest tensorem symetrycznym. Operator symetryzacji indukuje nowe działanie 
+\begin{equation*}
+    \alpha\beta = \mathcal{S}(\alpha\otimes\beta),
+\end{equation*}
+które jest przemienne, dwuliniowe i nie wyprowadza poza \(\Sigma^{k+l}(V^{\ast})\)(\cite{lee}, tw. 12.15).
+
 \textbf{Iloczynem zewnętrznych \(p\)-wektorów} (odpowiednio: \textbf{\(p\)-form}) \(t_i\in\Exterior^{p_i}(V)\), \(s^i\in\Exterior^{p_i}(V^\ast)\), \(i=1,\dots, k\), nazywamy odpowiednio tensory
 \begin{align*}
     t_1\wedge\dots\wedge t_k = \mathcal{A}(t_1\otimes \dots \otimes t_k), \quad 
@@ -153,7 +160,7 @@ Będziemy teraz zmierzać do określenia form różniczkowych na rozmaitościach
 \begin{equation*}
     T^\ast_p M := (T_p M)^\ast = \mathrm{L}(T_p M, \R),
 \end{equation*}
-Jej elementy są \emph{1-formami}, które nazywamy \textbf{kowektorami}. Podobnie jak w przypadku wiązki stycznej, określając
+Jej elementy nazywamy \textbf{kowektorami}. Podobnie jak w przypadku wiązki stycznej, określając
 \begin{equation*}
     T^\ast M = \bigcup\limits_{p\in M} T_p^\ast M.
 \end{equation*}
@@ -169,10 +176,26 @@ Przestrzeń wektorową wszystkich \(\mathrm{C}^\infty\) \(k\)-form na \(M\) ozn
     \Omega^k(M)=\Gamma\left(M, \Exterior^k(T^\ast M)\right).
 \end{equation*}
 Zbiór \(\mathrm{supp}\, \omega = \mathrm{cl}\left\{p\in M \: | \: \omega_p \neq 0\right\}\) nazywamy nośnikiem \(k\)-formy \(\omega\in\Omega^k(M)\), zaś przez \(\Omega^k_c(M)\) oznaczać będziemy przestrzeń wektorową wszystkich \(k\)-form klasy \(C^\infty\) ze zwartym nośnikiem na \(M\).
-%Analogicznie jak w przypadku przestrzeni stycznych możemy wprowadzić operacje popchnięcia i cofnięcia k-form. \(\mathrm{C}^\infty\) odwzorowanie rozmaitości \(F:M\to N\) indukuje wiązkę odwzorowań \(F^\ast:\Omega^k(\to \) taką, że dla k-formy \(\omega\in\Omega^k(N)\) jego \emph{cofnięcie} określamy punktowo przepisem \((F^\ast \omega)_p = F^\ast(\omega_{F(p)})\) dla wszystkich \(p\in N\), czyli
+
+%Przypuśćmy, że \(F:N\to M\) jest gładkim odwzorowaniem rozmaitości. W każdym punkcie \(p\in N\) różniczka
 %\begin{equation*}
-%    (F^\ast\omega)_p(v_1, \dots, v_k) = \omega_{F(p)}(F_{/ast,p}v_1, \dots, F_{/ast,p}v_k).
+    %    F_{\ast,p}:\:T_p N\to T_{F(p)} M
 %\end{equation*}
+%jest odwzorowaniem liniowym przestrzeni stycznych, które indukuje odwzorowanie sprzężone
+%\begin{equation*}
+    %    (F_{\ast,p})^{\ast}: \Exterior^p(T^{\ast}_{F(p)}M)\to \Exterior^p(T^{\ast}_p N) 
+%\end{equation*}
+%Upraszczamy ten zapis i mówimy, że dla \(k\)-kowektora \(\omega_{F(p)}\in\Exterior^p(T^{\ast}_{F(p)}M)\) \(k\)-kowektor (F^\ast(\omega_{F(p)}:=((F_{\ast,p}))^{\ast}\) jest \emph{cofnięciem} \(k\)-formy w \(p\in N\) oraz
+%\begin{equation*}
+    %    F^{\ast}(\omega_{F(p)}(v_1, \dots, v_k) = \omega_{F(p)}(F_{\ast,p} v_1, \dots, F_{\ast,p} v_k), \quad v_i\in T_p N.
+%\end{equation*}
+
+
+
+Analogicznie jak w przypadku przestrzeni stycznych możemy wprowadzić operacje \emph{cofnięcia \(k\)-formy}. Dyfeomorfizm rozmaitości \(F:M\to N\) indukuje gładką wiązkę odwzorowań \(F^\ast:\Omega^k(N)\to\Omega^{k}(M)\) taką, że dla \(k\)-formy \(\omega\in\Omega^k(N)\) jego \emph{cofnięcie} określamy punktowo przepisem \((F^\ast \omega)_p = F^\ast(\omega_{F(p)})\) dla wszystkich \(p\in N\), czyli
+\begin{equation*}
+    (F^\ast\omega)_p(v_1, \dots, v_k) = \omega_{F(p)}(F_{\ast,p}v_1, \dots, F_{\ast,p}v_k),\quad v_i\in T_p N.
+\end{equation*}
 
 Okazuje się (\cite{marsden}, tw. 7.4.1), że na n-rozmaitościach można jednoznacznie określić rodzinę odwzorowań \(\mathbf{d}^k(U): \Omega^k(U)\to \Omega^{k+1}(U)\), gdzie \(k=0, 1, 2, \dots, n\) i \(U\) jest otwartym podzbiorem \(M\). Taką rodzinę oznaczamy krótko \(\mathbf{d}\) i nazywamy \emph{pochodną zewnętrzną} na \(M\). Wymagamy, żeby miała ona następujące własności:
 \begin{enumerate}[i)]
