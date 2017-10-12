@@ -27,9 +27,9 @@ jest izomomorfizmem przestrzeni wektorowych,
 \end{enumerate}
 wówczas \(\pi\) nazywamy odwzorowaniem \emph{lokalnie trywialnym rzędu r}.  Tak określony zbiór \(U\) nazywamy zbiorem \emph{trywializującym} \(E\), zaś \(\phi\) nazywamy \emph{trywializacją} \(E\) nad \(U\).
 
-Korzystając z powyższych rozstrzygnięć definiujemy \textbf{wiązką wektorową} klasy \(\mathrm{C}^\infty\) rzędu \(r\) jako trójkę \((E, M, \pi)\), gdzie \(\pi: E\to M\) jest lokalnie trywialną gładką surjekcją rzędu \(r\). Nadużywając notacji często zamiast odnosić się bezpośrednio do tak zdefiniowanej struktury, będziemy mówili o \emph{wiązce wektorowej} \(E\) albo \emph{wiązce wektorowej} \(\pi:E\to M\). W tę myśl \textbf{cięciem} wiązki \(\pi: E\to M\) nazywamy odwzorowanie \(s:M\to E\) takie, że \(\pi\circ s= \mathrm{id}_M\). Przyporządkowuje ono każdemu punktowi \(p\in M\) włókno \(E_p\). Jeśli \(E\to M\) jest wiązką wektorową klasy \(\mathrm{C}^\infty\), wówczas przestrzeń wektorową wszystkich cięć \(E\) klasy \(\mathrm{C}^\infty\) oznaczamy \(\Gamma(M, E)\) lub krótko \(\Gamma(E)\), o ile nie prowadzi to do niejednoznaczności. 
+Korzystając z powyższych rozstrzygnięć definiujemy \textbf{wiązką wektorową} klasy \(\mathrm{C}^\infty\) rzędu \(r\) jako trójkę \((E, M, \pi)\), gdzie \(\pi: E\to M\) jest lokalnie trywialną gładką surjekcją rzędu \(r\). Nadużywając notacji często zamiast odnosić się bezpośrednio do tak zdefiniowanej struktury, będziemy mówili o \emph{wiązce wektorowej} \(E\) albo \emph{wiązce wektorowej} \(\pi:E\to M\). W tę myśl \emph{cięciem} wiązki \(\pi: E\to M\) nazywamy odwzorowanie \(s:M\to E\) takie, że \(\pi\circ s= \mathrm{id}_M\). Przyporządkowuje ono każdemu punktowi \(p\in M\) włókno \(E_p\). Jeśli \(E\to M\) jest wiązką wektorową klasy \(\mathrm{C}^\infty\), wówczas nieskończenie wymiarową przestrzeń wektorową wszystkich cięć \(E\) klasy \(\mathrm{C}^\infty\) oznaczamy \(\Gamma(M, E)\) lub krótko \(\Gamma(E)\), o ile nie prowadzi to do niejednoznaczności. 
 
-Okazuje się, że zbiór wszystkich cięć klasy \(\mathrm{C}^\infty\) wiązki \(E\), \(\Gamma(E)\), ma interesujące własności algebraiczne. Jeśli \(U\) jest otwartym pozdbiorem rozmaitości \(E\), wówczas analogicznie określmy \(\Gamma(U)\). Na tak zadanym zbiorze można zadać strukturę modułu nad pierścieniem \(C^\infty(U)\) funkcji klasy \(\mathrm{C}^\infty\) zadanych na \(U\). \(\Gamma(U)\) jest również rzeczywistą przestrzeńą wektorowa w której możemy wybrać uporządkowaną bazę \((s_1, s_2, \dots, s_r)\). Jest to tak zwany \emph{reper} wiązki wektorowej \(\pi:E\to M\) nad \(U\). 
+Okazuje się, że zbiór wszystkich cięć klasy \(\mathrm{C}^\infty\) wiązki \(E\), \(\Gamma(E)\), ma interesujące własności algebraiczne. Jeśli \(U\) jest otoczeniem punktu \(p\) na rozmaitości \(E\), wówczas analogicznie określmy \(\Gamma(U)\). Na tak zadanym zbiorze można zadać strukturę modułu nad pierścieniem \(C^\infty(U)\) funkcji klasy \(\mathrm{C}^\infty\) zadanych na \(U\). \(\Gamma(U)\) jest również rzeczywistą nieskończenie wymiarową przestrzeńą wektorowa w której możemy wybrać uporządkowany zbiór cięć \((s_1, s_2, \dots, s_r)\) taki, że \(\{s_1(p),\, s_2(p), \dots, s_r(p)\}\) jest bazą włókna \(E_p\). Jest to tak zwany \emph{gładki reper} wiązki wektorowej \(\pi:E\to M\) nad \(U\). 
 
 
 %Niech \(\pi_E:E\to M\) i \(\pi_F\to N\) będą dowolnymi wiązkami wektorowymi. Odwzorowanie \(\tilde{f}:E\to F\)   
@@ -208,7 +208,7 @@ Okazuje się (\cite{marsden}, tw. 7.4.1), że na n-rozmaitościach można jedno
 \begin{enumerate}[i)]
     \item \(\mathrm{d}\) jest \(\R\)-liniowe oraz dla każdych \(\alpha\in \Omega^k(U)\) i \(\beta\in \Omega^l(U)\)
         \begin{equation*}
-                \mathrm{d}(\alpha \wedge \beta) = \mathrm{d}\alpha \wedge \beta + -1^k \alpha \wedge \mathrm{d}\beta.
+            \mathrm{d}(\alpha \wedge \beta) = \mathrm{d}\alpha \wedge \beta + (-1)^k \alpha \wedge \mathrm{d}\beta.
         \end{equation*}
         Odwzorowania spełniające ten warunek nazywamy \emph{\(\wedge\)-antypochodnymi}.
     \item Jeśli \(f\in\mathcal{F}(U)\), wówczas \((\mathrm{d}f)(X)=Xf\) dla dowolnego gładkiego pola wektorowego \(X\) na \(U\).
