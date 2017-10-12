@@ -1,17 +1,24 @@
 \chapter{Płyn idealny} W tym rozdziale naszym celem jest opracowanie modelu fizycznego cieczy idealnej i uzasadnienie jej podstawowych równań ruchu.
 
 \section{Pojęcia wstępne}
-Zaczniemy od przypomnienia podstawowych pojęć w teorii rozmaitości gładkich. Niech \(M\) będzie rzeczywistą \(n\)-rozmaitością różniczkowalną klasy \(\mathrm{C}^\infty\), \(p\) będzie dowolnym punktem rozmaitości \(M\) i niech \(U, V\subset M\) będą otoczeniami punktu \(p\). Zmierzamy do określenia pojęcia \emph{przestrzeni stycznej} za pomocą klas funkcji określonych na \(M\), które są lokalnie identyczne. Powiemy, że dwie funkcje rzeczywiste \(f:U\to\R,\ g:V\to\R\) są \emph{równoważne}, jeśli w pewnym otoczeniu \(W\subset U\cap V\) punktu \(p\) są one sobie równe. Pod pojęciem \emph{kiełka} funkcji rzeczywistej klasy \(\mathrm{C}^\infty\) w punkcie \(p\in M\) będziemy rozumieli każdą klasę równoważności tak zadanej relacji. Zbiór wszystkich kiełków w punkcie \(p\), \(\mathrm{C}_p^\infty(M)\), jest wówczas \(\R\)-algebrą. Zbiór wszystkich funkcji klasy \(\mathrm{C}^\infty\) określonych na \(M\) będziemy oznaczali \(\mathcal{F}(M)\). 
-Każde odwzorowanie liniowe \(D:C_p^\infty(M)\to\R\) spełniające warunek:
+Zaczniemy od przypomnienia podstawowych pojęć w teorii rozmaitości gładkich. Pisząc o rozmaitościach i nie czyniąc żadnych dodatkowych wyróżnień będziemy mięli na względzie zawsze rozmaitości topologiczne klasy \(\mathrm{C}^{\infty}\). Niech \(M\) będzie rzeczywistą \(n\)-rozmaitością różniczkowalną klasy \(\mathrm{C}^\infty\), \(p\) będzie dowolnym punktem rozmaitości \(M\) i niech \(U, V\subset M\) będą otoczeniami punktu \(p\). Zmierzamy do określenia pojęcia \emph{przestrzeni stycznej} za pomocą klas funkcji określonych na \(M\), które są lokalnie identyczne i tzw. pochodnych kierunkowych. Powiemy, że dwie funkcje rzeczywiste \(f:U\to\R,\ g:V\to\R\) są \emph{równoważne}, jeśli w pewnym otoczeniu \(W\subset U\cap V\) punktu \(p\) są one sobie równe. Pod pojęciem \emph{kiełka} funkcji rzeczywistej klasy \(\mathrm{C}^\infty\) w punkcie \(p\in M\) będziemy rozumieli każdą klasę równoważności tak zadanej relacji. Zbiór wszystkich kiełków w punkcie \(p\), \(\mathrm{C}_p^\infty(M)\), jest wówczas \(\R\)-algebrą. Zbiór wszystkich funkcji klasy \(\mathrm{C}^\infty\) określonych na \(M\) będziemy oznaczali \(\mathcal{F}(M)\).
+Każde odwzorowanie liniowe \(\mathrm{D}:\mathrm{C}_p^\infty(M)\to\R\) spełniające warunek:
 \begin{equation}\label{eq:differentiation}
-D(fg) = (Df)g(p) + f(Dg)(p)
+    \mathrm{D}(fg) = (\mathrm{D}f)g(p) + f(\mathrm{D}g)(p)
 \end{equation}
-nazywamy \emph{różniczkowaniem} w punkcie \(p\). Przestrzeń liniową wszystkich różniczkowań w punkcie \(p\) nazywamy \textbf{przestrzenią styczną} w \(p\) i oznaczamy przez \(T_pM\).
+nazywamy \emph{różniczkowaniem} w punkcie \(p\), zaś przestrzeń liniową wszystkich różniczkowań w punkcie \(p\) -- \textbf{przestrzenią styczną} w \(p\) i oznaczamy przez \(T_pM\).
 
-Niech \(\pi: E\to M\) będzie dowolnym odwzorowaniem między rozmaitościami \(E\) i \(M\). Przeciwobraz \(E_p = \pi^{-1}(p)\) punktu \(p\) nazywamy \textbf{włóknem} w \(p\). Niech \(\pi': E'\to M\) będzie odwzorowaniem rozmaitości \(E'\) i \(M\). Powiemy, że odwzorowanie \(\phi:E\to E'\) \emph{zachowuje włókna}, jeśli \(\phi(E_p)\subset E'_p\) dla każdego \(p\in M\). Jeśli \(\pi\) jest surjekcją klasy \(\mathrm{C}^\infty\) oraz
+Przypuśćmy, że \(\pi: E\to M\) będzie dowolnym odwzorowaniem między rozmaitościami \(E\) i \(M\). Przeciwobraz \(E_p = \pi^{-1}(p)\) dla każdego punktu \(p\) nazywamy \emph{włóknem} w \(p\). Niech \(\pi': E'\to M\) będzie odwzorowaniem rozmaitości \(E'\) i \(M\). Powiemy, że odwzorowanie \(\phi:E\to E'\) \emph{zachowuje włókna}, jeśli \(\phi(E_p)\subset E'_p\) dla każdego \(p\in M\), czyli gdy poniższy diagram jest przemienny.
+\begin{equation*}
+    \begin{tikzcd}
+        E \arrow{dr}{\pi} \arrow{rr}{\phi} && E' \arrow{dl}{\pi'}\\
+         & M 
+    \end{tikzcd}
+\end{equation*}
+Teraz, jeśli \(\pi\) jest surjekcją klasy \(\mathrm{C}^\infty\) oraz
 \begin{enumerate}[i)]
     \item każde włókno \(\pi^{-1}(p)\) ma strukturę \(r\)-wymiarowej przestrzeni wektorowej,
-\item dla każdego \(p\in M\) istnieje otoczenie \(U\in M\) punktu \(p\) i zachowujący włókna dyfeomorfizm \(\phi: \pi^{-1}(U)\to U\times \R^r\) taki, że dla każdego \(q\in U\) zawężenie
+    \item dla każdego \(p\in M\) istnieje otoczenie \(U\in M\) punktu \(p\) i zachowujący włókna dyfeomorfizm \(\phi: \pi^{-1}(U)\to U\times \R^r\) taki, że dla każdego \(q\in U\) zawężenie
 \begin{equation*}
 \left.\phi\right|_{\pi^{-1}(q)}:\pi^{-1}(q)\to \{q\} \times \R^r
 \end{equation*}
@@ -64,7 +71,7 @@ Niech \(\pi_N: TN \to N\) i \(\pi_M: TM \to M\) będą wiązkami stycznymi. Odwz
 \begin{equation*}
 F_{\ast, p}:T_p N\rightarrow T_{F(p)}M, 
 \end{equation*}
-jest odwzorowaniem liniowym między przestrzeniami stycznymi, które nazywamy \textbf{różniczką} \(F\) w \(p\in N\) oraz poniższy diagram jest przemienny. 
+jest odwzorowaniem liniowym między przestrzeniami stycznymi, które nazywamy \emph{różniczką} \(F\) w \(p\in N\) oraz poniższy diagram jest przemienny. 
 \begin{figure}[!h]
 \centering
 \begin{tikzpicture}
@@ -197,18 +204,18 @@ Analogicznie jak w przypadku przestrzeni stycznych możemy wprowadzić operacje
     (F^\ast\omega)_p(v_1, \dots, v_k) = \omega_{F(p)}(F_{\ast,p}v_1, \dots, F_{\ast,p}v_k),\quad v_i\in T_p N.
 \end{equation*}
 
-Okazuje się (\cite{marsden}, tw. 7.4.1), że na n-rozmaitościach można jednoznacznie określić rodzinę odwzorowań \(\mathbf{d}^k(U): \Omega^k(U)\to \Omega^{k+1}(U)\), gdzie \(k=0, 1, 2, \dots, n\) i \(U\) jest otwartym podzbiorem \(M\). Taką rodzinę oznaczamy krótko \(\mathbf{d}\) i nazywamy \emph{pochodną zewnętrzną} na \(M\). Wymagamy, żeby miała ona następujące własności:
+Okazuje się (\cite{marsden}, tw. 7.4.1), że na n-rozmaitościach można jednoznacznie określić rodzinę odwzorowań \(\mathrm{d}^k(U): \Omega^k(U)\to \Omega^{k+1}(U)\), gdzie \(k=0, 1, 2, \dots, n\) i \(U\) jest otwartym podzbiorem \(M\) o następujących własnościach:
 \begin{enumerate}[i)]
-    \item \(\mathbf{d}\) jest \(\R\)-liniowe oraz dla każdych \(\alpha\in \Omega^k(U)\) i \(\beta\in \Omega^l(U)\)
+    \item \(\mathrm{d}\) jest \(\R\)-liniowe oraz dla każdych \(\alpha\in \Omega^k(U)\) i \(\beta\in \Omega^l(U)\)
         \begin{equation*}
-                \mathbf{d}(\alpha \wedge \beta) = \mathbf{d}\alpha \wedge \beta + -1^k \alpha \wedge \mathbf{d}\beta.
+                \mathrm{d}(\alpha \wedge \beta) = \mathrm{d}\alpha \wedge \beta + -1^k \alpha \wedge \mathrm{d}\beta.
         \end{equation*}
         Odwzorowania spełniające ten warunek nazywamy \emph{\(\wedge\)-antypochodnymi}.
-    \item Jeśli \(f\in\mathcal{F}(U)\), wówczas \((\mathbf{d}f)(X)=Xf\) dla dowolnego gładkiego pola wektorowego \(X\) na \(U\).
-    \item \(\mathbf{d^2} = \mathbf{d} \circ \mathbf{d} = 0.\)
-    \item \(\mathbf{d}\) jest \emph{operatorem lokalnym}, czyli dla otwartych podzbiorów \(U \subset V \subset M\) i \(\alpha\in\Omega^k(V)\) zachodzi \(\mathbf{d}(\left.\alpha\right|_U)  = \left.(\mathbf{d}\alpha)\right|_U\), gdzie \(|_U\) oznacza zawężenie do \(U\).
+    \item Jeśli \(f\in\mathcal{F}(U)\), wówczas \((\mathrm{d}f)(X)=Xf\) dla dowolnego gładkiego pola wektorowego \(X\) na \(U\).
+    \item \(\mathrm{d^2} = \mathrm{d} \circ \mathrm{d} = 0.\)
+    \item \(\mathrm{d}\) jest \emph{operatorem lokalnym}, czyli dla otwartych podzbiorów \(U \subset V \subset M\) i \(\alpha\in\Omega^k(V)\) zachodzi \(\mathrm{d}(\left.\alpha\right|_U)  = \left.(\mathrm{d}\alpha)\right|_U\), gdzie \(|_U\) oznacza zawężenie do \(U\).
 \end{enumerate}
-
+Taką rodzinę oznaczamy krótko \(\mathrm{d}\) i nazywamy \emph{pochodną zewnętrzną} na \(M\). 
 
 
 %\begin{twierdzenie}[\cite{herdegen}, §19, tw. 2]
