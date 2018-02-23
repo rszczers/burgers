@@ -1,18 +1,22 @@
 \chapter{Płyn idealny} W tym rozdziale naszym celem jest opracowanie modelu fizycznego cieczy idealnej i uzasadnienie jej podstawowych równań ruchu.
 
 \section{Pojęcia wstępne}
-Zaczniemy od przypomnienia podstawowych pojęć w teorii rozmaitości gładkich. Pisząc o rozmaitościach i nie czyniąc żadnych dodatkowych wyróżnień będziemy mięli na względzie zawsze rozmaitości topologiczne klasy \(\mathrm{C}^{\infty}\). Niech \(M\) będzie rzeczywistą \(n\)-rozmaitością różniczkowalną klasy \(\mathrm{C}^\infty\), \(p\) będzie dowolnym punktem rozmaitości \(M\) i niech \(U, V\subset M\) będą otoczeniami punktu \(p\). Zmierzamy do określenia pojęcia \emph{przestrzeni stycznej} za pomocą klas funkcji określonych na \(M\), które są lokalnie identyczne i tzw. pochodnych kierunkowych. Powiemy, że dwie funkcje rzeczywiste \(f:U\to\R,\ g:V\to\R\) są \emph{równoważne}, jeśli w pewnym otoczeniu \(W\subset U\cap V\) punktu \(p\) są one sobie równe. Pod pojęciem \emph{kiełka} funkcji rzeczywistej klasy \(\mathrm{C}^\infty\) w punkcie \(p\in M\) będziemy rozumieli każdą klasę równoważności tak zadanej relacji. Zbiór wszystkich kiełków w punkcie \(p\), \(\mathrm{C}_p^\infty(M)\), jest wówczas \(\R\)-algebrą. Zbiór wszystkich funkcji klasy \(\mathrm{C}^\infty\) określonych na \(M\) będziemy oznaczali \(\mathcal{F}(M)\).
+Zaczniemy od przypomnienia podstawowych pojęć w teorii rozmaitości gładkich. Pisząc o rozmaitościach i nie czyniąc żadnych dodatkowych wyróżnień będziemy mięli na względzie zawsze rozmaitości topologiczne klasy \(\mathrm{C}^{\infty}\).
+
+\subsection{Przestrzeń styczna do rozmaitości}
+Niech \(M\) będzie rzeczywistą \(n\)-rozmaitością różniczkowalną klasy \(\mathrm{C}^\infty\), \(p\) będzie dowolnym punktem rozmaitości \(M\) i niech \(U, V\subset M\) będą otoczeniami punktu \(p\). Zmierzamy do określenia pojęcia \emph{przestrzeni stycznej} za pomocą klas funkcji określonych na \(M\), które są lokalnie identyczne i tzw. pochodnych kierunkowych. Powiemy, że dwie funkcje rzeczywiste \(f:U\to\R,\ g:V\to\R\) są \emph{równoważne}, jeśli w pewnym otoczeniu \(W\subset U\cap V\) punktu \(p\) są one sobie równe. Pod pojęciem \emph{kiełka} funkcji rzeczywistej klasy \(\mathrm{C}^\infty\) w punkcie \(p\in M\) będziemy rozumieli każdą klasę równoważności tak zadanej relacji. Zbiór wszystkich kiełków w punkcie \(p\), \(\mathrm{C}_p^\infty(M)\), jest wówczas \(\R\)-algebrą. Zbiór wszystkich funkcji klasy \(\mathrm{C}^\infty\) określonych na \(M\) będziemy oznaczali \(\mathcal{F}(M)\).
 Każde odwzorowanie liniowe \(\mathrm{D}:\mathrm{C}_p^\infty(M)\to\R\) spełniające warunek:
 \begin{equation}\label{eq:differentiation}
     \mathrm{D}(fg) = (\mathrm{D}f)g(p) + f(\mathrm{D}g)(p)
 \end{equation}
 nazywamy \emph{różniczkowaniem} w punkcie \(p\), zaś przestrzeń liniową wszystkich różniczkowań w punkcie \(p\) -- \textbf{przestrzenią styczną} w \(p\) i oznaczamy przez \(T_pM\).
 
+\subsection{Wiązki wektorowe}
 Przypuśćmy, że \(\pi: E\to M\) będzie dowolnym odwzorowaniem między rozmaitościami \(E\) i \(M\). Przeciwobraz \(E_p = \pi^{-1}(p)\) dla każdego punktu \(p\) nazywamy \emph{włóknem} w \(p\). Niech \(\pi': E'\to M\) będzie odwzorowaniem rozmaitości \(E'\) i \(M\). Powiemy, że odwzorowanie \(\phi:E\to E'\) \emph{zachowuje włókna}, jeśli \(\phi(E_p)\subset E'_p\) dla każdego \(p\in M\), czyli gdy poniższy diagram jest przemienny.
 \begin{equation*}
     \begin{tikzcd}
         E \arrow{dr}{\pi} \arrow{rr}{\phi} && E' \arrow{dl}{\pi'}\\
-         & M 
+         & M
     \end{tikzcd}
 \end{equation*}
 Teraz, jeśli \(\pi\) jest surjekcją klasy \(\mathrm{C}^\infty\) oraz
@@ -27,15 +31,15 @@ jest izomomorfizmem przestrzeni wektorowych,
 \end{enumerate}
 wówczas \(\pi\) nazywamy odwzorowaniem \emph{lokalnie trywialnym rzędu r}.  Tak określony zbiór \(U\) nazywamy zbiorem \emph{trywializującym} \(E\), zaś \(\phi\) nazywamy \emph{trywializacją} \(E\) nad \(U\).
 
-Korzystając z powyższych rozstrzygnięć definiujemy \textbf{wiązką wektorową} klasy \(\mathrm{C}^\infty\) rzędu \(r\) jako trójkę \((E, M, \pi)\), gdzie \(\pi: E\to M\) jest lokalnie trywialną gładką surjekcją rzędu \(r\). Nadużywając notacji często zamiast odnosić się bezpośrednio do tak zdefiniowanej struktury, będziemy mówili o \emph{wiązce wektorowej} \(E\) albo \emph{wiązce wektorowej} \(\pi:E\to M\). W tę myśl \emph{cięciem} wiązki \(\pi: E\to M\) nazywamy odwzorowanie \(s:M\to E\) takie, że \(\pi\circ s= \mathrm{id}_M\). Przyporządkowuje ono każdemu punktowi \(p\in M\) włókno \(E_p\). Jeśli \(E\to M\) jest wiązką wektorową klasy \(\mathrm{C}^\infty\), wówczas nieskończenie wymiarową przestrzeń wektorową wszystkich cięć \(E\) klasy \(\mathrm{C}^\infty\) oznaczamy \(\Gamma(M, E)\) lub krótko \(\Gamma(E)\), o ile nie prowadzi to do niejednoznaczności. 
+Korzystając z powyższych rozstrzygnięć definiujemy \textbf{wiązką wektorową} klasy \(\mathrm{C}^\infty\) rzędu \(r\) jako trójkę \((E, M, \pi)\), gdzie \(\pi: E\to M\) jest lokalnie trywialną gładką surjekcją rzędu \(r\). Nadużywając notacji często zamiast odnosić się bezpośrednio do tak zdefiniowanej struktury, będziemy mówili o \emph{wiązce wektorowej} \(E\) albo \emph{wiązce wektorowej} \(\pi:E\to M\). W tę myśl \emph{cięciem} wiązki \(\pi: E\to M\) nazywamy odwzorowanie \(s:M\to E\) takie, że \(\pi\circ s= \mathrm{id}_M\). Przyporządkowuje ono każdemu punktowi \(p\in M\) włókno \(E_p\). Jeśli \(E\to M\) jest wiązką wektorową klasy \(\mathrm{C}^\infty\), wówczas nieskończenie wymiarową przestrzeń wektorową wszystkich cięć \(E\) klasy \(\mathrm{C}^\infty\) oznaczamy \(\Gamma(M, E)\) lub krótko \(\Gamma(E)\), o ile nie prowadzi to do niejednoznaczności.
 
-Okazuje się, że zbiór wszystkich cięć klasy \(\mathrm{C}^\infty\) wiązki \(E\), \(\Gamma(E)\), ma interesujące własności algebraiczne. Jeśli \(U\) jest otoczeniem punktu \(p\) na rozmaitości \(E\), wówczas analogicznie określmy \(\Gamma(U)\). Na tak zadanym zbiorze można zadać strukturę modułu nad pierścieniem \(C^\infty(U)\) funkcji klasy \(\mathrm{C}^\infty\) zadanych na \(U\). \(\Gamma(U)\) jest również rzeczywistą nieskończenie wymiarową przestrzeńą wektorowa w której możemy wybrać uporządkowany zbiór cięć \((s_1, s_2, \dots, s_r)\) taki, że \(\{s_1(p),\, s_2(p), \dots, s_r(p)\}\) jest bazą włókna \(E_p\). Jest to tak zwany \emph{gładki reper} wiązki wektorowej \(\pi:E\to M\) nad \(U\). 
+Okazuje się, że zbiór wszystkich cięć klasy \(\mathrm{C}^\infty\) wiązki \(E\), \(\Gamma(E)\), ma interesujące własności algebraiczne. Jeśli \(U\) jest otoczeniem punktu \(p\) na rozmaitości \(E\), wówczas analogicznie określmy \(\Gamma(U)\). Na tak zadanym zbiorze można zadać strukturę modułu nad pierścieniem \(C^\infty(U)\) funkcji klasy \(\mathrm{C}^\infty\) zadanych na \(U\). \(\Gamma(U)\) jest również rzeczywistą nieskończenie wymiarową przestrzeńą wektorowa w której możemy wybrać uporządkowany zbiór cięć \((s_1, s_2, \dots, s_r)\) taki, że \(\{s_1(p),\, s_2(p), \dots, s_r(p)\}\) jest bazą włókna \(E_p\). Jest to tak zwany \emph{gładki reper} wiązki wektorowej \(\pi:E\to M\) nad \(U\).
 
 
-%Niech \(\pi_E:E\to M\) i \(\pi_F\to N\) będą dowolnymi wiązkami wektorowymi. Odwzorowanie \(\tilde{f}:E\to F\)   
+%Niech \(\pi_E:E\to M\) i \(\pi_F\to N\) będą dowolnymi wiązkami wektorowymi. Odwzorowanie \(\tilde{f}:E\to F\)
 %jest \emph{morfizmem wiązek} z \(E\) do \(F\) .
 %begin{enumerate}[i)]
-%    \item \(\pi_F\circ \tilde{f} = f \circ \pi_E\), czyli w języku teorii kategorii poniższy diagram jest przemienny 
+%    \item \(\pi_F\circ \tilde{f} = f \circ \pi_E\), czyli w języku teorii kategorii poniższy diagram jest przemienny
 %\begin{figure}[!h]
 %\centering
 %\begin{tikzpicture}
@@ -50,28 +54,30 @@ Okazuje się, że zbiór wszystkich cięć klasy \(\mathrm{C}^\infty\) wiązki \
 %    (m-2-1) edge node [above] {\(f\)} (m-2-2);
 %\end{tikzpicture}
 %\end{figure}
-%\item \(\tilde{f}:E_p\to F_{f(p)}\) jest odwzorowaniem liniowym dla każdego \(p\in M\). 
+%\item \(\tilde{f}:E_p\to F_{f(p)}\) jest odwzorowaniem liniowym dla każdego \(p\in M\).
 %\end{enumerate}
-%Parę \((f, \tilde{f})\) będziemy nazywali \emph{odwzorowaniem wiązek}. 
+%Parę \((f, \tilde{f})\) będziemy nazywali \emph{odwzorowaniem wiązek}.
 
-Szczególnie interesującym nas obiektem tej kategorii jest \textbf{wiązka styczna} \((TM, M, \pi)\), gdzie 
+Szczególnie interesującym nas obiektem tej kategorii jest \textbf{wiązka styczna} \((TM, M, \pi)\), gdzie
 \begin{equation*}
 TM := \bigcup\limits_{p\in M} T_p M
 \end{equation*}
-oraz \(\pi: TM \ni v \mapsto p\in M\) jest naturalną projekcją. 
-Jeśli \(M\) jest n-rozmaitością klasy \(\mathrm{C}^k\), to \(TM\) okazuje się \(2n\)-rozmaitością klasy \(\mathrm{C}^{k-1}\) (\cite{tu}, s. 130). 
+oraz \(\pi: TM \ni v \mapsto p\in M\) jest naturalną projekcją.
+Jeśli \(M\) jest n-rozmaitością klasy \(\mathrm{C}^k\), to \(TM\) okazuje się \(2n\)-rozmaitością klasy \(\mathrm{C}^{k-1}\) (\cite{tu}, s. 130).
+
+\subsection{Pola wektorowe}
 Korzystając z powyższego wygodnego aparatu matematycznego możemy teraz określić \textbf{pole wektorowe} na rozmaitości \(M\) po prostu jako cięcie wiązki stycznej \(TM\). Zbiór wszystkich pól wektorowych na \(M\), \(\mathfrak{X}(M)\), stanowi szczególny rodzaj \(\mathcal{F}\)-modułu, mianowicie \emph{moduł Liego}. Pola wektorowe można w nim rozumieć jako różniczkowania w algebrze \(\mathcal{F}\) oraz określony jest w nim operator \emph{komutacji} pól wektorowych, nazywany również \emph{nawiasem Liego}:
 \begin{equation*}
     [X, Y]f := X(Yf) - Y(Xf).
 \end{equation*}
 Okazuje się (\cite{tu}, tw. 14.10), że komutacja gładkich pól wektorowych nie wyprowadza poza \(\mathfrak{X}(M)\) i lokalnie spełnia warunek \eqref{eq:differentiation}, czyli jest różniczkowaniem.
 
-Niech \(\pi_N: TN \to N\) i \(\pi_M: TM \to M\) będą wiązkami stycznymi. Odwzorowanie \(F:N\to M\) klasy \(C^\infty\) między rozmaitościami \(N\) i \(M\) indukuje \emph{odwzorowanie wiązek} \(F_\ast: TN\to TM\) takie, że dla każdego \(p\in N\):  
-%Niech \(N,\,M\) będą rozmaitościami różniczkowalnymi i \(F:N\to M\) odwzorowaniem klasy \(\mathrm{C}^\infty\) między nimi. Wówczas dla każdego punktu \(p\) na rozmaitości \(M\) określamy odwzorowanie liniowe między przestrzeniami stycznymi 
+Niech \(\pi_N: TN \to N\) i \(\pi_M: TM \to M\) będą wiązkami stycznymi. Odwzorowanie \(F:N\to M\) klasy \(C^\infty\) między rozmaitościami \(N\) i \(M\) indukuje \emph{odwzorowanie wiązek} \(F_\ast: TN\to TM\) takie, że dla każdego \(p\in N\):
+%Niech \(N,\,M\) będą rozmaitościami różniczkowalnymi i \(F:N\to M\) odwzorowaniem klasy \(\mathrm{C}^\infty\) między nimi. Wówczas dla każdego punktu \(p\) na rozmaitości \(M\) określamy odwzorowanie liniowe między przestrzeniami stycznymi
 \begin{equation*}
-F_{\ast, p}:T_p N\rightarrow T_{F(p)}M, 
+F_{\ast, p}:T_p N\rightarrow T_{F(p)}M,
 \end{equation*}
-jest odwzorowaniem liniowym między przestrzeniami stycznymi, które nazywamy \emph{różniczką} \(F\) w \(p\in N\) oraz poniższy diagram jest przemienny. 
+jest odwzorowaniem liniowym między przestrzeniami stycznymi, które nazywamy \emph{różniczką} \(F\) w \(p\in N\) oraz poniższy diagram jest przemienny.
 \begin{figure}[!h]
 \centering
 \begin{tikzpicture}
@@ -87,10 +93,10 @@ jest odwzorowaniem liniowym między przestrzeniami stycznymi, które nazywamy \e
 \end{tikzpicture}
 \end{figure}
 
-Jeśli \(X_p\in T_p N\) jest wektorem stycznym do \(M\) w \(p\), wówczas dla dowolnego kiełka \(f\in C_{F(p)}^\infty(M)\) funkcji w \(F(p)\) określamy 
+Jeśli \(X_p\in T_p N\) jest wektorem stycznym do \(M\) w \(p\), wówczas dla dowolnego kiełka \(f\in C_{F(p)}^\infty(M)\) funkcji w \(F(p)\) określamy
 \begin{equation*}
 (F_{\ast, p} (X_p))f = X_p(f\circ F) \in \R.
-\end{equation*} 
+\end{equation*}
 gdzie \(F_{\ast, p} (X_p)\) jest wektorem stycznym do \(N\) w \(F(p)\). Jeśli \(F\) jest dyfeomorfizmem, zaś \(X\) -- polem wektorowym na \(M\), odwzorowanie \(F_\ast X := F_\ast \circ X \circ F^{-1}\) nazywamy \textbf{popchnięciem} pola wektorowego \(X\) przez \(F\). Ponadto, jeśli \(f\in C_p^\infty(M)\) określamy \textbf{cofnięcie} \(F^\ast f := f\circ F\) funkcji \(f\) przez \(F\).
 
 
@@ -103,12 +109,14 @@ gdzie \(F_{\ast, p} (X_p)\) jest wektorem stycznym do \(N\) w \(F(p)\). Jeśli \
 %    x_1\otimes \dots \otimes x_r : V_1^\ast\times \dots \times V_r^\ast \mapsto \R,\\
 %    (x_1\otimes \dots \otimes x_r)(\varphi^1, \dots, \varphi^r) := \braket{\varphi^1,x_1}_1 \dots \braket{\varphi^r, x_r}_r.
 %\end{gather*}
-%Tak określone działanie jest łączne, \(r\)-liniowe, ciągłe i nie jest przemienne. Dla wygody oznaczamy \(\mathcal{T}_{0}^{0}(V) = \R\). Wektor postaci \(x_1\otimes\dots \otimes x_r\) nazywamy \emph{iloczynem tenstorowym} wektorów \(x_1, \dots, x_r\).   
+%Tak określone działanie jest łączne, \(r\)-liniowe, ciągłe i nie jest przemienne. Dla wygody oznaczamy \(\mathcal{T}_{0}^{0}(V) = \R\). Wektor postaci \(x_1\otimes\dots \otimes x_r\) nazywamy \emph{iloczynem tenstorowym} wektorów \(x_1, \dots, x_r\).
+
+\subsection{Tensory i formy różniczkowe}
 Niech \(V\) będzie przestrzenią wektorową. Rozważając funkcjonały wieloliniowe na produkcie kilku kopii \(V\) i jej dualnych otrzymujemy strukturę, którą nazywamy \emph{przestrzenią tensorów o walencji} \({p \brack q}\) nad przestrzenią \(V\),
 \begin{align*}
     \mathcal{T}_q^p(V) := \mathrm{L}^{p+q}(\underbrace{V^\ast, \dots, V^\ast}_{p\ \text{razy}} ,\underbrace{V,\dots, V}_{q\ \text{razy}}; \R) , &\quad p+q\geq 1.
 \end{align*}
-Taką definicję określa się niekiedy \emph{modelem wieloliniowym tensora}. Elementy \(\mathcal{T}_q^p(V)\) nazywamy \emph{tensorami q-krotnie kowariantnymi i p-krotnie kontrawariantnymi} albo prościej: \emph{tensorami o walencji} \(p \brack q\). Dla tensorów \(t_1 \in \mathcal{T}_{s_1}^{r_1}(V)\) i \(t_2 \in \mathcal{T}_{s_2}^{r_2}(V)\) określamy \textbf{iloczyn tensorowy} \(t_1 \otimes t_2 \in \mathcal{T}_{s_1+s_2}^{r_1+r_2}(V)\) przepisem 
+Taką definicję określa się niekiedy \emph{modelem wieloliniowym tensora}. Elementy \(\mathcal{T}_q^p(V)\) nazywamy \emph{tensorami q-krotnie kowariantnymi i p-krotnie kontrawariantnymi} albo prościej: \emph{tensorami o walencji} \(p \brack q\). Dla tensorów \(t_1 \in \mathcal{T}_{s_1}^{r_1}(V)\) i \(t_2 \in \mathcal{T}_{s_2}^{r_2}(V)\) określamy \textbf{iloczyn tensorowy} \(t_1 \otimes t_2 \in \mathcal{T}_{s_1+s_2}^{r_1+r_2}(V)\) przepisem
 \begin{align*}
     (t_1 \otimes t_2)& (\beta^1,\dots, \beta^{r_1}, \gamma^1, \dots, \gamma^{r_2}, f_1, \dots, f_{s_1}, g_1, \dots, g_{s_2}) = \\
                      & t_1(\beta^1,\dots, \beta^{r_1}, f_1, \dots, f_{s_1})\,t_2(\gamma^1, \dots, \gamma^{r_2},g_1, \dots, g_{s_2}),
@@ -116,28 +124,28 @@ Taką definicję określa się niekiedy \emph{modelem wieloliniowym tensora}. E
 gdzie \(\beta^j, \gamma^j \in V^\ast\), \(f_j, g_j\in V\).
 Okazuje się (\cite{marsden}, tw. 6.1.2), że jeśli \(\{e_1, \dots, e_n\}\) jest bazą przestrzeni \(V\) i \(\{e^1, \dots, e^n\}\) jest bazą przestrzeni dualnej, to
 \begin{equation*}
-    \left\{e_{i_1} \otimes \dots \otimes e_{i_q} \otimes e^{j_1} \otimes \dots \otimes e^{j_p} \, | \, i_1, \dots, i_q, j_1, \dots, j_p = 1, \dots, n \right\} 
+    \left\{e_{i_1} \otimes \dots \otimes e_{i_q} \otimes e^{j_1} \otimes \dots \otimes e^{j_p} \, | \, i_1, \dots, i_q, j_1, \dots, j_p = 1, \dots, n \right\}
 \end{equation*}
-jest bazą \(\mathcal{T}_q^p(V)\), a zatem \(\mathrm{dim}\mathcal{T}_q^p(V) = (\mathrm{dim}V)^{p+q}\). 
+jest bazą \(\mathcal{T}_q^p(V)\), a zatem \(\mathrm{dim}\mathcal{T}_q^p(V) = (\mathrm{dim}V)^{p+q}\).
 
 Niech \(\pi:\:TM\to M\) będzie wiązką styczną i niech \(T_m M = \pi^{-1}(m)\) oznacza włókno nad punktem \(m\in M\). Określmy
 \begin{equation*}
     \mathcal{T}_s^r(M)=\bigcup\limits_{m\in M} \mathcal{T}_r^s(T_m M),
 \end{equation*}
-Oraz niech odwzorowanie \(\pi_s^r:\mathcal{T}_s^r(M)\to M\), \(\pi_s^r(e) = m\) dla \(e\in \mathcal{T}_s^r(E_m)\) będzie naturalną projekcją elementu z włókna na rozmaitość. Naśladując konstrukcję wiązki stycznej, trójkę \((\mathcal{T}_s^r(M), M, \pi_s^r(e))\) nazywamy \emph{wiązką tensorową} o walencji \(r \brack s\) na \(M\). Analogicznie, cięcie wiązki tensorowej określamy \textbf{polem tensorowym}. 
+Oraz niech odwzorowanie \(\pi_s^r:\mathcal{T}_s^r(M)\to M\), \(\pi_s^r(e) = m\) dla \(e\in \mathcal{T}_s^r(E_m)\) będzie naturalną projekcją elementu z włókna na rozmaitość. Naśladując konstrukcję wiązki stycznej, trójkę \((\mathcal{T}_s^r(M), M, \pi_s^r(e))\) nazywamy \emph{wiązką tensorową} o walencji \(r \brack s\) na \(M\). Analogicznie, cięcie wiązki tensorowej określamy \textbf{polem tensorowym}.
 
 Okazuje się (\cite{herdegen}, §19, tw. 2), że każda permutacja \(\pi\in S_n\) jednoznacznie wyznacza \emph{operator permutacji wskaźników} \(P^{\pi}:\mathcal{T}_q^p(V)\to\mathcal{T}_q^p(V)\)
 \begin{equation*}
     (P^\pi t)(\psi^1, \dots, \psi^p, y_1, \dots, y_q) = t(\psi^{\pi(1)}, \dots, \psi^{\pi(p)}, y_1, \dots, y_q),
-\end{equation*} dla \(t\in\mathcal{T}_q^p(V)\). Niech \(\pi\in S_p\) będzie dowolną permutacją zbioru \(p\)-elementowego. Powiemy, że \(t\in\mathcal{T}_q^p(V)\) jest \textbf{tensorem całkowicie symetrycznym (antysymetrycznym) we wskaźnikach kontrawariantnych}, jeśli 
+\end{equation*} dla \(t\in\mathcal{T}_q^p(V)\). Niech \(\pi\in S_p\) będzie dowolną permutacją zbioru \(p\)-elementowego. Powiemy, że \(t\in\mathcal{T}_q^p(V)\) jest \textbf{tensorem całkowicie symetrycznym (antysymetrycznym) we wskaźnikach kontrawariantnych}, jeśli
 \begin{equation*}
-    P^\pi t = t\quad \text{(odpowiednio:}\ P^\pi t = \mathrm{sgn}\pi\, t\text{)}. 
+    P^\pi t = t\quad \text{(odpowiednio:}\ P^{\pi} t = \mathrm{sgn}\pi\, t\text{)}.
 \end{equation*}
 Przy powyższych oznaczeniach na przestrzeni \(\mathcal{T}_q^p(V)\) wprowadza się operatory rzutowe
 \begin{equation*}
     \mathcal{A}=\frac{1}{p!}\sum_{\pi\in S_p} \mathrm{sgn\,\pi}\,P^\pi,\quad \mathcal{S}=\frac{1}{p!}\sum_{\pi\in S_p} P^\pi,
 \end{equation*}
-które nazywamy odpowiednio \emph{operatorem antysymetryzacji} i symetryzacji. Można wykazać (\cite{herdegen}, §20, tw. 4), że tensor \(t\) jest antysymetryczny (symetryczny) wtedy i tylko, gdy \(\mathcal{A}t = t\)  (\(\mathcal{S}t = t\)). Wprowadźmy oznaczenie\footnote{Jest to nawiązanie do algebraicznej konstrukcji przeprowadzonej za pomocą potęgowania zewnętrznego; okazuje się ona izomorficzna z przyjętymi przestrzeniami; szczegółów można szukać w \cite{maurin2}.} dla przestrzeni tensorów całkowicie antysymetrycznych
+które nazywamy odpowiednio \emph{operatorem antysymetryzacji} i \emph{symetryzacji}. Można wykazać (\cite{herdegen}, §20, tw. 4), że tensor \(t\) jest antysymetryczny (symetryczny) wtedy i tylko, gdy \(\mathcal{A}t = t\)  (\(\mathcal{S}t = t\)). Wprowadźmy oznaczenie\footnote{Jest to nawiązanie do algebraicznej konstrukcji przeprowadzonej za pomocą potęgowania zewnętrznego; okazuje się ona izomorficzna z przyjętymi przestrzeniami; szczegółów można szukać w \cite{maurin2}.} dla przestrzeni tensorów całkowicie antysymetrycznych
 \begin{align*}
     \Exterior^p(V):=\mathcal{AT}^p_0(V)\subseteq \mathcal{T}^p_0(V),\quad \Exterior^p(V^\ast):=\mathcal{AT}^0_p(V)\subseteq\mathcal{T}^0_p(V), \quad p\geq 1.
 \end{align*}
@@ -146,7 +154,7 @@ Ich elementy nazywamy odpowiednio \textbf{\(p\)-wektorami} i \textbf{\(p\)-forma
      \Exterior^0(V):=\Exterior^0(V^\ast)=\R
 \end{equation*}
 
-Przez \(\Sigma^k(V^{\ast})\) oznaczamy podprzestrzeń liniową \(k\)-kowariantnych tensorów symetrycznych na \(V\) na którą operator symetryzacji \(\mathcal{S}\) rzutuje przestrzeń \(\mathcal{T}^k_0(V)\). Jeśli \(\alpha\in\Sigma^k(V^{\ast})\), \(\beta\in\Sigma^l(V^{\ast})\) są symetrycznymi tensorami na \(V\), wówczas \(\alpha\otimes\beta\) na ogół nie jest tensorem symetrycznym. Operator symetryzacji indukuje nowe działanie 
+Przez \(\Sigma^k(V^{\ast})\) oznaczamy podprzestrzeń liniową \(k\)-kowariantnych tensorów symetrycznych na \(V\) na którą operator symetryzacji \(\mathcal{S}\) rzutuje przestrzeń \(\mathcal{T}^k_0(V)\). Jeśli \(\alpha\in\Sigma^k(V^{\ast})\), \(\beta\in\Sigma^l(V^{\ast})\) są symetrycznymi tensorami na \(V\), wówczas \(\alpha\otimes\beta\) na ogół nie jest tensorem symetrycznym. Operator symetryzacji indukuje nowe działanie
 \begin{equation*}
     \alpha\beta = \mathcal{S}(\alpha\otimes\beta),
 \end{equation*}
@@ -154,14 +162,14 @@ które jest przemienne, dwuliniowe i nie wyprowadza poza \(\Sigma^{k+l}(V^{\ast}
 
 \textbf{Iloczynem zewnętrznym \(p\)-wektorów} (odpowiednio: \textbf{\(p\)-form}) \(t_i\in\Exterior^{p_i}(V)\), \(s^i\in\Exterior^{p_i}(V^\ast)\), \(i=1,\dots, k\), nazywamy odpowiednio tensory
 \begin{align*}
-    t_1\wedge\dots\wedge t_k = \mathcal{A}(t_1\otimes \dots \otimes t_k), \quad 
+    t_1\wedge\dots\wedge t_k = \mathcal{A}(t_1\otimes \dots \otimes t_k), \quad
     s^1\wedge\dots\wedge s^k = \mathcal{A}(s^1\otimes \dots \otimes s^k).
 \end{align*}
 Jeśli \(V\) jest przestrzenią \(n\)-wymiarową, wówczas (\cite{herdegen}, §20, tw. 7)
 \begin{equation*}
     \mathrm{dim}\,\Exterior^p(V) = \mathrm{dim}\,\Exterior^p(V^\ast) = \binom{n}{k}.
 \end{equation*}
-W szczególności przestrzenie \(\Exterior^n(V)\) i \(\Exterior^n(V^\ast)\) są jednowymiarowe. 
+W szczególności przestrzenie \(\Exterior^n(V)\) i \(\Exterior^n(V^\ast)\) są jednowymiarowe.
 
 Będziemy teraz zmierzać do określenia form różniczkowych na rozmaitościach różniczkowalnych. Niech \(p\) będzie punktem z rozmaitości \(M\). \textbf{Przestrzenią kostyczną} w \(p\) do \(M\) nazywamy przestrzeń dualną do przestrzeni stycznej \(T_p M\)
 \begin{equation*}
@@ -171,12 +179,12 @@ Jej elementy nazywamy \textbf{kowektorami}. Podobnie jak w przypadku wiązki sty
 \begin{equation*}
     T^\ast M = \bigcup\limits_{p\in M} T_p^\ast M.
 \end{equation*}
-możemy zadać strukturę wiązki wektorowej \((T^\ast M, M, \phi)\) rzędu \(2n\) (\cite{tu}, s. 192), którą nazywamy \textbf{wiązką kostyczną} na \(M\). 
+możemy zadać strukturę wiązki wektorowej \((T^\ast M, M, \phi)\) rzędu \(2n\) (\cite{tu}, s. 192), którą nazywamy \textbf{wiązką kostyczną} na \(M\).
 Rozważmy zbiór
 \begin{equation*}
     \Exterior^k(T^\ast M) := \bigcup\limits_{p\in M} \Exterior^k(T^{\ast}_p M) = \bigcup\limits_{p\in M} \mathcal{AT}^0_k(T_p M)
-\end{equation*} i zadajmy odwzorowanie \(\pi: \Exterior^k (T^\ast M) \ni \alpha \mapsto p\in M\) dla 
-\(\alpha \in \Exterior^k(T^{\ast}_p M)\). Okazuje się (\cite{tu}, s. 203), że \(\pi\) jest wiązką wektorową rzędu \(\binom{n}{k}\), której cięcia są antysymetrycznymi \(k\)-kowariantnymi (i \(0\)-kontrawariantnymi) polami tensorowymi na \(M\).   
+\end{equation*} i zadajmy odwzorowanie \(\pi: \Exterior^k (T^\ast M) \ni \alpha \mapsto p\in M\) dla
+\(\alpha \in \Exterior^k(T^{\ast}_p M)\). Okazuje się (\cite{tu}, s. 203), że \(\pi\) jest wiązką wektorową rzędu \(\binom{n}{k}\), której cięcia są antysymetrycznymi \(k\)-kowariantnymi (i \(0\)-kontrawariantnymi) polami tensorowymi na \(M\).
 Każde \(k\)-kowariantne pole tensorowe na \(M\), które jest antysymetryczne, nazywamy \textbf{\(k\)-formą różniczkową} na \(M\).
 Przestrzeń wektorową wszystkich \(\mathrm{C}^\infty\) \(k\)-form na \(M\) oznaczamy \(\Omega^k(M)\) oraz
 \begin{equation*}
@@ -190,7 +198,7 @@ Zbiór \(\mathrm{supp}\, \omega = \mathrm{cl}\left\{p\in M \: | \: \omega_p \neq
 %\end{equation*}
 %jest odwzorowaniem liniowym przestrzeni stycznych, które indukuje odwzorowanie sprzężone
 %\begin{equation*}
-    %    (F_{\ast,p})^{\ast}: \Exterior^p(T^{\ast}_{F(p)}M)\to \Exterior^p(T^{\ast}_p N) 
+    %    (F_{\ast,p})^{\ast}: \Exterior^p(T^{\ast}_{F(p)}M)\to \Exterior^p(T^{\ast}_p N)
 %\end{equation*}
 %Upraszczamy ten zapis i mówimy, że dla \(k\)-kowektora \(\omega_{F(p)}\in\Exterior^p(T^{\ast}_{F(p)}M)\) \(k\)-kowektor (F^\ast(\omega_{F(p)}:=((F_{\ast,p}))^{\ast}\) jest \emph{cofnięciem} \(k\)-formy w \(p\in N\) oraz
 %\begin{equation*}
@@ -215,7 +223,7 @@ Okazuje się (\cite{marsden}, tw. 7.4.1), że na n-rozmaitościach można jedno
     \item \(\mathrm{d^2} = \mathrm{d} \circ \mathrm{d} = 0.\)
     \item \(\mathrm{d}\) jest \emph{operatorem lokalnym}, czyli dla otwartych podzbiorów \(U \subset V \subset M\) i \(\alpha\in\Omega^k(V)\) zachodzi \(\mathrm{d}(\left.\alpha\right|_U)  = \left.(\mathrm{d}\alpha)\right|_U\), gdzie \(|_U\) oznacza zawężenie do \(U\).
 \end{enumerate}
-Taką rodzinę oznaczamy krótko \(\mathrm{d}\) i nazywamy \emph{pochodną zewnętrzną} na \(M\). 
+Taką rodzinę oznaczamy krótko \(\mathrm{d}\) i nazywamy \emph{pochodną zewnętrzną} na \(M\).
 
 
 %\begin{twierdzenie}[\cite{herdegen}, §19, tw. 2]
@@ -232,14 +240,14 @@ Taką rodzinę oznaczamy krótko \(\mathrm{d}\) i nazywamy \emph{pochodną zew
 %    \Exterior^1(V^{\vee}) &= A_1(V) = V^\ast\\
 %    \Exterior^2(V^{\vee}) &= A_2(V),\ \text{i tak dalej.}
 %\end{align*}
-%Nasze największe zainteresowanie będą budziły gładkie k-formy różniczkowe. Przestrzeń liniową wszystkich k-form na rozmaitości \(M\) klasy \(\mathrm{C}^\infty\) konwencjonalnie oznaczamy przez \(\Omega^k(M)\). 
-%Rozważmy przestrzenie wektorowe \(V_1, V_2, \dots, V_r\). Przestrzeń \(V\) nazwiemy \emph{iloczynem tensorowym} przestrzeni \(V_1, V_2, \dots, V_r\) i będziemy oznaczali \(V=V_1\otimes V_2 \otimes \dots \otimes V_r\), jeśli 
+%Nasze największe zainteresowanie będą budziły gładkie k-formy różniczkowe. Przestrzeń liniową wszystkich k-form na rozmaitości \(M\) klasy \(\mathrm{C}^\infty\) konwencjonalnie oznaczamy przez \(\Omega^k(M)\).
+%Rozważmy przestrzenie wektorowe \(V_1, V_2, \dots, V_r\). Przestrzeń \(V\) nazwiemy \emph{iloczynem tensorowym} przestrzeni \(V_1, V_2, \dots, V_r\) i będziemy oznaczali \(V=V_1\otimes V_2 \otimes \dots \otimes V_r\), jeśli
 %\begin{enumerate}[i)]
 %    \item zadane jest odwzorowanie wieloliniowe
 %        \begin{equation*}
 %            \otimes: V_1\times \dots \times V_r \ni (x_1, \dots, x_r) \mapsto x_1\otimes\dots \otimes x_r\in V,\\
 %        \end{equation*}
-%    \item zbiór wektorów \(\left{e_1\otimes \dots e_r | e_{alpha} 
+%    \item zbiór wektorów \(\left{e_1\otimes \dots e_r | e_{alpha}
 %
 %\end{enumerate}
 
@@ -249,7 +257,7 @@ Taką rodzinę oznaczamy krótko \(\mathrm{d}\) i nazywamy \emph{pochodną zew
 %\end{align*}
 %Elementy \(\mathcal{T}_q^p(V)\) nazywamy \emph{tensorami q-krotnie kowariantnymi i p-krotnie kontrawariantnymi} albo prościej: \emph{tensorami o walencji} \(p \brack q\). Okazuje się, że jeśli \(\{e_1, \dots, e_n\}\) jest bazą przestrzeni \(V\) i \(\{e^1, \dots, e^n\}\) jest bazą przestrzeni dualnej, to
 %\begin{equation*}
-%    \left\{e_{i_1} \otimes \dots \otimes e_{i_q} \otimes e^{j_1} \otimes \dots \otimes e^{j_p} \, | \, i_1, \dots, i_q, j_1, \dots, j_p = 1, \dots, n \right\} 
+%    \left\{e_{i_1} \otimes \dots \otimes e_{i_q} \otimes e^{j_1} \otimes \dots \otimes e^{j_p} \, | \, i_1, \dots, i_q, j_1, \dots, j_p = 1, \dots, n \right\}
 %\end{equation*}
 %jest bazą \(\mathcal{T}_q^p(V)\), a zatem \(\mathrm{dim}\mathcal{T}_q^p(V) = (\mathrm{dim}V)^{p+q}\).
 
@@ -258,7 +266,7 @@ Taką rodzinę oznaczamy krótko \(\mathrm{d}\) i nazywamy \emph{pochodną zew
 %    \left\{\frac{\partial}{\partial x^{i_1}} \otimes \dots \otimes \frac{\partial}{\partial x^{i_r}} \otimes dx^{j_1} \otimes \dots \otimes dx^{j_s}\right\}.
 %\end{equation*}
 %
-%\textbf{Polem tensorowym} o walecji \(p \brack q\) klasy \(\mathrm{C}^k,\ k\leq r\), na rozmaitości różniczkowalnej klasy \(\mathrm{C}^r\) nazywamy odwzorowanie 
+%\textbf{Polem tensorowym} o walecji \(p \brack q\) klasy \(\mathrm{C}^k,\ k\leq r\), na rozmaitości różniczkowalnej klasy \(\mathrm{C}^r\) nazywamy odwzorowanie
 %\begin{gather*}
 %    w: M \mapsto \mathcal{T}_q^p (M) := \bigcup\limits_{x\in M}\mathcal{T}_q^p (x),  \quad w(x) \in \mathcal{T}_q^p (x),
 %\end{gather*}
@@ -272,10 +280,10 @@ Taką rodzinę oznaczamy krótko \(\mathrm{d}\) i nazywamy \emph{pochodną zew
 %Niech \(f\in C^\infty(M)\) będzie funkcją na rozmaitości \(M\) i \(X\) będzie polem wektorowym na \(M\). \(1\)-formę różniczkowa \(df\) taka, że dla każdego \(p\in M\) i wektora stycznego \(X_p\in T_p M\) zachodzi
 %\begin{equation*}
 %    \left.df\right|_p(X_p) = X_p f.
-%\end{equation*} nazywamy \emph{różniczką} funkcji \(f\). 
+%\end{equation*} nazywamy \emph{różniczką} funkcji \(f\).
 
 %Ponieważ \(f_\ast(X_p)\in T_{f(p)}\R\), to istnieje liczba \(a\in \R\) taka, że
-%\(f_{\ast}(X_p) = a \left.\frac{d}{dt}\right|_{f(p)}\), gdzie 
+%\(f_{\ast}(X_p) = a \left.\frac{d}{dt}\right|_{f(p)}\), gdzie
 %\begin{equation*}
 %    a = f_{\ast}(X_p)(t) = X_p(t\circ f) = X_p f = (df)_p(X_p).
 %\end{equation*}
@@ -297,7 +305,7 @@ Niech \(X\) będzie polem wektorowym klasy \(\mathrm{C}^r\) na \(M\) i niech \((
 \end{tikzpicture}
 \end{figure}
 
-Chwilą \(t\in\R\) będziemy nazywać zmienną czasową. \textbf{Polem wektorowym zależnym od czasu} klasy \(\mathrm{C}^r\) na \(M\) nazywamy odwzorowanie \(X:\R\times M\rightarrow TM\) takie, że \(X_t(m):=X(t,\,m) \in T_{m} M\) jest wektorem stycznym w \(m\) w chwili \(t\) dla wszytkich par \((t, m) \in \R \times M\). Przez \(X_t\in \mathfrak{X}^r(M)\) oznaczamy pole wektorowe na \(M\) w chwili \(t\), gdzie \(\mathfrak{X}^r(M)\) to zbiór wszystkich pól wektorowych klasy \(\mathrm{C}^r\) na \(M\). 
+Chwilą \(t\in\R\) będziemy nazywać zmienną czasową. \textbf{Polem wektorowym zależnym od czasu} klasy \(\mathrm{C}^r\) na \(M\) nazywamy odwzorowanie \(X:\R\times M\rightarrow TM\) takie, że \(X_t(m):=X(t,\,m) \in T_{m} M\) jest wektorem stycznym w \(m\) w chwili \(t\) dla wszytkich par \((t, m) \in \R \times M\). Przez \(X_t\in \mathfrak{X}^r(M)\) oznaczamy pole wektorowe na \(M\) w chwili \(t\), gdzie \(\mathfrak{X}^r(M)\) to zbiór wszystkich pól wektorowych klasy \(\mathrm{C}^r\) na \(M\).
 
 \textbf{Trajektorią} (także: linią przepływu, krzywą całkową) pola wektorowego \(X\) w punkcie \(m\in M\) nazywamy krzywą \(c: \R \supset I \rightarrow M\) o początku w \(m\), taką, że \(c'(t) = X_{c(t)}\) dla każdego \(t\in I\). Jeśli \((U, \varphi) = (U, x^1, x^2, \dots, x^n)\) jest mapą wokół \(c(0)=p\) i \([X^1, X^2, \dots, X^n]^T\) jest lokalną reprezentacją \(X\), funkcja wektorowa \(\mathbf{c} = \varphi \circ c, I \ni t \mapsto \left[c^i(t)\right]_{i=1}^m \in \R^n\) jest lokalną reprezentacją krzywej \(c\) oraz spełniony jest układ równań różniczkowch pierwszego rzędu nazywany układem charakterystyk
 \begin{align*}
@@ -325,7 +333,7 @@ F_{\ast, p} (X_p) = \left.\frac{d}{dt}\right|_0(F\circ c)(t).
 Czyli popchnięcie prędkości \(X_p\) przez \(F\) jest wektorem prędkości krzywej \(F\circ c\) w \(M\).
 \end{twierdzenie}
 
-Przez \(\mathcal{D}_X\) oznaczmy wszystkie pary \((m, t)\in M \times \R\) dla których istnieje trajektoria \(c: I\rightarrow M\) pola wektorowego \(X\) w punkcie \(m\) i zmienna czasowa \(t\) zawiera się w pewnym przedziale \(I\). Mówimy, że pole wektorowe jest \textbf{zupełne}, jeśli \(\mathcal{D}_X = M \times \R\). Oznacza to, że dla każdego punktu na rozmaitości znajdziemy trajektorię cząsteczki próbnej poruszającej się dowolnie długo. Domknięcie zbioru wszystkich punktów rozmaitości na których pole wektorowe nie znika, \(\mathrm{supp}\,X=\mathrm{cl}\{m\in M\:|\: X_m\neq 0\}\), nazywamy \textbf{nośnikiem} pola wektorowego X. 
+Przez \(\mathcal{D}_X\) oznaczmy wszystkie pary \((m, t)\in M \times \R\) dla których istnieje trajektoria \(c: I\rightarrow M\) pola wektorowego \(X\) w punkcie \(m\) i zmienna czasowa \(t\) zawiera się w pewnym przedziale \(I\). Mówimy, że pole wektorowe jest \textbf{zupełne}, jeśli \(\mathcal{D}_X = M \times \R\). Oznacza to, że dla każdego punktu na rozmaitości znajdziemy trajektorię cząsteczki próbnej poruszającej się dowolnie długo. Domknięcie zbioru wszystkich punktów rozmaitości na których pole wektorowe nie znika, \(\mathrm{supp}\,X=\mathrm{cl}\{m\in M\:|\: X_m\neq 0\}\), nazywamy \textbf{nośnikiem} pola wektorowego X.
 
 Zachodzą następujące twierdzenia
 \begin{twierdzenie}[\cite{marsden}, tw. 4.1.17]\label{tw:D}
@@ -336,7 +344,7 @@ Niech \(X\) będzie polem wektorowym na \(M\) klasy \(C^r,\, r\geq1\). Wówczas
 \item istnieje jednoznacznie wyznaczone odwzorowanie \(F_X:\mathcal{D}_X\rightarrow M\) takie, że krzywa \(t\mapsto F_X(m,t)\) jest trajektorią w \(m\) dla wszystkich \(m\in M\),
 \item dla \((m,t)\in \mathcal{D}_X,\) \((F_X(m,t),\, s)\in\mathcal{D}_X\) wtedy i tylko wtedy, gdy \((m, t+s)\in \mathcal{D}_X\).
 \end{enumerate}
-\end{twierdzenie}  
+\end{twierdzenie}
 
 \begin{twierdzenie}[\cite{marsden}, tw. 4.1.20]
 Każde pole wektorowe klasy \(C^r\) na zwartej rozmaitości \(M\) jest zupełne.
@@ -345,27 +353,27 @@ Każde pole wektorowe klasy \(C^r\) na zwartej rozmaitości \(M\) jest zupełne.
 Określone w Twierdzeniu \ref{tw:D} odwzorowanie \(F_X\) nazywamy \textbf{całką} \(X\), zaś trajektorię \(t\rightarrow F_X(m,t)\) \textbf{maksymalną krzywą całkową} \(X\) w \(m\). Jeśli pole wektorowe \(X\) jest zupełne, \(F_X\) nazywamy \textbf{przepływem} pola wektorowego \(X\). Każdy przepływ \(F\) określa 1-parametrową grupę dyfeomorfizmów \(\{F_t:\:M\rightarrow M\:|\: t\in \R\}\) z operacją składania \(F_{t_1}\circ F_{t_2} = F_{t_1 + t_2}\) dla \(t_{1}, {t}_2 \in \R\), gdzie \(F_0\) jest elementem neutralnym i \(F_{t}\circ F_{-t} = F_{0}\) dla dowolnego \(t\in\R\). Jeśli \(X\) jest polem wektorowym zależnym od czasu, wówczas analogicznie określamy \textbf{przepływ zależny od czasu} \(F_{t,s}\) pola \(X\) dla którego odwzorowanie \(t\mapsto F_{t,s}(m)\) jest trajektorią \(X\) o początku w punkcie \(m\) i w chwili \(t=s\), czyli
 \begin{align}
 \frac{d}{dt}F_{t,s}(m) = X\left(t, F_{t,s}(m)\right), &\quad F_{s,s}(m) = m.
-\end{align} 
-Wówczas działanie składania staje się przechodnie, \(F_{t,s}\circ F_{s,r} = F_{s, r}\), a \(F_{t, t}\) jest jego elementem neutralnym. 
+\end{align}
+Wówczas działanie składania staje się przechodnie, \(F_{t,s}\circ F_{s,r} = F_{s, r}\), a \(F_{t, t}\) jest jego elementem neutralnym.
 
 %Pojęcia pola wektorowego, przepływu i trajektorii wiąże następujące twierdzenie
 %
 %\begin{twierdzenie}[O lokalnym istnieniu gładkiego przepływu]
 %Niech \((U, \varphi)\) będzie mapą wokół \(p\in M\) i niech \(X\) będzie polem wektorowym klasy \(C^\infty\) na \(U\). Wówczas dla każdego \(p_0\in U\) istnieje przepływ \(F:]-\varepsilon, \varepsilon[ \times V \rightarrow U\) klasy \(C^\infty\) dla pewnego otoczenia \(V\subset U\) i pewnego \(\varepsilon>0\) taki, że \(F_t\) jest trajektorią pola wektorowego \(X\) w \(p_0\), czyli
 %\begin{align}
-%\frac{\partial F}{\partial t}(t, q) = X_{F_t(q)}, &\quad F_0(p_0) = p_0,  
+%\frac{\partial F}{\partial t}(t, q) = X_{F_t(q)}, &\quad F_0(p_0) = p_0,
 %\end{align}
 %dla wszystkich \((t, q) \in ]-\varepsilon, \varepsilon[ \times V\)
 %\end{twierdzenie}
 %\begin{twierdzenie}[O lokalnym istnieniu gładkiego i jednoznacznego przepływu]
-%    Niech \(U\) będzie otwartym podzbiorem \(\R^n\) i niech \(\mathbf{X}: U\times \R \rightarrow \R^n\) będzie lokalną reprezentacją pola wektorowego zależnego od czasu klasy \(C^r\,, r\geq 1\). Wówczas 
+%    Niech \(U\) będzie otwartym podzbiorem \(\R^n\) i niech \(\mathbf{X}: U\times \R \rightarrow \R^n\) będzie lokalną reprezentacją pola wektorowego zależnego od czasu klasy \(C^r\,, r\geq 1\). Wówczas
 %    \begin{enumerate}[i)]
 %        \item Dla dowolnego \(x_0\in U\) i chwili \(t\in \R\) istnieje trajektoria w \(x_0\),
 %    \item Jeśli w punkcie i w tej samej chwili istnieją dwie różne trajektorie, to są identyczne na przecięciu swoich dziedzin,
 %    \item Istnieje otoczenie \(U_0\) punktu \(p\in U\) oraz przepływ \(F: U_0 \times ]-a, a[ \rightarrow \R^n\) klasy \(C^r\) dla pewnego \(a>0\) takie, że krzywa \(c_u: \left]-a, a\right[\rightarrow \R^n\, c_u(t) = F(u, t)\) jest trajektorią w \(u\in \R^n\).
 %\end{enumerate}
 %\end{twierdzenie}
-%Wówczas \(u(x, t)\) oznacza prędkość cząsteczki próbnej przechodzącej przez punkt \(x\in M\). 
+%Wówczas \(u(x, t)\) oznacza prędkość cząsteczki próbnej przechodzącej przez punkt \(x\in M\).
 
 Niech \(X,\,Y\in\mathfrak{X}(M)\) i \(F:]-\varepsilon, \varepsilon[\times U\rightarrow M\) będzie lokalnym przepływem pola wektorowego \(X\) w otoczeniu \(U\subset M\) punktu \(p\in M\). \textbf{Pochodną Liego} \(\mathcal{L}_X Y\) \textbf{pola wektorowego} \(Y\) względem \(X\) w \(p\) nazywamy wektor
 \begin{equation}\label{eq:lie_vector}
@@ -374,19 +382,19 @@ Niech \(X,\,Y\in\mathfrak{X}(M)\) i \(F:]-\varepsilon, \varepsilon[\times U\righ
                     &= \lim_{t\to 0} \frac{(F_{-t\ast}Y)_p - Y_p}{t} =\\
                     &= \left.\frac{d}{dt}\right|_{t = 0}(F_{-t\ast}Y)_p.
 \end{split}
-\end{equation} 
+\end{equation}
 Jeśli \(\omega\) jest gładką k-formą na rozmaitości \(M\), to \textbf{pochodną Liego} \(\mathcal{L}_X \omega\) \textbf{k-formy} \(\omega\) względem \(X\) w \(p\in M\) nazywamy formę
 \begin{equation}\label{eq:lie_form}
 \begin{split}
 (\mathcal{L}_X \omega)_p &= \lim_{t\to 0}\frac{F_t^{\ast}(\omega_{F_t(p)})-\omega_p}{t} =\\
-						 &= \lim_{t\to 0}\frac{(F_t^{\ast}\omega)_p - \omega_p}{t} =\\
-						 &= \left.\frac{d}{dt}\right|_{t=0}(F_t^{\ast}\omega)_p.
+                         &= \lim_{t\to 0}\frac{(F_t^{\ast}\omega)_p - \omega_p}{t} =\\
+                         &= \left.\frac{d}{dt}\right|_{t=0}(F_t^{\ast}\omega)_p.
 \end{split}
 \end{equation}
 
 \emph{Formą objętości} na \(n\)-rozmaitości \(M\) nazywamy każdą nieznikający na \(M\) \(n\)-formę \(\mu\in\Omega^n(M)\) i mówimy, że \(M\) jest orientowalna, jeśli na \(M\) można określić formę objętości.
-Powiedzmy, że rozmaitość \(M\) jest orientowalna i rozważmy na niej dowolne dwie formy objętości \(\mu_1\) i \(\mu_2\). Powiemy, że są one równoważne, jeśli istnieje \(f\in\mathcal{F}(M)\) taka, że \(f(m)>0\) dla wszystkich \(m\in M\) oraz \(\mu_1 = f \mu_2\). Każdą klasę równoważności \(\left[\mu\right]\) takiej relacji nazywamy \emph{orientacją} na \(M\).   
-Rozmaitości z wybraną orientacją będziemy nazywali \emph{rozmaitościami zorientowanymi} i oznaczali \((M, [\mu])\). 
+Powiedzmy, że rozmaitość \(M\) jest orientowalna i rozważmy na niej dowolne dwie formy objętości \(\mu_1\) i \(\mu_2\). Powiemy, że są one równoważne, jeśli istnieje \(f\in\mathcal{F}(M)\) taka, że \(f(m)>0\) dla wszystkich \(m\in M\) oraz \(\mu_1 = f \mu_2\). Każdą klasę równoważności \(\left[\mu\right]\) takiej relacji nazywamy \emph{orientacją} na \(M\).
+Rozmaitości z wybraną orientacją będziemy nazywali \emph{rozmaitościami zorientowanymi} i oznaczali \((M, [\mu])\).
 
 Jeśli \(F: (M, \mu_M)\to(N, \mu_N)\) jest dyfeomorfizmem między rozmaitościami zorientowanymi, to powiemy, że \(F\) \emph{zachowuje (odwraca) orientację}, jeśli \(\left[F^\ast \mu_M\right] = \left[\mu_N\right]\) (\(\left[F^\ast \mu_M\right] = -\left[\mu_N\right]\)). Podobnie, jeśli tylko \(F^\ast \mu_M = \mu_N\), powiemy że \(F\) \emph{zachowuje objętość}. Pojęcie orientowalności niekiedy wygodniej jest określać za pomocą \emph{atlasu zorientowanego}. Atlas na \(M\) nazywamy \emph{zorientowanym}, jeśli dla dowolnych dwóch nakładających się na siebie map \((U, x^1, \dots, x^n)\) i \((V, y^1, \dots, y^n)\) jakobian \(\mathrm{det}\left[\frac{\partial y^i}{\partial x^j}\right]\) jest dodatni na \(U\cap V\). Wówczas, o ile rozmaitośc jest parazwarta, orientowalność \(M\) jest równoważna istnieniu atlasu zorientowanego na \(M\) (\cite{marsden}, tw. 7.5.2).
 
@@ -407,31 +415,30 @@ Korzystając z powyższej definicji całkowania na \(\R^n\) możemy przy pomocy 
 \begin{equation*}
     \int_U \omega := \int_{\varphi(U)} (\varphi^{-1})^{\ast}\left.\omega\right|_U.
 \end{equation*}
-nazywamy \emph{całką z formy \(\omega\)} na \(U\).  
+nazywamy \emph{całką z formy \(\omega\)} na \(U\).
 Niech \(\omega\in\Omega^n_c(M)\). Wybierzmy rozkład jedności \(\{\rho_{\alpha}\}\) przyporządkowany pokryciu \(\{U_{\alpha}\}\). Ponieważ \(\rho_{\alpha}\omega\) jest \(n\)-formą ze zwartym nośnikiem zawartym w \(U_{\alpha}\), to określona jest całka \(\int_{U_\alpha} \rho_{\alpha} \omega\). Skończoną sumę postaci
 \begin{equation*}
-    \int_M \omega := \sum_{\alpha} \int_{U_{\alpha}} \rho_{\alpha}\omega 
+    \int_M \omega := \sum_{\alpha} \int_{U_{\alpha}} \rho_{\alpha}\omega
 \end{equation*}
 nazywamy \emph{całką z formy \(\omega\) na \(M\)}. Taka definicja jest niezależna ani od wyboru zorientowanego atlasu, ani od wyboru rozkładu jedności (\cite{tu}, s. 265-266).
 
-%Wybierzmy mapę \((U, \varphi)\) i niech \(\omega\in\Omega^n_c(M)\). Jeśli \(\mathrm{supp}\,\omega \subset U\), wówczas zawężenie \(\left.\omega\right|_U\) ma taki sam zwarty nośnik.  
+%Wybierzmy mapę \((U, \varphi)\) i niech \(\omega\in\Omega^n_c(M)\). Jeśli \(\mathrm{supp}\,\omega \subset U\), wówczas zawężenie \(\left.\omega\right|_U\) ma taki sam zwarty nośnik.
 
-%Zajmiemy się teraz \emph{orientacją} rozmaitości. Będziemy chcięli określić orientację rozmaitości orientując przestrzenie styczne w każdym jej punkcie.  
-%Niech \((X_1, \dots, X_n)\) i \((Y_1, \dots, Y_n)\) będą dowolnymi reperami nad \(M\) takimi, że dla każdego \(p\in M\) 
+%Zajmiemy się teraz \emph{orientacją} rozmaitości. Będziemy chcięli określić orientację rozmaitości orientując przestrzenie styczne w każdym jej punkcie.
+%Niech \((X_1, \dots, X_n)\) i \((Y_1, \dots, Y_n)\) będą dowolnymi reperami nad \(M\) takimi, że dla każdego \(p\in M\)
 %\((X_{1,p}, \dots, X_{n,p})\) i \((Y_{1,p}, \dots, Y_{n,p})\) są uporządkowanymi bazami przestrzeni stycznej \(T_p M\). Wprowadzamy relację równoważności
 %\begin{equation*}
 %    (X_1, \dots, X_n) \sim (Y_1, \dots, Y_n) \iff (X_{1,p}, \dots, X_{n,p}) \sim (Y_{1,p}, \dots, Y_{n,p})\ \text{dla każdego}\ p\in M
 %\end{equation*}
-%gdzie relacja \(\sim\) użyta po prawej stronie oznacza, że istnieje macierz przejścia \(A = [a_i^j]\) taka, że \(\mathrm{det} A>0\) dla każdego \(p\in M\). Jeśli istnieje reper \((Y_1, \dots, Y_n)\), który jest ciągły na otoczeniu \(U\) każdego punkt \(p\) na rozmaitości \(M\), to klasę równoważności którą reprezentuje nazywamy \textbf{orientacją} na rozmaitości \(M\), zaś samą rozmaitość \(M\) nazywamy \emph{orientowalną}.  
-%    
+%gdzie relacja \(\sim\) użyta po prawej stronie oznacza, że istnieje macierz przejścia \(A = [a_i^j]\) taka, że \(\mathrm{det} A>0\) dla każdego \(p\in M\). Jeśli istnieje reper \((Y_1, \dots, Y_n)\), który jest ciągły na otoczeniu \(U\) każdego punkt \(p\) na rozmaitości \(M\), to klasę równoważności którą reprezentuje nazywamy \textbf{orientacją} na rozmaitości \(M\), zaś samą rozmaitość \(M\) nazywamy \emph{orientowalną}.
+%
 
 %Wybierając reper na rozmaitości \(M\) również możemy określamy jej orientację. Myśl tę wyraża poniższe twierdzenie
 %\begin{twierdzenie}[\cite{tu}, tw. 21.5]
-%    Rozmaitość \(M\) jest orientowalna wtedy i tylko wtedy, gdy na \(M\) . 
+%    Rozmaitość \(M\) jest orientowalna wtedy i tylko wtedy, gdy na \(M\) .
 %\end{twierdzenie}
 
-
-Dalej rozważać będziemy gładkie \(n\)-rozmaitości \(M\) z określoną metryką Riemmana \(g\), które nazywać będziemy krótko \textbf{n-rozmaitościami Riemanowskimi} i oznaczali \((M, g)\). Przypomnijmy, że metryka Riemannowska \(g\) to gładkie symetryczne i dodatnio określone 2-kowariantne pole tensorowe takie, że \(g_p \in \Sigma^2(T^{\ast}_p M)\) dla każdego \(p\in M\) jest iloczynem skalarnym określonym na przestrzeni stycznej \(T_p M\).  
+Dalej rozważać będziemy gładkie \(n\)-rozmaitości \(M\) z określoną metryką Riemmana \(g\), które nazywać będziemy krótko \textbf{n-rozmaitościami Riemanowskimi} i oznaczali \((M, g)\). Przypomnijmy, że metryka Riemannowska \(g\) to gładkie symetryczne i dodatnio określone 2-kowariantne pole tensorowe takie, że \(g_p \in \Sigma^2(T^{\ast}_p M)\) dla każdego \(p\in M\) jest iloczynem skalarnym określonym na przestrzeni stycznej \(T_p M\). Korzystając z faktu, że każda rozmaitość topologiczna ma rozkład jedności okazuje się również, że może być wyposażona w metrykę Riemannowską (\cite{maurin2}, Tw. XX.19).
 
 \begin{twierdzenie}[\textbf{O zamianie zmiennych}, \cite{marsden}, tw. 8.1.7]\label{thm:coord_change}
     Niech \(M\) i \(N\) będą \(n\)-rozmaitościami z orientacją  i niech \(f: M\to N\) będzie dyfeomorfizmem zachowującym orientację. Jeśli \(\omega \in \Omega^n(N)\) ma zwarty nośnik, to \(f^\ast\omega\) również ma zwarty nośnik oraz
@@ -440,7 +447,7 @@ Dalej rozważać będziemy gładkie \(n\)-rozmaitości \(M\) z określoną metr
     \end{equation}
 \end{twierdzenie}
 
-Niech \(X\) będzie polem wektorowym na \(M\). Funkcję \(\mathrm{div}_\mu X \in C^\infty(M)\) taką, że 
+Niech \(X\) będzie polem wektorowym na \(M\). Funkcję \(\mathrm{div}_\mu X \in C^\infty(M)\) taką, że
 \begin{equation}
 \mathcal{L}_X \mu = (\mathrm{div}_\mu X) \mu
 \end{equation}
@@ -460,13 +467,13 @@ Poniższej prezentujemy centralne twierdzenie w mechanice płynów, które umoż
         F^\ast_t\mathcal{L}_X(f_t\mu) =\\
         &= F^\ast_t\left(\frac{\partial f}{\partial t}\mu\right) +
         F^\ast_t\left(\left(\mathcal{L}_X f_t\right)\mu + f_t(\mathrm{div}_\mu X)\mu\right) =\\
-        &= F^\ast_t\left(\left(\frac{\partial f}{\partial t}+\mathrm{div}_\mu(f_t X)\right)\mu\right). 
+        &= F^\ast_t\left(\left(\frac{\partial f}{\partial t}+\mathrm{div}_\mu(f_t X)\right)\mu\right).
     \end{align*}
 
     Stosując wzór na zamianę zmiennych z Twierdzenia \ref{thm:coord_change} otrzymujemy
 
     \begin{align*}
-       \frac{d}{dt}\int_{F_t (U)} f_t \mu &= \frac{d}{dt}\int_U F^\ast_t (f_t \mu) 
+       \frac{d}{dt}\int_{F_t (U)} f_t \mu &= \frac{d}{dt}\int_U F^\ast_t (f_t \mu)
        = \int_U F^\ast_t \left(\left(\frac{\partial f}{\partial t} + \mathrm{div}_\mu (f_t X)\right)\mu\right) =\\
        &=\int_{F_t(U)} \left(\frac{\partial f}{\partial t} + \mathrm{div}_\mu (f_t X)\right)\mu.
     \end{align*}
