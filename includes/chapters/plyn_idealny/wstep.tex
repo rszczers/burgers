@@ -5,11 +5,15 @@ Zaczniemy od przypomnienia podstawowych pojęć w teorii rozmaitości gładkich.
 
 \subsection{Przestrzeń styczna do rozmaitości}
 Niech \(M\) będzie rzeczywistą \(n\)-rozmaitością różniczkowalną klasy \(\mathrm{C}^\infty\), \(p\) będzie dowolnym punktem rozmaitości \(M\) i niech \(U, V\subset M\) będą otoczeniami punktu \(p\). Zmierzamy do określenia pojęcia \emph{przestrzeni stycznej} za pomocą klas funkcji określonych na \(M\), które są lokalnie identyczne. Powiemy, że dwie funkcje rzeczywiste \(f:U\to\R,\ g:V\to\R\) są \emph{równoważne}, jeśli w pewnym otoczeniu \(W\subset U\cap V\) punktu \(p\) są one sobie równe. Pod pojęciem \emph{kiełka} funkcji rzeczywistej klasy \(\mathrm{C}^\infty\) w punkcie \(p\in M\) będziemy rozumieli każdą klasę równoważności tak zadanej relacji. Zbiór wszystkich kiełków w punkcie \(p\), \(\mathrm{C}_p^\infty(M)\), jest wówczas \(\R\)-algebrą. Zbiór wszystkich funkcji klasy \(\mathrm{C}^\infty\) określonych na \(M\) będziemy oznaczali \(\mathcal{F}(M)\).
-Każde odwzorowanie liniowe \(\mathrm{D}:\mathrm{C}_p^\infty(M)\to\R\) spełniające warunek:
+Każde odwzorowanie liniowe \(\mathrm{X}:\mathrm{C}_p^\infty(M)\to\R\) spełniające warunek:
 \begin{equation}\label{eq:differentiation}
-    \mathrm{D}(fg) = (\mathrm{D}f)g(p) + f(\mathrm{D}g)(p)
+    \mathrm{X}(fg) = (\mathrm{X}f)g(p) + f(\mathrm{X}g)(p)
 \end{equation}
-nazywamy \emph{różniczkowaniem} w punkcie \(p\), zaś przestrzeń liniową wszystkich różniczkowań w punkcie \(p\) -- \textbf{przestrzenią styczną} w \(p\) i oznaczamy przez \(T_pM\).
+nazywamy \emph{różniczkowaniem} w punkcie \(p\). Na zbiorze wszystkich takich różniczkowań w punkcie \(p\) można zadać strukturę \(n\)-wymiarowej \(\R\)-przestrzeni liniowej z działaniami
+\begin{align*}
+    (X + Y)f := Xf + Yf, &\quad (rX)f := r(Xf),\ \text{gdzie}\ f\in\mathcal{F}(M),\ r\in\R.
+\end{align*}
+Taką strukturę nazywamy \textbf{przestrzenią styczną} w \(p\) i oznaczamy przez \(T_pM\), a każdy \(X\in T_pM\) nazywamy \emph{wektorem stycznym} w \(p\).
 
 \subsection{Wiązki wektorowe}
 Przypuśćmy, że \(\pi: E\to M\) będzie dowolnym odwzorowaniem między rozmaitościami \(E\) i \(M\). Przeciwobraz \(E_p = \pi^{-1}(p)\) dla każdego punktu \(p\) nazywamy \emph{włóknem} w \(p\). Niech \(\pi': E'\to M\) będzie odwzorowaniem rozmaitości \(E'\) i \(M\). Powiemy, że odwzorowanie \(\phi:E\to E'\) \emph{zachowuje włókna}, jeśli \(\phi(E_p)\subset E'_p\) dla każdego \(p\in M\), czyli gdy poniższy diagram jest przemienny.
@@ -305,6 +309,7 @@ Niech \(X\) będzie polem wektorowym klasy \(\mathrm{C}^r\) na \(M\) i niech \((
 \end{tikzpicture}
 \end{figure}
 
+\subsection{Grupy dyfeomorfizmów}
 Chwilą \(t\in\R\) będziemy nazywać zmienną czasową. \textbf{Polem wektorowym zależnym od czasu} klasy \(\mathrm{C}^r\) na \(M\) nazywamy odwzorowanie \(X:\R\times M\rightarrow TM\) takie, że \(X_t(m):=X(t,\,m) \in T_{m} M\) jest wektorem stycznym w \(m\) w chwili \(t\) dla wszytkich par \((t, m) \in \R \times M\). Przez \(X_t\in \mathfrak{X}^r(M)\) oznaczamy pole wektorowe na \(M\) w chwili \(t\), gdzie \(\mathfrak{X}^r(M)\) to zbiór wszystkich pól wektorowych klasy \(\mathrm{C}^r\) na \(M\).
 
 \textbf{Trajektorią} (także: linią przepływu, krzywą całkową) pola wektorowego \(X\) w punkcie \(m\in M\) nazywamy krzywą \(c: \R \supset I \rightarrow M\) o początku w \(m\), taką, że \(c'(t) = X_{c(t)}\) dla każdego \(t\in I\). Jeśli \((U, \varphi) = (U, x^1, x^2, \dots, x^n)\) jest mapą wokół \(c(0)=p\) i \([X^1, X^2, \dots, X^n]^T\) jest lokalną reprezentacją \(X\), funkcja wektorowa \(\mathbf{c} = \varphi \circ c, I \ni t \mapsto \left[c^i(t)\right]_{i=1}^m \in \R^n\) jest lokalną reprezentacją krzywej \(c\) oraz spełniony jest układ równań różniczkowch pierwszego rzędu nazywany układem charakterystyk
@@ -392,6 +397,7 @@ Jeśli \(\omega\) jest gładką k-formą na rozmaitości \(M\), to \textbf{poch
 \end{split}
 \end{equation}
 
+\subsection{Rozmaitości Riemannowskie}
 \emph{Formą objętości} na \(n\)-rozmaitości \(M\) nazywamy każdą nieznikający na \(M\) \(n\)-formę \(\mu\in\Omega^n(M)\) i mówimy, że \(M\) jest orientowalna, jeśli na \(M\) można określić formę objętości.
 Powiedzmy, że rozmaitość \(M\) jest orientowalna i rozważmy na niej dowolne dwie formy objętości \(\mu_1\) i \(\mu_2\). Powiemy, że są one równoważne, jeśli istnieje \(f\in\mathcal{F}(M)\) taka, że \(f(m)>0\) dla wszystkich \(m\in M\) oraz \(\mu_1 = f \mu_2\). Każdą klasę równoważności \(\left[\mu\right]\) takiej relacji nazywamy \emph{orientacją} na \(M\).
 Rozmaitości z wybraną orientacją będziemy nazywali \emph{rozmaitościami zorientowanymi} i oznaczali \((M, [\mu])\).
